@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  PetsApp_0001
+
+  Created by Илья Нестрогаев on 04.04.2024.
+  
+*/
+
+
+"name_field" = "Name";
+"password_field" = "Password";
+"mail_field" = "Email";
+"error_alert" = "Error";
+"create_account_button" = "Create an account";
+"calendar" = "Calendar";
+"journal" = "Journal";
+"my_pets" = "My pets";
+"settings" = "Settings";
+"log_out" = "Log out";
+"yes" = "Yes";
+"no" = "No";
+"date_birth" = "Date of Birth";
+"password_6chars" = "Password (min 6 characters)";
+"repeat_password" = "Repeat password";
+"password_reset_alert" = "Password reset successfully";
+"password_reset_alert_2" = "Check your email and follow the instructions provided";
+"error_reset_password" = "Invalid email address entered";
+"reset_password_instr" = "To reset, enter your email address and follow the instructions in the email";
+"password_reset" = "Password reset";
+"reset_password" = "Reset the password";
+"pet_add" = "Add a pet";
+"type_pet" = "Type of pet";
+"log_out_alert" = "Are you sure want to log out?";
+"registration" = "Sign Up";
+"authorization" = "Auth";
+"log_in" = "Log In";
+"select_image" = "Select image";
+

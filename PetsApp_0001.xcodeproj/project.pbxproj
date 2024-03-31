@@ -1,0 +1,947 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A3F20782BB84327005E4BC0 /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F20772BB84327005E4BC0 /* CalendarEventCell.swift */; };
+		4A3F207A2BB843E7005E4BC0 /* CalendarEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F20792BB843E7005E4BC0 /* CalendarEventModel.swift */; };
+		4A3F207C2BB85754005E4BC0 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F207B2BB85754005E4BC0 /* PetModel.swift */; };
+		4A3F207E2BB85BA2005E4BC0 /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F207D2BB85BA2005E4BC0 /* PetCell.swift */; };
+		4A3F20802BB8702C005E4BC0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F207F2BB8702C005E4BC0 /* TabBarController.swift */; };
+		4A3F21292BB89FE1005E4BC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F21282BB89FE1005E4BC0 /* GoogleService-Info.plist */; };
+		4A3F212B2BB8A09C005E4BC0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3F212A2BB8A09C005E4BC0 /* FirebaseAuth */; };
+		4A3F212D2BB8A09C005E4BC0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3F212C2BB8A09C005E4BC0 /* FirebaseDatabase */; };
+		4A3F212F2BB8A09C005E4BC0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3F212E2BB8A09C005E4BC0 /* FirebaseFirestore */; };
+		4A3F21312BB8A09C005E4BC0 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3F21302BB8A09C005E4BC0 /* FirebaseInAppMessaging-Beta */; };
+		4A3F21332BB8A09C005E4BC0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3F21322BB8A09C005E4BC0 /* FirebaseStorage */; };
+		4A3F21352BB90E5F005E4BC0 /* UICustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21342BB90E5F005E4BC0 /* UICustomColor.swift */; };
+		4A3F213B2BBD3C7A005E4BC0 /* CalendarAddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F213A2BBD3C7A005E4BC0 /* CalendarAddModel.swift */; };
+		4A3F213D2BBD3C8A005E4BC0 /* CalendarAddProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F213C2BBD3C8A005E4BC0 /* CalendarAddProtocols.swift */; };
+		4A3F213F2BBD3CAD005E4BC0 /* CalendarAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F213E2BBD3CAD005E4BC0 /* CalendarAddViewController.swift */; };
+		4A3F21412BBD3CBE005E4BC0 /* CalendarAddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21402BBD3CBE005E4BC0 /* CalendarAddInteractor.swift */; };
+		4A3F21432BBD3CC6005E4BC0 /* CalendarAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21422BBD3CC6005E4BC0 /* CalendarAddPresenter.swift */; };
+		4A3F21452BBD3CD1005E4BC0 /* CalendarAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21442BBD3CD1005E4BC0 /* CalendarAddRouter.swift */; };
+		4A3F21472BBD3CDA005E4BC0 /* CalendarAddAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21462BBD3CDA005E4BC0 /* CalendarAddAssembly.swift */; };
+		4A3F214F2BBF2617005E4BC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F214D2BBF2616005E4BC0 /* Localizable.strings */; };
+		4A3F21522BBF2E80005E4BC0 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21512BBF2E80005E4BC0 /* String+extension.swift */; };
+		4A8DA7FA2BB59A21000DA908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */; };
+		4A8DA7FC2BB59A21000DA908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */; };
+		4A8DA8032BB59A23000DA908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DA8022BB59A23000DA908 /* Assets.xcassets */; };
+		4A8DA8112BB59B46000DA908 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8102BB59B46000DA908 /* AuthModel.swift */; };
+		4A8DA8132BB59B51000DA908 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8122BB59B51000DA908 /* AuthViewController.swift */; };
+		4A8DA8152BB59DF6000DA908 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8142BB59DF6000DA908 /* UIViewPin.swift */; };
+		4A8DA8182BB5A16C000DA908 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8172BB5A16C000DA908 /* CustomTextField.swift */; };
+		4A8DA81B2BB5B8ED000DA908 /* AccessRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA81A2BB5B8ED000DA908 /* AccessRecoveryViewController.swift */; };
+		4A8DA81D2BB5BDD5000DA908 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA81C2BB5BDD5000DA908 /* AuthProtocols.swift */; };
+		4A8DA8232BB5BF80000DA908 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8222BB5BF80000DA908 /* AuthPresenter.swift */; };
+		4A8DA8252BB5C186000DA908 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8242BB5C186000DA908 /* AuthInteractor.swift */; };
+		4A8DA8272BB5C19D000DA908 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8262BB5C19C000DA908 /* AuthAssembly.swift */; };
+		4A8DA8292BB5C1A7000DA908 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8282BB5C1A7000DA908 /* AuthRouter.swift */; };
+		4A8DA82B2BB5C294000DA908 /* AccessRecoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA82A2BB5C294000DA908 /* AccessRecoveryInteractor.swift */; };
+		4A8DA82D2BB5C2B5000DA908 /* AccessRecoveryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA82C2BB5C2B5000DA908 /* AccessRecoveryModel.swift */; };
+		4A8DA82F2BB5C2DF000DA908 /* AccessRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA82E2BB5C2DF000DA908 /* AccessRecoveryPresenter.swift */; };
+		4A8DA8312BB5C2FE000DA908 /* AccessRecoveryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8302BB5C2FE000DA908 /* AccessRecoveryProtocols.swift */; };
+		4A8DA8332BB5C32B000DA908 /* AccessRecoveryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8322BB5C32B000DA908 /* AccessRecoveryAssembly.swift */; };
+		4A8DA8352BB5C370000DA908 /* AccessRecoveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8342BB5C370000DA908 /* AccessRecoveryRouter.swift */; };
+		4A8DA8382BB5CDCF000DA908 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8372BB5CDCF000DA908 /* RegistrationModel.swift */; };
+		4A8DA83A2BB5CDED000DA908 /* RegistrationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8392BB5CDED000DA908 /* RegistrationProtocols.swift */; };
+		4A8DA83C2BB5CDF9000DA908 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA83B2BB5CDF9000DA908 /* RegistrationViewController.swift */; };
+		4A8DA83E2BB5CE0B000DA908 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA83D2BB5CE0B000DA908 /* RegistrationInteractor.swift */; };
+		4A8DA8402BB5CE1B000DA908 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA83F2BB5CE1B000DA908 /* RegistrationPresenter.swift */; };
+		4A8DA8422BB5CE24000DA908 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8412BB5CE24000DA908 /* RegistrationRouter.swift */; };
+		4A8DA8442BB5CE2F000DA908 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8432BB5CE2F000DA908 /* RegistrationAssembly.swift */; };
+		4A8DA8472BB5DAD9000DA908 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8462BB5DAD9000DA908 /* JournalModel.swift */; };
+		4A8DA8492BB5DAE3000DA908 /* JournalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8482BB5DAE3000DA908 /* JournalProtocols.swift */; };
+		4A8DA84B2BB5DAF1000DA908 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA84A2BB5DAF1000DA908 /* JournalViewController.swift */; };
+		4A8DA84D2BB5DAFF000DA908 /* JournalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA84C2BB5DAFF000DA908 /* JournalInteractor.swift */; };
+		4A8DA84F2BB5DB0A000DA908 /* JournalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA84E2BB5DB0A000DA908 /* JournalPresenter.swift */; };
+		4A8DA8512BB5DB15000DA908 /* JournalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8502BB5DB15000DA908 /* JournalRouter.swift */; };
+		4A8DA8532BB5DB2A000DA908 /* JournalAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8522BB5DB2A000DA908 /* JournalAssembly.swift */; };
+		4A8DA8582BB5DC53000DA908 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8572BB5DC53000DA908 /* CalendarModel.swift */; };
+		4A8DA85A2BB5DC5D000DA908 /* CalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8592BB5DC5D000DA908 /* CalendarProtocols.swift */; };
+		4A8DA85C2BB5DC6A000DA908 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA85B2BB5DC6A000DA908 /* CalendarViewController.swift */; };
+		4A8DA85E2BB5DC7A000DA908 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA85D2BB5DC7A000DA908 /* CalendarInteractor.swift */; };
+		4A8DA8602BB5DC82000DA908 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA85F2BB5DC82000DA908 /* CalendarPresenter.swift */; };
+		4A8DA8622BB5DC8B000DA908 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8612BB5DC8B000DA908 /* CalendarRouter.swift */; };
+		4A8DA8652BB5DC9C000DA908 /* CalendarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8642BB5DC9C000DA908 /* CalendarAssembly.swift */; };
+		4A8DA86D2BB5FDF0000DA908 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA86C2BB5FDF0000DA908 /* EventCell.swift */; };
+		4A8DA8702BB6007C000DA908 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA86F2BB6007C000DA908 /* EventModel.swift */; };
+		4AD057D62BC0855F006E3275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DA8042BB59A23000DA908 /* LaunchScreen.storyboard */; };
+		4AD057D92BC08BC9006E3275 /* PetPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057D82BC08BC9006E3275 /* PetPageModel.swift */; };
+		4AD057DB2BC08BD4006E3275 /* PetPageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057DA2BC08BD4006E3275 /* PetPageProtocols.swift */; };
+		4AD057DD2BC08BE0006E3275 /* PetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057DC2BC08BE0006E3275 /* PetPageViewController.swift */; };
+		4AD057DF2BC08BEE006E3275 /* PetPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057DE2BC08BEE006E3275 /* PetPageInteractor.swift */; };
+		4AD057E12BC08BF6006E3275 /* PetPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057E02BC08BF6006E3275 /* PetPagePresenter.swift */; };
+		4AD057E32BC08BFD006E3275 /* PetPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057E22BC08BFD006E3275 /* PetPageRouter.swift */; };
+		4AD057E52BC08C0B006E3275 /* PetPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057E42BC08C0B006E3275 /* PetPageAssembly.swift */; };
+		4AE7854F2BC3B23500D5182E /* PetEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7854E2BC3B23500D5182E /* PetEditModel.swift */; };
+		4AE785512BC3B23E00D5182E /* PetEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE785502BC3B23E00D5182E /* PetEditProtocols.swift */; };
+		4AE785532BC3B24B00D5182E /* PetEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE785522BC3B24B00D5182E /* PetEditViewController.swift */; };
+		4AE785552BC3B25400D5182E /* PetEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE785542BC3B25400D5182E /* PetEditInteractor.swift */; };
+		4AE785582BC3B26200D5182E /* PetEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE785572BC3B26200D5182E /* PetEditPresenter.swift */; };
+		4AE7855A2BC3B26B00D5182E /* PetEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE785592BC3B26B00D5182E /* PetEditRouter.swift */; };
+		4AE7855C2BC3B27500D5182E /* PetEditAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7855B2BC3B27500D5182E /* PetEditAssembly.swift */; };
+		4AEBA0982BB6F5A800D17B79 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0972BB6F5A800D17B79 /* SettingsModel.swift */; };
+		4AEBA09A2BB6F5B400D17B79 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0992BB6F5B400D17B79 /* SettingsProtocols.swift */; };
+		4AEBA09C2BB6F5BE00D17B79 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA09B2BB6F5BE00D17B79 /* SettingsViewController.swift */; };
+		4AEBA09E2BB6F5CC00D17B79 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA09D2BB6F5CC00D17B79 /* SettingsInteractor.swift */; };
+		4AEBA0A02BB6F5D600D17B79 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA09F2BB6F5D600D17B79 /* SettingsPresenter.swift */; };
+		4AEBA0A22BB6F5E700D17B79 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0A12BB6F5E700D17B79 /* SettingsRouter.swift */; };
+		4AEBA0A42BB6F5F000D17B79 /* SettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0A32BB6F5F000D17B79 /* SettingsAssembly.swift */; };
+		4AEBA0A62BB736C600D17B79 /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0A52BB736C600D17B79 /* PetsModel.swift */; };
+		4AEBA0A82BB736D600D17B79 /* PetsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0A72BB736D600D17B79 /* PetsProtocols.swift */; };
+		4AEBA0AA2BB736E200D17B79 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0A92BB736E200D17B79 /* PetsViewController.swift */; };
+		4AEBA0AC2BB736F400D17B79 /* PetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0AB2BB736F400D17B79 /* PetsInteractor.swift */; };
+		4AEBA0AE2BB7370000D17B79 /* PetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0AD2BB7370000D17B79 /* PetsPresenter.swift */; };
+		4AEBA0B02BB7370700D17B79 /* PetsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0AF2BB7370700D17B79 /* PetsRouter.swift */; };
+		4AEBA0B22BB7371100D17B79 /* PetsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0B12BB7371100D17B79 /* PetsAssembly.swift */; };
+		4AEBA0B72BB7382E00D17B79 /* PetAddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0B62BB7382D00D17B79 /* PetAddModel.swift */; };
+		4AEBA0B92BB7383D00D17B79 /* PetAddProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0B82BB7383D00D17B79 /* PetAddProtocols.swift */; };
+		4AEBA0BB2BB7384600D17B79 /* PetAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0BA2BB7384600D17B79 /* PetAddViewController.swift */; };
+		4AEBA0BD2BB7385100D17B79 /* PetAddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0BC2BB7385100D17B79 /* PetAddInteractor.swift */; };
+		4AEBA0BF2BB7388C00D17B79 /* PetAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0BE2BB7388C00D17B79 /* PetAddPresenter.swift */; };
+		4AEBA0C12BB7389400D17B79 /* PetAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0C02BB7389400D17B79 /* PetAddRouter.swift */; };
+		4AEBA0C32BB7389C00D17B79 /* PetAddAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0C22BB7389C00D17B79 /* PetAddAssembly.swift */; };
+		4AEBA0C52BB73AB200D17B79 /* JournalAddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0C42BB73AB200D17B79 /* JournalAddModel.swift */; };
+		4AEBA0C72BB73ABF00D17B79 /* JournalAddProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0C62BB73ABF00D17B79 /* JournalAddProtocols.swift */; };
+		4AEBA0C92BB73ACB00D17B79 /* JournalAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0C82BB73ACB00D17B79 /* JournalAddViewController.swift */; };
+		4AEBA0CB2BB73AD600D17B79 /* JournalAddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0CA2BB73AD600D17B79 /* JournalAddInteractor.swift */; };
+		4AEBA0CD2BB73ADF00D17B79 /* JournalAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0CC2BB73ADF00D17B79 /* JournalAddPresenter.swift */; };
+		4AEBA0CF2BB73AE800D17B79 /* JournalAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0CE2BB73AE800D17B79 /* JournalAddRouter.swift */; };
+		4AEBA0D12BB73B0900D17B79 /* JournalAddAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA0D02BB73B0900D17B79 /* JournalAddAssembly.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A3F20772BB84327005E4BC0 /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
+		4A3F20792BB843E7005E4BC0 /* CalendarEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventModel.swift; sourceTree = "<group>"; };
+		4A3F207B2BB85754005E4BC0 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		4A3F207D2BB85BA2005E4BC0 /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
+		4A3F207F2BB8702C005E4BC0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4A3F21282BB89FE1005E4BC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A3F21342BB90E5F005E4BC0 /* UICustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomColor.swift; sourceTree = "<group>"; };
+		4A3F213A2BBD3C7A005E4BC0 /* CalendarAddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddModel.swift; sourceTree = "<group>"; };
+		4A3F213C2BBD3C8A005E4BC0 /* CalendarAddProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddProtocols.swift; sourceTree = "<group>"; };
+		4A3F213E2BBD3CAD005E4BC0 /* CalendarAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddViewController.swift; sourceTree = "<group>"; };
+		4A3F21402BBD3CBE005E4BC0 /* CalendarAddInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddInteractor.swift; sourceTree = "<group>"; };
+		4A3F21422BBD3CC6005E4BC0 /* CalendarAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddPresenter.swift; sourceTree = "<group>"; };
+		4A3F21442BBD3CD1005E4BC0 /* CalendarAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddRouter.swift; sourceTree = "<group>"; };
+		4A3F21462BBD3CDA005E4BC0 /* CalendarAddAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddAssembly.swift; sourceTree = "<group>"; };
+		4A3F214B2BBF2508005E4BC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A3F214C2BBF25E1005E4BC0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A3F214E2BBF2616005E4BC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A3F21502BBF27FF005E4BC0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A3F21512BBF2E80005E4BC0 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		4A8DA7F62BB59A21000DA908 /* PetsApp_0001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsApp_0001.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A8DA8022BB59A23000DA908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A8DA8072BB59A23000DA908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A8DA8102BB59B46000DA908 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		4A8DA8122BB59B51000DA908 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		4A8DA8142BB59DF6000DA908 /* UIViewPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPin.swift; sourceTree = "<group>"; };
+		4A8DA8172BB5A16C000DA908 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4A8DA81A2BB5B8ED000DA908 /* AccessRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryViewController.swift; sourceTree = "<group>"; };
+		4A8DA81C2BB5BDD5000DA908 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
+		4A8DA8222BB5BF80000DA908 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		4A8DA8242BB5C186000DA908 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		4A8DA8262BB5C19C000DA908 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		4A8DA8282BB5C1A7000DA908 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		4A8DA82A2BB5C294000DA908 /* AccessRecoveryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryInteractor.swift; sourceTree = "<group>"; };
+		4A8DA82C2BB5C2B5000DA908 /* AccessRecoveryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryModel.swift; sourceTree = "<group>"; };
+		4A8DA82E2BB5C2DF000DA908 /* AccessRecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryPresenter.swift; sourceTree = "<group>"; };
+		4A8DA8302BB5C2FE000DA908 /* AccessRecoveryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryProtocols.swift; sourceTree = "<group>"; };
+		4A8DA8322BB5C32B000DA908 /* AccessRecoveryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryAssembly.swift; sourceTree = "<group>"; };
+		4A8DA8342BB5C370000DA908 /* AccessRecoveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRecoveryRouter.swift; sourceTree = "<group>"; };
+		4A8DA8372BB5CDCF000DA908 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		4A8DA8392BB5CDED000DA908 /* RegistrationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProtocols.swift; sourceTree = "<group>"; };
+		4A8DA83B2BB5CDF9000DA908 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		4A8DA83D2BB5CE0B000DA908 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
+		4A8DA83F2BB5CE1B000DA908 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		4A8DA8412BB5CE24000DA908 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		4A8DA8432BB5CE2F000DA908 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		4A8DA8462BB5DAD9000DA908 /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+		4A8DA8482BB5DAE3000DA908 /* JournalProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProtocols.swift; sourceTree = "<group>"; };
+		4A8DA84A2BB5DAF1000DA908 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		4A8DA84C2BB5DAFF000DA908 /* JournalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalInteractor.swift; sourceTree = "<group>"; };
+		4A8DA84E2BB5DB0A000DA908 /* JournalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPresenter.swift; sourceTree = "<group>"; };
+		4A8DA8502BB5DB15000DA908 /* JournalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRouter.swift; sourceTree = "<group>"; };
+		4A8DA8522BB5DB2A000DA908 /* JournalAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAssembly.swift; sourceTree = "<group>"; };
+		4A8DA8572BB5DC53000DA908 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		4A8DA8592BB5DC5D000DA908 /* CalendarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarProtocols.swift; sourceTree = "<group>"; };
+		4A8DA85B2BB5DC6A000DA908 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		4A8DA85D2BB5DC7A000DA908 /* CalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInteractor.swift; sourceTree = "<group>"; };
+		4A8DA85F2BB5DC82000DA908 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
+		4A8DA8612BB5DC8B000DA908 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
+		4A8DA8642BB5DC9C000DA908 /* CalendarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAssembly.swift; sourceTree = "<group>"; };
+		4A8DA86C2BB5FDF0000DA908 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		4A8DA86F2BB6007C000DA908 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		4AD057D82BC08BC9006E3275 /* PetPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageModel.swift; sourceTree = "<group>"; };
+		4AD057DA2BC08BD4006E3275 /* PetPageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageProtocols.swift; sourceTree = "<group>"; };
+		4AD057DC2BC08BE0006E3275 /* PetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageViewController.swift; sourceTree = "<group>"; };
+		4AD057DE2BC08BEE006E3275 /* PetPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageInteractor.swift; sourceTree = "<group>"; };
+		4AD057E02BC08BF6006E3275 /* PetPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPagePresenter.swift; sourceTree = "<group>"; };
+		4AD057E22BC08BFD006E3275 /* PetPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageRouter.swift; sourceTree = "<group>"; };
+		4AD057E42BC08C0B006E3275 /* PetPageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageAssembly.swift; sourceTree = "<group>"; };
+		4AE7854E2BC3B23500D5182E /* PetEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditModel.swift; sourceTree = "<group>"; };
+		4AE785502BC3B23E00D5182E /* PetEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditProtocols.swift; sourceTree = "<group>"; };
+		4AE785522BC3B24B00D5182E /* PetEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditViewController.swift; sourceTree = "<group>"; };
+		4AE785542BC3B25400D5182E /* PetEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditInteractor.swift; sourceTree = "<group>"; };
+		4AE785572BC3B26200D5182E /* PetEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditPresenter.swift; sourceTree = "<group>"; };
+		4AE785592BC3B26B00D5182E /* PetEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditRouter.swift; sourceTree = "<group>"; };
+		4AE7855B2BC3B27500D5182E /* PetEditAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditAssembly.swift; sourceTree = "<group>"; };
+		4AEBA0972BB6F5A800D17B79 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		4AEBA0992BB6F5B400D17B79 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
+		4AEBA09B2BB6F5BE00D17B79 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4AEBA09D2BB6F5CC00D17B79 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		4AEBA09F2BB6F5D600D17B79 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		4AEBA0A12BB6F5E700D17B79 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		4AEBA0A32BB6F5F000D17B79 /* SettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
+		4AEBA0A52BB736C600D17B79 /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
+		4AEBA0A72BB736D600D17B79 /* PetsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsProtocols.swift; sourceTree = "<group>"; };
+		4AEBA0A92BB736E200D17B79 /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
+		4AEBA0AB2BB736F400D17B79 /* PetsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsInteractor.swift; sourceTree = "<group>"; };
+		4AEBA0AD2BB7370000D17B79 /* PetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsPresenter.swift; sourceTree = "<group>"; };
+		4AEBA0AF2BB7370700D17B79 /* PetsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRouter.swift; sourceTree = "<group>"; };
+		4AEBA0B12BB7371100D17B79 /* PetsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsAssembly.swift; sourceTree = "<group>"; };
+		4AEBA0B62BB7382D00D17B79 /* PetAddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddModel.swift; sourceTree = "<group>"; };
+		4AEBA0B82BB7383D00D17B79 /* PetAddProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddProtocols.swift; sourceTree = "<group>"; };
+		4AEBA0BA2BB7384600D17B79 /* PetAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddViewController.swift; sourceTree = "<group>"; };
+		4AEBA0BC2BB7385100D17B79 /* PetAddInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddInteractor.swift; sourceTree = "<group>"; };
+		4AEBA0BE2BB7388C00D17B79 /* PetAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddPresenter.swift; sourceTree = "<group>"; };
+		4AEBA0C02BB7389400D17B79 /* PetAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddRouter.swift; sourceTree = "<group>"; };
+		4AEBA0C22BB7389C00D17B79 /* PetAddAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAddAssembly.swift; sourceTree = "<group>"; };
+		4AEBA0C42BB73AB200D17B79 /* JournalAddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddModel.swift; sourceTree = "<group>"; };
+		4AEBA0C62BB73ABF00D17B79 /* JournalAddProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddProtocols.swift; sourceTree = "<group>"; };
+		4AEBA0C82BB73ACB00D17B79 /* JournalAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddViewController.swift; sourceTree = "<group>"; };
+		4AEBA0CA2BB73AD600D17B79 /* JournalAddInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddInteractor.swift; sourceTree = "<group>"; };
+		4AEBA0CC2BB73ADF00D17B79 /* JournalAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddPresenter.swift; sourceTree = "<group>"; };
+		4AEBA0CE2BB73AE800D17B79 /* JournalAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddRouter.swift; sourceTree = "<group>"; };
+		4AEBA0D02BB73B0900D17B79 /* JournalAddAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddAssembly.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A8DA7F32BB59A21000DA908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3F212D2BB8A09C005E4BC0 /* FirebaseDatabase in Frameworks */,
+				4A3F212B2BB8A09C005E4BC0 /* FirebaseAuth in Frameworks */,
+				4A3F212F2BB8A09C005E4BC0 /* FirebaseFirestore in Frameworks */,
+				4A3F21332BB8A09C005E4BC0 /* FirebaseStorage in Frameworks */,
+				4A3F21312BB8A09C005E4BC0 /* FirebaseInAppMessaging-Beta in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A3F208E2BB8943E005E4BC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A3F21392BBD3C5D005E4BC0 /* CalendarAdd */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F213A2BBD3C7A005E4BC0 /* CalendarAddModel.swift */,
+				4A3F213C2BBD3C8A005E4BC0 /* CalendarAddProtocols.swift */,
+				4A3F213E2BBD3CAD005E4BC0 /* CalendarAddViewController.swift */,
+				4A3F21402BBD3CBE005E4BC0 /* CalendarAddInteractor.swift */,
+				4A3F21422BBD3CC6005E4BC0 /* CalendarAddPresenter.swift */,
+				4A3F21442BBD3CD1005E4BC0 /* CalendarAddRouter.swift */,
+				4A3F21462BBD3CDA005E4BC0 /* CalendarAddAssembly.swift */,
+			);
+			path = CalendarAdd;
+			sourceTree = "<group>";
+		};
+		4A8DA7ED2BB59A21000DA908 = {
+			isa = PBXGroup;
+			children = (
+				4A3F21342BB90E5F005E4BC0 /* UICustomColor.swift */,
+				4A8DA8142BB59DF6000DA908 /* UIViewPin.swift */,
+				4A3F21282BB89FE1005E4BC0 /* GoogleService-Info.plist */,
+				4A8DA7F82BB59A21000DA908 /* PetsApp_0001 */,
+				4A8DA7F72BB59A21000DA908 /* Products */,
+				4A3F208E2BB8943E005E4BC0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A8DA7F72BB59A21000DA908 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA7F62BB59A21000DA908 /* PetsApp_0001.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A8DA7F82BB59A21000DA908 /* PetsApp_0001 */ = {
+			isa = PBXGroup;
+			children = (
+				4AE7854D2BC3B22200D5182E /* PetEdit */,
+				4AD057D72BC08BB2006E3275 /* PetPage */,
+				4A8DA8552BB5DC23000DA908 /* Pets */,
+				4A3F21392BBD3C5D005E4BC0 /* CalendarAdd */,
+				4AEBA0B42BB737FA00D17B79 /* JournalAdd */,
+				4AEBA0B32BB737F200D17B79 /* PetAdd */,
+				4A8DA8562BB5DC3E000DA908 /* Settings */,
+				4A8DA8542BB5DC17000DA908 /* Calendar */,
+				4A8DA8452BB5DAB9000DA908 /* Journal */,
+				4A8DA8162BB5A153000DA908 /* Views */,
+				4A8DA8362BB5C689000DA908 /* RegistrationScreen */,
+				4A8DA8192BB5B87F000DA908 /* AccessRecoveryScreen */,
+				4A8DA80D2BB59B00000DA908 /* Auth_Screen */,
+				4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */,
+				4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */,
+				4A8DA8022BB59A23000DA908 /* Assets.xcassets */,
+				4A8DA8042BB59A23000DA908 /* LaunchScreen.storyboard */,
+				4A8DA8072BB59A23000DA908 /* Info.plist */,
+				4A3F207F2BB8702C005E4BC0 /* TabBarController.swift */,
+				4A3F214D2BBF2616005E4BC0 /* Localizable.strings */,
+				4A3F21512BBF2E80005E4BC0 /* String+extension.swift */,
+			);
+			path = PetsApp_0001;
+			sourceTree = "<group>";
+		};
+		4A8DA80D2BB59B00000DA908 /* Auth_Screen */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8102BB59B46000DA908 /* AuthModel.swift */,
+				4A8DA81C2BB5BDD5000DA908 /* AuthProtocols.swift */,
+				4A8DA8122BB59B51000DA908 /* AuthViewController.swift */,
+				4A8DA8222BB5BF80000DA908 /* AuthPresenter.swift */,
+				4A8DA8242BB5C186000DA908 /* AuthInteractor.swift */,
+				4A8DA8262BB5C19C000DA908 /* AuthAssembly.swift */,
+				4A8DA8282BB5C1A7000DA908 /* AuthRouter.swift */,
+			);
+			path = Auth_Screen;
+			sourceTree = "<group>";
+		};
+		4A8DA8162BB5A153000DA908 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8172BB5A16C000DA908 /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A8DA8192BB5B87F000DA908 /* AccessRecoveryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA82A2BB5C294000DA908 /* AccessRecoveryInteractor.swift */,
+				4A8DA81A2BB5B8ED000DA908 /* AccessRecoveryViewController.swift */,
+				4A8DA82C2BB5C2B5000DA908 /* AccessRecoveryModel.swift */,
+				4A8DA82E2BB5C2DF000DA908 /* AccessRecoveryPresenter.swift */,
+				4A8DA8302BB5C2FE000DA908 /* AccessRecoveryProtocols.swift */,
+				4A8DA8322BB5C32B000DA908 /* AccessRecoveryAssembly.swift */,
+				4A8DA8342BB5C370000DA908 /* AccessRecoveryRouter.swift */,
+			);
+			path = AccessRecoveryScreen;
+			sourceTree = "<group>";
+		};
+		4A8DA8362BB5C689000DA908 /* RegistrationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8372BB5CDCF000DA908 /* RegistrationModel.swift */,
+				4A8DA8392BB5CDED000DA908 /* RegistrationProtocols.swift */,
+				4A8DA83B2BB5CDF9000DA908 /* RegistrationViewController.swift */,
+				4A8DA83D2BB5CE0B000DA908 /* RegistrationInteractor.swift */,
+				4A8DA83F2BB5CE1B000DA908 /* RegistrationPresenter.swift */,
+				4A8DA8412BB5CE24000DA908 /* RegistrationRouter.swift */,
+				4A8DA8432BB5CE2F000DA908 /* RegistrationAssembly.swift */,
+			);
+			path = RegistrationScreen;
+			sourceTree = "<group>";
+		};
+		4A8DA8452BB5DAB9000DA908 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA86E2BB5FFE4000DA908 /* Models */,
+				4A8DA8482BB5DAE3000DA908 /* JournalProtocols.swift */,
+				4A8DA84A2BB5DAF1000DA908 /* JournalViewController.swift */,
+				4A8DA84C2BB5DAFF000DA908 /* JournalInteractor.swift */,
+				4A8DA84E2BB5DB0A000DA908 /* JournalPresenter.swift */,
+				4A8DA8502BB5DB15000DA908 /* JournalRouter.swift */,
+				4A8DA8522BB5DB2A000DA908 /* JournalAssembly.swift */,
+				4A8DA86C2BB5FDF0000DA908 /* EventCell.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		4A8DA8542BB5DC17000DA908 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8572BB5DC53000DA908 /* CalendarModel.swift */,
+				4A8DA8592BB5DC5D000DA908 /* CalendarProtocols.swift */,
+				4A8DA85B2BB5DC6A000DA908 /* CalendarViewController.swift */,
+				4A8DA85D2BB5DC7A000DA908 /* CalendarInteractor.swift */,
+				4A8DA85F2BB5DC82000DA908 /* CalendarPresenter.swift */,
+				4A8DA8612BB5DC8B000DA908 /* CalendarRouter.swift */,
+				4A8DA8642BB5DC9C000DA908 /* CalendarAssembly.swift */,
+				4A3F20772BB84327005E4BC0 /* CalendarEventCell.swift */,
+				4A3F20792BB843E7005E4BC0 /* CalendarEventModel.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		4A8DA8552BB5DC23000DA908 /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBA0A52BB736C600D17B79 /* PetsModel.swift */,
+				4AEBA0A72BB736D600D17B79 /* PetsProtocols.swift */,
+				4AEBA0A92BB736E200D17B79 /* PetsViewController.swift */,
+				4AEBA0AB2BB736F400D17B79 /* PetsInteractor.swift */,
+				4AEBA0AD2BB7370000D17B79 /* PetsPresenter.swift */,
+				4AEBA0AF2BB7370700D17B79 /* PetsRouter.swift */,
+				4AEBA0B12BB7371100D17B79 /* PetsAssembly.swift */,
+				4A3F207B2BB85754005E4BC0 /* PetModel.swift */,
+				4A3F207D2BB85BA2005E4BC0 /* PetCell.swift */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
+		4A8DA8562BB5DC3E000DA908 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBA0972BB6F5A800D17B79 /* SettingsModel.swift */,
+				4AEBA0992BB6F5B400D17B79 /* SettingsProtocols.swift */,
+				4AEBA09B2BB6F5BE00D17B79 /* SettingsViewController.swift */,
+				4AEBA09D2BB6F5CC00D17B79 /* SettingsInteractor.swift */,
+				4AEBA09F2BB6F5D600D17B79 /* SettingsPresenter.swift */,
+				4AEBA0A12BB6F5E700D17B79 /* SettingsRouter.swift */,
+				4AEBA0A32BB6F5F000D17B79 /* SettingsAssembly.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4A8DA86E2BB5FFE4000DA908 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8462BB5DAD9000DA908 /* JournalModel.swift */,
+				4A8DA86F2BB6007C000DA908 /* EventModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AD057D72BC08BB2006E3275 /* PetPage */ = {
+			isa = PBXGroup;
+			children = (
+				4AD057D82BC08BC9006E3275 /* PetPageModel.swift */,
+				4AD057DA2BC08BD4006E3275 /* PetPageProtocols.swift */,
+				4AD057DC2BC08BE0006E3275 /* PetPageViewController.swift */,
+				4AD057DE2BC08BEE006E3275 /* PetPageInteractor.swift */,
+				4AD057E02BC08BF6006E3275 /* PetPagePresenter.swift */,
+				4AD057E22BC08BFD006E3275 /* PetPageRouter.swift */,
+				4AD057E42BC08C0B006E3275 /* PetPageAssembly.swift */,
+			);
+			path = PetPage;
+			sourceTree = "<group>";
+		};
+		4AE7854D2BC3B22200D5182E /* PetEdit */ = {
+			isa = PBXGroup;
+			children = (
+				4AE7854E2BC3B23500D5182E /* PetEditModel.swift */,
+				4AE785502BC3B23E00D5182E /* PetEditProtocols.swift */,
+				4AE785522BC3B24B00D5182E /* PetEditViewController.swift */,
+				4AE785542BC3B25400D5182E /* PetEditInteractor.swift */,
+				4AE785572BC3B26200D5182E /* PetEditPresenter.swift */,
+				4AE785592BC3B26B00D5182E /* PetEditRouter.swift */,
+				4AE7855B2BC3B27500D5182E /* PetEditAssembly.swift */,
+			);
+			path = PetEdit;
+			sourceTree = "<group>";
+		};
+		4AEBA0B32BB737F200D17B79 /* PetAdd */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBA0B62BB7382D00D17B79 /* PetAddModel.swift */,
+				4AEBA0B82BB7383D00D17B79 /* PetAddProtocols.swift */,
+				4AEBA0BA2BB7384600D17B79 /* PetAddViewController.swift */,
+				4AEBA0BC2BB7385100D17B79 /* PetAddInteractor.swift */,
+				4AEBA0BE2BB7388C00D17B79 /* PetAddPresenter.swift */,
+				4AEBA0C02BB7389400D17B79 /* PetAddRouter.swift */,
+				4AEBA0C22BB7389C00D17B79 /* PetAddAssembly.swift */,
+			);
+			path = PetAdd;
+			sourceTree = "<group>";
+		};
+		4AEBA0B42BB737FA00D17B79 /* JournalAdd */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBA0C42BB73AB200D17B79 /* JournalAddModel.swift */,
+				4AEBA0C62BB73ABF00D17B79 /* JournalAddProtocols.swift */,
+				4AEBA0C82BB73ACB00D17B79 /* JournalAddViewController.swift */,
+				4AEBA0CA2BB73AD600D17B79 /* JournalAddInteractor.swift */,
+				4AEBA0CC2BB73ADF00D17B79 /* JournalAddPresenter.swift */,
+				4AEBA0CE2BB73AE800D17B79 /* JournalAddRouter.swift */,
+				4AEBA0D02BB73B0900D17B79 /* JournalAddAssembly.swift */,
+			);
+			path = JournalAdd;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A8DA7F52BB59A21000DA908 /* PetsApp_0001 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A8DA80A2BB59A23000DA908 /* Build configuration list for PBXNativeTarget "PetsApp_0001" */;
+			buildPhases = (
+				4A8DA7F22BB59A21000DA908 /* Sources */,
+				4A8DA7F32BB59A21000DA908 /* Frameworks */,
+				4A8DA7F42BB59A21000DA908 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetsApp_0001;
+			packageProductDependencies = (
+				4A3F212A2BB8A09C005E4BC0 /* FirebaseAuth */,
+				4A3F212C2BB8A09C005E4BC0 /* FirebaseDatabase */,
+				4A3F212E2BB8A09C005E4BC0 /* FirebaseFirestore */,
+				4A3F21302BB8A09C005E4BC0 /* FirebaseInAppMessaging-Beta */,
+				4A3F21322BB8A09C005E4BC0 /* FirebaseStorage */,
+			);
+			productName = PetsApp_0001;
+			productReference = 4A8DA7F62BB59A21000DA908 /* PetsApp_0001.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A8DA7EE2BB59A21000DA908 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					4A8DA7F52BB59A21000DA908 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 4A8DA7F12BB59A21000DA908 /* Build configuration list for PBXProject "PetsApp_0001" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+			);
+			mainGroup = 4A8DA7ED2BB59A21000DA908;
+			packageReferences = (
+				4A3F20832BB8846D005E4BC0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4A3F21362BBB4824005E4BC0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
+			productRefGroup = 4A8DA7F72BB59A21000DA908 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A8DA7F52BB59A21000DA908 /* PetsApp_0001 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A8DA7F42BB59A21000DA908 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8DA8032BB59A23000DA908 /* Assets.xcassets in Resources */,
+				4AD057D62BC0855F006E3275 /* LaunchScreen.storyboard in Resources */,
+				4A3F214F2BBF2617005E4BC0 /* Localizable.strings in Resources */,
+				4A3F21292BB89FE1005E4BC0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A8DA7F22BB59A21000DA908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8DA8132BB59B51000DA908 /* AuthViewController.swift in Sources */,
+				4A8DA8272BB5C19D000DA908 /* AuthAssembly.swift in Sources */,
+				4A8DA7FA2BB59A21000DA908 /* AppDelegate.swift in Sources */,
+				4A3F21522BBF2E80005E4BC0 /* String+extension.swift in Sources */,
+				4A3F21472BBD3CDA005E4BC0 /* CalendarAddAssembly.swift in Sources */,
+				4A8DA8402BB5CE1B000DA908 /* RegistrationPresenter.swift in Sources */,
+				4AD057E52BC08C0B006E3275 /* PetPageAssembly.swift in Sources */,
+				4A8DA81B2BB5B8ED000DA908 /* AccessRecoveryViewController.swift in Sources */,
+				4A8DA85C2BB5DC6A000DA908 /* CalendarViewController.swift in Sources */,
+				4A3F21412BBD3CBE005E4BC0 /* CalendarAddInteractor.swift in Sources */,
+				4A8DA8602BB5DC82000DA908 /* CalendarPresenter.swift in Sources */,
+				4A8DA8182BB5A16C000DA908 /* CustomTextField.swift in Sources */,
+				4AEBA09E2BB6F5CC00D17B79 /* SettingsInteractor.swift in Sources */,
+				4A8DA8232BB5BF80000DA908 /* AuthPresenter.swift in Sources */,
+				4AEBA0CB2BB73AD600D17B79 /* JournalAddInteractor.swift in Sources */,
+				4A8DA85E2BB5DC7A000DA908 /* CalendarInteractor.swift in Sources */,
+				4AEBA0C12BB7389400D17B79 /* PetAddRouter.swift in Sources */,
+				4AE7854F2BC3B23500D5182E /* PetEditModel.swift in Sources */,
+				4AEBA0B92BB7383D00D17B79 /* PetAddProtocols.swift in Sources */,
+				4AEBA0A82BB736D600D17B79 /* PetsProtocols.swift in Sources */,
+				4AEBA0CD2BB73ADF00D17B79 /* JournalAddPresenter.swift in Sources */,
+				4A8DA83A2BB5CDED000DA908 /* RegistrationProtocols.swift in Sources */,
+				4AEBA0C52BB73AB200D17B79 /* JournalAddModel.swift in Sources */,
+				4A8DA84D2BB5DAFF000DA908 /* JournalInteractor.swift in Sources */,
+				4A3F21352BB90E5F005E4BC0 /* UICustomColor.swift in Sources */,
+				4AEBA0982BB6F5A800D17B79 /* SettingsModel.swift in Sources */,
+				4AEBA0B72BB7382E00D17B79 /* PetAddModel.swift in Sources */,
+				4AEBA0D12BB73B0900D17B79 /* JournalAddAssembly.swift in Sources */,
+				4A8DA86D2BB5FDF0000DA908 /* EventCell.swift in Sources */,
+				4AD057E32BC08BFD006E3275 /* PetPageRouter.swift in Sources */,
+				4A8DA8622BB5DC8B000DA908 /* CalendarRouter.swift in Sources */,
+				4A8DA8702BB6007C000DA908 /* EventModel.swift in Sources */,
+				4A8DA8152BB59DF6000DA908 /* UIViewPin.swift in Sources */,
+				4AEBA0BD2BB7385100D17B79 /* PetAddInteractor.swift in Sources */,
+				4A8DA8582BB5DC53000DA908 /* CalendarModel.swift in Sources */,
+				4AEBA0A02BB6F5D600D17B79 /* SettingsPresenter.swift in Sources */,
+				4A8DA8332BB5C32B000DA908 /* AccessRecoveryAssembly.swift in Sources */,
+				4A3F21432BBD3CC6005E4BC0 /* CalendarAddPresenter.swift in Sources */,
+				4A3F20782BB84327005E4BC0 /* CalendarEventCell.swift in Sources */,
+				4AEBA0BB2BB7384600D17B79 /* PetAddViewController.swift in Sources */,
+				4A3F213B2BBD3C7A005E4BC0 /* CalendarAddModel.swift in Sources */,
+				4A8DA8532BB5DB2A000DA908 /* JournalAssembly.swift in Sources */,
+				4AEBA0C72BB73ABF00D17B79 /* JournalAddProtocols.swift in Sources */,
+				4AD057D92BC08BC9006E3275 /* PetPageModel.swift in Sources */,
+				4AD057DF2BC08BEE006E3275 /* PetPageInteractor.swift in Sources */,
+				4A8DA8442BB5CE2F000DA908 /* RegistrationAssembly.swift in Sources */,
+				4A8DA84F2BB5DB0A000DA908 /* JournalPresenter.swift in Sources */,
+				4A8DA8252BB5C186000DA908 /* AuthInteractor.swift in Sources */,
+				4A8DA8352BB5C370000DA908 /* AccessRecoveryRouter.swift in Sources */,
+				4AEBA0A22BB6F5E700D17B79 /* SettingsRouter.swift in Sources */,
+				4AEBA0C92BB73ACB00D17B79 /* JournalAddViewController.swift in Sources */,
+				4AEBA0B02BB7370700D17B79 /* PetsRouter.swift in Sources */,
+				4A8DA85A2BB5DC5D000DA908 /* CalendarProtocols.swift in Sources */,
+				4AEBA09A2BB6F5B400D17B79 /* SettingsProtocols.swift in Sources */,
+				4AEBA0AC2BB736F400D17B79 /* PetsInteractor.swift in Sources */,
+				4AD057DB2BC08BD4006E3275 /* PetPageProtocols.swift in Sources */,
+				4A8DA8512BB5DB15000DA908 /* JournalRouter.swift in Sources */,
+				4A8DA83E2BB5CE0B000DA908 /* RegistrationInteractor.swift in Sources */,
+				4A8DA82B2BB5C294000DA908 /* AccessRecoveryInteractor.swift in Sources */,
+				4A3F207A2BB843E7005E4BC0 /* CalendarEventModel.swift in Sources */,
+				4A3F213F2BBD3CAD005E4BC0 /* CalendarAddViewController.swift in Sources */,
+				4A8DA7FC2BB59A21000DA908 /* SceneDelegate.swift in Sources */,
+				4AE7855A2BC3B26B00D5182E /* PetEditRouter.swift in Sources */,
+				4A8DA82D2BB5C2B5000DA908 /* AccessRecoveryModel.swift in Sources */,
+				4AEBA0AE2BB7370000D17B79 /* PetsPresenter.swift in Sources */,
+				4AE7855C2BC3B27500D5182E /* PetEditAssembly.swift in Sources */,
+				4AEBA0BF2BB7388C00D17B79 /* PetAddPresenter.swift in Sources */,
+				4AD057DD2BC08BE0006E3275 /* PetPageViewController.swift in Sources */,
+				4AEBA0A42BB6F5F000D17B79 /* SettingsAssembly.swift in Sources */,
+				4AE785532BC3B24B00D5182E /* PetEditViewController.swift in Sources */,
+				4AEBA0CF2BB73AE800D17B79 /* JournalAddRouter.swift in Sources */,
+				4A8DA8472BB5DAD9000DA908 /* JournalModel.swift in Sources */,
+				4A8DA8112BB59B46000DA908 /* AuthModel.swift in Sources */,
+				4A8DA82F2BB5C2DF000DA908 /* AccessRecoveryPresenter.swift in Sources */,
+				4AEBA0B22BB7371100D17B79 /* PetsAssembly.swift in Sources */,
+				4A8DA84B2BB5DAF1000DA908 /* JournalViewController.swift in Sources */,
+				4AE785552BC3B25400D5182E /* PetEditInteractor.swift in Sources */,
+				4A3F213D2BBD3C8A005E4BC0 /* CalendarAddProtocols.swift in Sources */,
+				4AD057E12BC08BF6006E3275 /* PetPagePresenter.swift in Sources */,
+				4A3F207C2BB85754005E4BC0 /* PetModel.swift in Sources */,
+				4AEBA09C2BB6F5BE00D17B79 /* SettingsViewController.swift in Sources */,
+				4AE785582BC3B26200D5182E /* PetEditPresenter.swift in Sources */,
+				4AEBA0A62BB736C600D17B79 /* PetsModel.swift in Sources */,
+				4A8DA8292BB5C1A7000DA908 /* AuthRouter.swift in Sources */,
+				4A3F207E2BB85BA2005E4BC0 /* PetCell.swift in Sources */,
+				4AEBA0AA2BB736E200D17B79 /* PetsViewController.swift in Sources */,
+				4AE785512BC3B23E00D5182E /* PetEditProtocols.swift in Sources */,
+				4A8DA8652BB5DC9C000DA908 /* CalendarAssembly.swift in Sources */,
+				4A3F21452BBD3CD1005E4BC0 /* CalendarAddRouter.swift in Sources */,
+				4A8DA8312BB5C2FE000DA908 /* AccessRecoveryProtocols.swift in Sources */,
+				4A8DA83C2BB5CDF9000DA908 /* RegistrationViewController.swift in Sources */,
+				4A8DA8382BB5CDCF000DA908 /* RegistrationModel.swift in Sources */,
+				4A3F20802BB8702C005E4BC0 /* TabBarController.swift in Sources */,
+				4A8DA81D2BB5BDD5000DA908 /* AuthProtocols.swift in Sources */,
+				4AEBA0C32BB7389C00D17B79 /* PetAddAssembly.swift in Sources */,
+				4A8DA8422BB5CE24000DA908 /* RegistrationRouter.swift in Sources */,
+				4A8DA8492BB5DAE3000DA908 /* JournalProtocols.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A3F214D2BBF2616005E4BC0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A3F214E2BBF2616005E4BC0 /* en */,
+				4A3F21502BBF27FF005E4BC0 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4A8DA8042BB59A23000DA908 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A3F214B2BBF2508005E4BC0 /* en */,
+				4A3F214C2BBF25E1005E4BC0 /* ru */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A8DA8082BB59A23000DA908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A8DA8092BB59A23000DA908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A8DA80B2BB59A23000DA908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B598Y53B88;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetsApp_0001/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Lovely Pet";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TX.PetsApp-0001";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4A8DA80C2BB59A23000DA908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B598Y53B88;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetsApp_0001/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Lovely Pet";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "TX.PetsApp-0001";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A8DA7F12BB59A21000DA908 /* Build configuration list for PBXProject "PetsApp_0001" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8DA8082BB59A23000DA908 /* Debug */,
+				4A8DA8092BB59A23000DA908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A8DA80A2BB59A23000DA908 /* Build configuration list for PBXNativeTarget "PetsApp_0001" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8DA80B2BB59A23000DA908 /* Debug */,
+				4A8DA80C2BB59A23000DA908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A3F20832BB8846D005E4BC0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.1;
+			};
+		};
+		4A3F21362BBB4824005E4BC0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A3F212A2BB8A09C005E4BC0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAuth;
+		};
+		4A3F212C2BB8A09C005E4BC0 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseDatabase;
+		};
+		4A3F212E2BB8A09C005E4BC0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseFirestore;
+		};
+		4A3F21302BB8A09C005E4BC0 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		4A3F21322BB8A09C005E4BC0 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4A8DA7EE2BB59A21000DA908 /* Project object */;
+}
