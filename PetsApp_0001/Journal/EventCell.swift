@@ -1,5 +1,5 @@
 //
-//  EventCell.swift
+//  EventTableViewCell.swift
 //  PetsApp_0001
 //
 //  Created by Илья Нестрогаев on 10.03.2024.
@@ -7,83 +7,62 @@
 
 import UIKit
 
-class EventCell: UIView
-{
-    var event: EventModel?
-    
-    let nameLabel: UILabel = {
-        let control = UILabel()
-        control.font = UIFont.boldSystemFont(ofSize: 18)
-        return control
-    }()
-    
-    let descriptionLabel: UILabel = {
-        let control = UILabel()
-        control.font = UIFont.systemFont(ofSize: 12)
-        return control
-    }()
-    
-    let dateLabel: UILabel = {
-        let control = UILabel()
-        control.font = UIFont.systemFont(ofSize: 12)
-        return control
-    }()
-    
-    let petNameLabel: UILabel = {
-        let control = UILabel()
-        control.font = UIFont.systemFont(ofSize: 12)
-        return control
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+class EventTableViewCell: UITableViewCell {
+
+    var event: EventModel? {
+        didSet {
+            nameLabel.text = event?.title
+            descriptionLabel.text = event?.description
+            if let date = event?.date {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy" // Формат даты по вашему выбору
+                dateLabel.text = dateFormatter.string(from: date)
+            }
+            petNameLabel.text = event?.petName
+        }
     }
-    
+
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Привет"
+        return label
+    }()
+
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.text = "Как дела"
+        return label
+    }()
+
+    private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+
+    private let petNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(nameLabel)
+        addSubview(descriptionLabel)
+        addSubview(dateLabel)
+        addSubview(petNameLabel)
+
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    func configure(with model: EventModel) {
-        event = model
-        configureNameLabel()
-        configureDateLabel()
-        configureDescriptionLabel()
-        configurePetNameLabel()
-    }
-    
-    private func configureNameLabel() {
-        addSubview(nameLabel)
-        
-        nameLabel.text = event?.title
-        nameLabel.pinTop(to: self, 10)
-        nameLabel.pinLeft(to: self, 10)
-    }
-    
-    private func configureDateLabel() {
-        addSubview(dateLabel)
-        
-        if let date = event?.date {
-            dateLabel.text = "\(Calendar.current.component(.day, from: date))/\(Calendar.current.component(.month, from: date))/\(Calendar.current.component(.year, from: date))"
-        }
-        
-        dateLabel.pinCenterY(to: nameLabel)
-        dateLabel.pinRight(to: self, 10)
-    }
-    
-    private func configureDescriptionLabel() {
-        addSubview(descriptionLabel)
-        
-        descriptionLabel.text = event?.description
-        descriptionLabel.pinTop(to: nameLabel.bottomAnchor, 5)
-        descriptionLabel.pinLeft(to: nameLabel.leadingAnchor)
-    }
-    
-    private func configurePetNameLabel() {
-        addSubview(petNameLabel)
-        
-        petNameLabel.text = event?.petName
-        petNameLabel.pinTop(to: descriptionLabel.bottomAnchor, 5)
-        petNameLabel.pinLeft(to: nameLabel.leadingAnchor)
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Update frames for labels according to your layout
     }
 }

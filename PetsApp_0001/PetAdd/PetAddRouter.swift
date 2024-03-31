@@ -20,7 +20,6 @@ final class PetAddRouter: PetAddRoutingLogic {
                     .first else {
                 return
             }
-        
         petsViewController.configureCollection { Bool in
             if Bool == true {
                 self.view?.navigationController?.popToViewController(petsViewController, animated: true)

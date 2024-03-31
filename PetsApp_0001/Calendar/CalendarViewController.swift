@@ -18,12 +18,11 @@ final class CalendarViewController: UIViewController,
     private let label: UILabel = UILabel()
     private let addButton: UIButton = UIButton()
     private let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
-    #warning("TODO: eventsArray в интерактор")
-    var eventArray: [CalendarEventModel] = [CalendarEventModel](repeating: CalendarEventModel(title: "title", date: Date.now, notification: Date.now.addingTimeInterval(-3600)), count: 5)
-    
+  
+    private var eventArray: [CalendarEventModel] = []
     private let router: CalendarRoutingLogic
     private let interactor: CalendarBusinessLogic
+   
     
     // MARK: - LifeCycle
     init(
@@ -44,29 +43,39 @@ final class CalendarViewController: UIViewController,
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         self.navigationItem.hidesBackButton = true
-        interactor.loadStart(Model.Start.Request())
+        
+        interactor.configureCollection { [weak self] eventArray in
+            guard let self = self else { return }
+            self.eventArray = eventArray
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.configureCollection()
+            }
+            self.interactor.loadStart(Model.Start.Request())
+        }
     }
+
     
     // MARK: - Configuration
     private func configureUI() {
         configureAddButton()
         configureLabel()
-        configureCollection()
     }
     
     private func configureAddButton() {
+        addButton.tintColor = .systemPink
         view.addSubview(addButton)
         
-        addButton.setWidth(50)
-        addButton.setHeight(50)
+        addButton.setWidth(30)
+        addButton.setHeight(30)
         addButton.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
-        addButton.pinRight(to: view.trailingAnchor, 10)
+        addButton.pinRight(to: view.trailingAnchor, 15)
         
         if let image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)) {
-            let largerImage = image.withRenderingMode(.alwaysOriginal)
+            let largerImage = image.withRenderingMode(.alwaysTemplate)
             addButton.setImage(largerImage, for: .normal)
         }
-        
+       
         addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
     
@@ -74,9 +83,10 @@ final class CalendarViewController: UIViewController,
         view.addSubview(label)
         
         label.text = "calendar".localized
-        label.font = UIFont(name:"HelveticaNeue-Bold", size: 28.0)
-        label.pinLeft(to: view.leadingAnchor, 10)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 26.0)
+        label.textColor = UIColor.label
         label.pinCenterY(to: addButton.centerYAnchor)
+        label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
     }
     
     private func configureCollection() {
@@ -87,17 +97,17 @@ final class CalendarViewController: UIViewController,
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumInteritemSpacing = 0
-            layout.minimumLineSpacing = 0
+            layout.minimumLineSpacing = 2.5
             layout.invalidateLayout()
         }
         
         collectionView.register(CalendarEventCell.self, forCellWithReuseIdentifier: "calendar event")
         
         view.addSubview(collectionView)
-        
-        collectionView.pinHorizontal(to: view)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.pinHorizontal(to: view,5)
         collectionView.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
-        collectionView.pinTop(to: label.bottomAnchor, 10)
+        collectionView.pinTop(to: label.bottomAnchor, 15)
     }
     
     // MARK: - Actions

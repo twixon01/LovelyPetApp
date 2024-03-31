@@ -10,7 +10,15 @@ import UIKit
 final class CalendarAddRouter: CalendarAddRoutingLogic {
     weak var view: UIViewController?
     
-    func routeTo() {
+    func routeToCalendar() {
+        guard let calendarViewController = view?.navigationController?.viewControllers
+                    .compactMap({ $0 as? CalendarViewController })
+                    .first else {
+                return
+            }
+        calendarViewController.viewDidLoad()
+        self.view?.navigationController?.popToViewController(calendarViewController, animated: true)
+        
         
     }
 }

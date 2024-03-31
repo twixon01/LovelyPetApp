@@ -239,6 +239,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A32D9A82BC57D49007B1279 /* CalendarEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CalendarEdit;
+			sourceTree = "<group>";
+		};
+		4A32D9A92BC57E36007B1279 /* JournalEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JournalEdit;
+			sourceTree = "<group>";
+		};
 		4A3F208E2BB8943E005E4BC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +297,8 @@
 		4A8DA7F82BB59A21000DA908 /* PetsApp_0001 */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D9A92BC57E36007B1279 /* JournalEdit */,
+				4A32D9A82BC57D49007B1279 /* CalendarEdit */,
 				4AE7854D2BC3B22200D5182E /* PetEdit */,
 				4AD057D72BC08BB2006E3275 /* PetPage */,
 				4A8DA8552BB5DC23000DA908 /* Pets */,

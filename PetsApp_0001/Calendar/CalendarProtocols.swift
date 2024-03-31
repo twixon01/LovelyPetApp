@@ -5,10 +5,13 @@
 //  Created by Илья Нестрогаев on 10.03.2024.
 //
 
+import UIKit
+
 protocol CalendarBusinessLogic {
     typealias Model = CalendarModel
     func loadStart(_ request: Model.Start.Request)
     func loadCalendarAdd(_ request: Model.CalendarAdd.Request)
+    func configureCollection(completion: @escaping ([CalendarEventModel]) -> Void)
     // func load(_ request: Model..Request)
 }
 

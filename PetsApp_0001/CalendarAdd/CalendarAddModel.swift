@@ -19,5 +19,12 @@ enum CalendarAddModel {
     //        struct ViewModel { }
     //        struct Info { }
     //    }
+    
+    enum Calendar {
+        struct Request { }
+        struct Response { }
+        struct ViewModel { }
+        struct Info { }
+    }
 }
 
