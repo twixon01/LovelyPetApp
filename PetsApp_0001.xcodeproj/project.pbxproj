@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A32D9AB2BC599CC007B1279 /* CalendarEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9AA2BC599CC007B1279 /* CalendarEditModel.swift */; };
+		4A32D9AD2BC599E8007B1279 /* CalendarEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9AC2BC599E8007B1279 /* CalendarEditProtocols.swift */; };
+		4A32D9AF2BC599F2007B1279 /* CalendarEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9AE2BC599F2007B1279 /* CalendarEditViewController.swift */; };
+		4A32D9B12BC599FE007B1279 /* CalendarEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9B02BC599FE007B1279 /* CalendarEditInteractor.swift */; };
+		4A32D9B32BC59A06007B1279 /* CalendarEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9B22BC59A06007B1279 /* CalendarEditPresenter.swift */; };
+		4A32D9B52BC59A0E007B1279 /* CalendarEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9B42BC59A0E007B1279 /* CalendarEditRouter.swift */; };
+		4A32D9B72BC59A17007B1279 /* CalendarEditAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9B62BC59A17007B1279 /* CalendarEditAssembly.swift */; };
+		4A32D9B92BC59B40007B1279 /* JournalEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9B82BC59B40007B1279 /* JournalEditModel.swift */; };
+		4A32D9BB2BC59B47007B1279 /* JournalEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9BA2BC59B47007B1279 /* JournalEditProtocols.swift */; };
+		4A32D9BD2BC59B52007B1279 /* JournalEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9BC2BC59B52007B1279 /* JournalEditViewController.swift */; };
+		4A32D9BF2BC59B5C007B1279 /* JournalEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9BE2BC59B5C007B1279 /* JournalEditInteractor.swift */; };
+		4A32D9C12BC59B63007B1279 /* JournalEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9C02BC59B63007B1279 /* JournalEditPresenter.swift */; };
+		4A32D9C32BC59B6C007B1279 /* JournalEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9C22BC59B6C007B1279 /* JournalEditRouter.swift */; };
+		4A32D9C52BC59B75007B1279 /* JournalEditAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9C42BC59B75007B1279 /* JournalEditAssembly.swift */; };
+		4A32D9C82BC59CA2007B1279 /* AccountSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9C72BC59CA2007B1279 /* AccountSettingsModel.swift */; };
+		4A32D9CA2BC59CAD007B1279 /* AccountSettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9C92BC59CAD007B1279 /* AccountSettingsProtocols.swift */; };
+		4A32D9CC2BC59CBD007B1279 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9CB2BC59CBD007B1279 /* AccountSettingsViewController.swift */; };
+		4A32D9CE2BC59CC5007B1279 /* AccountSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9CD2BC59CC5007B1279 /* AccountSettingsInteractor.swift */; };
+		4A32D9D02BC59CD0007B1279 /* AccountSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9CF2BC59CD0007B1279 /* AccountSettingsPresenter.swift */; };
+		4A32D9D22BC59CD8007B1279 /* AccountSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9D12BC59CD8007B1279 /* AccountSettingsRouter.swift */; };
+		4A32D9D42BC59CE1007B1279 /* AccountSettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9D32BC59CE1007B1279 /* AccountSettingsAssembly.swift */; };
 		4A3F20782BB84327005E4BC0 /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F20772BB84327005E4BC0 /* CalendarEventCell.swift */; };
 		4A3F207A2BB843E7005E4BC0 /* CalendarEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F20792BB843E7005E4BC0 /* CalendarEventModel.swift */; };
 		4A3F207C2BB85754005E4BC0 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F207B2BB85754005E4BC0 /* PetModel.swift */; };
@@ -116,6 +137,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A32D9AA2BC599CC007B1279 /* CalendarEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditModel.swift; sourceTree = "<group>"; };
+		4A32D9AC2BC599E8007B1279 /* CalendarEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditProtocols.swift; sourceTree = "<group>"; };
+		4A32D9AE2BC599F2007B1279 /* CalendarEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditViewController.swift; sourceTree = "<group>"; };
+		4A32D9B02BC599FE007B1279 /* CalendarEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditInteractor.swift; sourceTree = "<group>"; };
+		4A32D9B22BC59A06007B1279 /* CalendarEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditPresenter.swift; sourceTree = "<group>"; };
+		4A32D9B42BC59A0E007B1279 /* CalendarEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditRouter.swift; sourceTree = "<group>"; };
+		4A32D9B62BC59A17007B1279 /* CalendarEditAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditAssembly.swift; sourceTree = "<group>"; };
+		4A32D9B82BC59B40007B1279 /* JournalEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditModel.swift; sourceTree = "<group>"; };
+		4A32D9BA2BC59B47007B1279 /* JournalEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditProtocols.swift; sourceTree = "<group>"; };
+		4A32D9BC2BC59B52007B1279 /* JournalEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditViewController.swift; sourceTree = "<group>"; };
+		4A32D9BE2BC59B5C007B1279 /* JournalEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditInteractor.swift; sourceTree = "<group>"; };
+		4A32D9C02BC59B63007B1279 /* JournalEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditPresenter.swift; sourceTree = "<group>"; };
+		4A32D9C22BC59B6C007B1279 /* JournalEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditRouter.swift; sourceTree = "<group>"; };
+		4A32D9C42BC59B75007B1279 /* JournalEditAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditAssembly.swift; sourceTree = "<group>"; };
+		4A32D9C72BC59CA2007B1279 /* AccountSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsModel.swift; sourceTree = "<group>"; };
+		4A32D9C92BC59CAD007B1279 /* AccountSettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsProtocols.swift; sourceTree = "<group>"; };
+		4A32D9CB2BC59CBD007B1279 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		4A32D9CD2BC59CC5007B1279 /* AccountSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsInteractor.swift; sourceTree = "<group>"; };
+		4A32D9CF2BC59CD0007B1279 /* AccountSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPresenter.swift; sourceTree = "<group>"; };
+		4A32D9D12BC59CD8007B1279 /* AccountSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsRouter.swift; sourceTree = "<group>"; };
+		4A32D9D32BC59CE1007B1279 /* AccountSettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsAssembly.swift; sourceTree = "<group>"; };
 		4A3F20772BB84327005E4BC0 /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
 		4A3F20792BB843E7005E4BC0 /* CalendarEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventModel.swift; sourceTree = "<group>"; };
 		4A3F207B2BB85754005E4BC0 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
@@ -242,6 +284,13 @@
 		4A32D9A82BC57D49007B1279 /* CalendarEdit */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D9AA2BC599CC007B1279 /* CalendarEditModel.swift */,
+				4A32D9AC2BC599E8007B1279 /* CalendarEditProtocols.swift */,
+				4A32D9AE2BC599F2007B1279 /* CalendarEditViewController.swift */,
+				4A32D9B02BC599FE007B1279 /* CalendarEditInteractor.swift */,
+				4A32D9B22BC59A06007B1279 /* CalendarEditPresenter.swift */,
+				4A32D9B42BC59A0E007B1279 /* CalendarEditRouter.swift */,
+				4A32D9B62BC59A17007B1279 /* CalendarEditAssembly.swift */,
 			);
 			path = CalendarEdit;
 			sourceTree = "<group>";
@@ -249,8 +298,29 @@
 		4A32D9A92BC57E36007B1279 /* JournalEdit */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D9B82BC59B40007B1279 /* JournalEditModel.swift */,
+				4A32D9BA2BC59B47007B1279 /* JournalEditProtocols.swift */,
+				4A32D9BC2BC59B52007B1279 /* JournalEditViewController.swift */,
+				4A32D9BE2BC59B5C007B1279 /* JournalEditInteractor.swift */,
+				4A32D9C02BC59B63007B1279 /* JournalEditPresenter.swift */,
+				4A32D9C22BC59B6C007B1279 /* JournalEditRouter.swift */,
+				4A32D9C42BC59B75007B1279 /* JournalEditAssembly.swift */,
 			);
 			path = JournalEdit;
+			sourceTree = "<group>";
+		};
+		4A32D9C62BC59C7C007B1279 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D9C72BC59CA2007B1279 /* AccountSettingsModel.swift */,
+				4A32D9C92BC59CAD007B1279 /* AccountSettingsProtocols.swift */,
+				4A32D9CB2BC59CBD007B1279 /* AccountSettingsViewController.swift */,
+				4A32D9CD2BC59CC5007B1279 /* AccountSettingsInteractor.swift */,
+				4A32D9CF2BC59CD0007B1279 /* AccountSettingsPresenter.swift */,
+				4A32D9D12BC59CD8007B1279 /* AccountSettingsRouter.swift */,
+				4A32D9D32BC59CE1007B1279 /* AccountSettingsAssembly.swift */,
+			);
+			path = AccountSettings;
 			sourceTree = "<group>";
 		};
 		4A3F208E2BB8943E005E4BC0 /* Frameworks */ = {
@@ -297,6 +367,7 @@
 		4A8DA7F82BB59A21000DA908 /* PetsApp_0001 */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D9C62BC59C7C007B1279 /* AccountSettings */,
 				4A32D9A92BC57E36007B1279 /* JournalEdit */,
 				4A32D9A82BC57D49007B1279 /* CalendarEdit */,
 				4AE7854D2BC3B22200D5182E /* PetEdit */,
@@ -583,11 +654,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A32D9AD2BC599E8007B1279 /* CalendarEditProtocols.swift in Sources */,
 				4A8DA8132BB59B51000DA908 /* AuthViewController.swift in Sources */,
 				4A8DA8272BB5C19D000DA908 /* AuthAssembly.swift in Sources */,
+				4A32D9B92BC59B40007B1279 /* JournalEditModel.swift in Sources */,
+				4A32D9C82BC59CA2007B1279 /* AccountSettingsModel.swift in Sources */,
 				4A8DA7FA2BB59A21000DA908 /* AppDelegate.swift in Sources */,
 				4A3F21522BBF2E80005E4BC0 /* String+extension.swift in Sources */,
 				4A3F21472BBD3CDA005E4BC0 /* CalendarAddAssembly.swift in Sources */,
+				4A32D9BB2BC59B47007B1279 /* JournalEditProtocols.swift in Sources */,
 				4A8DA8402BB5CE1B000DA908 /* RegistrationPresenter.swift in Sources */,
 				4AD057E52BC08C0B006E3275 /* PetPageAssembly.swift in Sources */,
 				4A8DA81B2BB5B8ED000DA908 /* AccessRecoveryViewController.swift in Sources */,
@@ -599,9 +674,11 @@
 				4A8DA8232BB5BF80000DA908 /* AuthPresenter.swift in Sources */,
 				4AEBA0CB2BB73AD600D17B79 /* JournalAddInteractor.swift in Sources */,
 				4A8DA85E2BB5DC7A000DA908 /* CalendarInteractor.swift in Sources */,
+				4A32D9BD2BC59B52007B1279 /* JournalEditViewController.swift in Sources */,
 				4AEBA0C12BB7389400D17B79 /* PetAddRouter.swift in Sources */,
 				4AE7854F2BC3B23500D5182E /* PetEditModel.swift in Sources */,
 				4AEBA0B92BB7383D00D17B79 /* PetAddProtocols.swift in Sources */,
+				4A32D9CA2BC59CAD007B1279 /* AccountSettingsProtocols.swift in Sources */,
 				4AEBA0A82BB736D600D17B79 /* PetsProtocols.swift in Sources */,
 				4AEBA0CD2BB73ADF00D17B79 /* JournalAddPresenter.swift in Sources */,
 				4A8DA83A2BB5CDED000DA908 /* RegistrationProtocols.swift in Sources */,
@@ -614,6 +691,7 @@
 				4A8DA86D2BB5FDF0000DA908 /* EventCell.swift in Sources */,
 				4AD057E32BC08BFD006E3275 /* PetPageRouter.swift in Sources */,
 				4A8DA8622BB5DC8B000DA908 /* CalendarRouter.swift in Sources */,
+				4A32D9AF2BC599F2007B1279 /* CalendarEditViewController.swift in Sources */,
 				4A8DA8702BB6007C000DA908 /* EventModel.swift in Sources */,
 				4A8DA8152BB59DF6000DA908 /* UIViewPin.swift in Sources */,
 				4AEBA0BD2BB7385100D17B79 /* PetAddInteractor.swift in Sources */,
@@ -623,7 +701,9 @@
 				4A3F21432BBD3CC6005E4BC0 /* CalendarAddPresenter.swift in Sources */,
 				4A3F20782BB84327005E4BC0 /* CalendarEventCell.swift in Sources */,
 				4AEBA0BB2BB7384600D17B79 /* PetAddViewController.swift in Sources */,
+				4A32D9CC2BC59CBD007B1279 /* AccountSettingsViewController.swift in Sources */,
 				4A3F213B2BBD3C7A005E4BC0 /* CalendarAddModel.swift in Sources */,
+				4A32D9B12BC599FE007B1279 /* CalendarEditInteractor.swift in Sources */,
 				4A8DA8532BB5DB2A000DA908 /* JournalAssembly.swift in Sources */,
 				4AEBA0C72BB73ABF00D17B79 /* JournalAddProtocols.swift in Sources */,
 				4AD057D92BC08BC9006E3275 /* PetPageModel.swift in Sources */,
@@ -631,8 +711,11 @@
 				4A8DA8442BB5CE2F000DA908 /* RegistrationAssembly.swift in Sources */,
 				4A8DA84F2BB5DB0A000DA908 /* JournalPresenter.swift in Sources */,
 				4A8DA8252BB5C186000DA908 /* AuthInteractor.swift in Sources */,
+				4A32D9C32BC59B6C007B1279 /* JournalEditRouter.swift in Sources */,
+				4A32D9CE2BC59CC5007B1279 /* AccountSettingsInteractor.swift in Sources */,
 				4A8DA8352BB5C370000DA908 /* AccessRecoveryRouter.swift in Sources */,
 				4AEBA0A22BB6F5E700D17B79 /* SettingsRouter.swift in Sources */,
+				4A32D9B72BC59A17007B1279 /* CalendarEditAssembly.swift in Sources */,
 				4AEBA0C92BB73ACB00D17B79 /* JournalAddViewController.swift in Sources */,
 				4AEBA0B02BB7370700D17B79 /* PetsRouter.swift in Sources */,
 				4A8DA85A2BB5DC5D000DA908 /* CalendarProtocols.swift in Sources */,
@@ -640,6 +723,7 @@
 				4AEBA0AC2BB736F400D17B79 /* PetsInteractor.swift in Sources */,
 				4AD057DB2BC08BD4006E3275 /* PetPageProtocols.swift in Sources */,
 				4A8DA8512BB5DB15000DA908 /* JournalRouter.swift in Sources */,
+				4A32D9B32BC59A06007B1279 /* CalendarEditPresenter.swift in Sources */,
 				4A8DA83E2BB5CE0B000DA908 /* RegistrationInteractor.swift in Sources */,
 				4A8DA82B2BB5C294000DA908 /* AccessRecoveryInteractor.swift in Sources */,
 				4A3F207A2BB843E7005E4BC0 /* CalendarEventModel.swift in Sources */,
@@ -649,6 +733,7 @@
 				4A8DA82D2BB5C2B5000DA908 /* AccessRecoveryModel.swift in Sources */,
 				4AEBA0AE2BB7370000D17B79 /* PetsPresenter.swift in Sources */,
 				4AE7855C2BC3B27500D5182E /* PetEditAssembly.swift in Sources */,
+				4A32D9D02BC59CD0007B1279 /* AccountSettingsPresenter.swift in Sources */,
 				4AEBA0BF2BB7388C00D17B79 /* PetAddPresenter.swift in Sources */,
 				4AD057DD2BC08BE0006E3275 /* PetPageViewController.swift in Sources */,
 				4AEBA0A42BB6F5F000D17B79 /* SettingsAssembly.swift in Sources */,
@@ -656,25 +741,32 @@
 				4AEBA0CF2BB73AE800D17B79 /* JournalAddRouter.swift in Sources */,
 				4A8DA8472BB5DAD9000DA908 /* JournalModel.swift in Sources */,
 				4A8DA8112BB59B46000DA908 /* AuthModel.swift in Sources */,
+				4A32D9AB2BC599CC007B1279 /* CalendarEditModel.swift in Sources */,
+				4A32D9D42BC59CE1007B1279 /* AccountSettingsAssembly.swift in Sources */,
 				4A8DA82F2BB5C2DF000DA908 /* AccessRecoveryPresenter.swift in Sources */,
 				4AEBA0B22BB7371100D17B79 /* PetsAssembly.swift in Sources */,
 				4A8DA84B2BB5DAF1000DA908 /* JournalViewController.swift in Sources */,
 				4AE785552BC3B25400D5182E /* PetEditInteractor.swift in Sources */,
+				4A32D9BF2BC59B5C007B1279 /* JournalEditInteractor.swift in Sources */,
 				4A3F213D2BBD3C8A005E4BC0 /* CalendarAddProtocols.swift in Sources */,
 				4AD057E12BC08BF6006E3275 /* PetPagePresenter.swift in Sources */,
 				4A3F207C2BB85754005E4BC0 /* PetModel.swift in Sources */,
 				4AEBA09C2BB6F5BE00D17B79 /* SettingsViewController.swift in Sources */,
+				4A32D9D22BC59CD8007B1279 /* AccountSettingsRouter.swift in Sources */,
 				4AE785582BC3B26200D5182E /* PetEditPresenter.swift in Sources */,
 				4AEBA0A62BB736C600D17B79 /* PetsModel.swift in Sources */,
 				4A8DA8292BB5C1A7000DA908 /* AuthRouter.swift in Sources */,
 				4A3F207E2BB85BA2005E4BC0 /* PetCell.swift in Sources */,
+				4A32D9C12BC59B63007B1279 /* JournalEditPresenter.swift in Sources */,
 				4AEBA0AA2BB736E200D17B79 /* PetsViewController.swift in Sources */,
 				4AE785512BC3B23E00D5182E /* PetEditProtocols.swift in Sources */,
+				4A32D9C52BC59B75007B1279 /* JournalEditAssembly.swift in Sources */,
 				4A8DA8652BB5DC9C000DA908 /* CalendarAssembly.swift in Sources */,
 				4A3F21452BBD3CD1005E4BC0 /* CalendarAddRouter.swift in Sources */,
 				4A8DA8312BB5C2FE000DA908 /* AccessRecoveryProtocols.swift in Sources */,
 				4A8DA83C2BB5CDF9000DA908 /* RegistrationViewController.swift in Sources */,
 				4A8DA8382BB5CDCF000DA908 /* RegistrationModel.swift in Sources */,
+				4A32D9B52BC59A0E007B1279 /* CalendarEditRouter.swift in Sources */,
 				4A3F20802BB8702C005E4BC0 /* TabBarController.swift in Sources */,
 				4A8DA81D2BB5BDD5000DA908 /* AuthProtocols.swift in Sources */,
 				4AEBA0C32BB7389C00D17B79 /* PetAddAssembly.swift in Sources */,
