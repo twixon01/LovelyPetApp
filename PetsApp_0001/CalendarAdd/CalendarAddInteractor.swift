@@ -39,11 +39,11 @@ final class CalendarAddInteractor: CalendarAddBusinessLogic {
         self.scheduleNotification(date: notify2, body: "\(title) состоится \(stringFromDateNot(date))", identifier: "secondNotify")
         func stringFromDate(_ date: Date) -> String {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
             return dateFormatter.string(from: date)
         }
         let uid = Auth.auth().currentUser?.uid ?? ""
-        Firestore.firestore().collection("users_new").document(uid).collection("calendar").document(stringFromDate(date)).setData(["Title": title, "Date": date, "Notify1": notify1, "Notify2": notify2, "DateEdit": currentDate]){ error in
+        Firestore.firestore().collection("users_new").document(uid).collection("calendar").document(stringFromDate(currentDate)).setData(["Title": title, "Date": date, "Notify1": notify1, "Notify2": notify2, "DateEdit": currentDate]){ error in
             if let error = error {
                 print("Ошибка при обновлении данных: \(error.localizedDescription)")
                 

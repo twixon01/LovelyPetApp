@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-public final class JournalViewController: UIViewController,
+final class JournalViewController: UIViewController,
                                           JournalDisplayLogic {
 
     // MARK: - Constants
@@ -21,12 +21,16 @@ public final class JournalViewController: UIViewController,
     private let addButton: UIButton = UIButton()
     private let tableView: UITableView = UITableView()
     private let label: UILabel = UILabel()
+    
+    private let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private let events: [EventModel] = [EventModel](repeating: EventModel(title: "Буся погуляла", date: Date.now), count: 15)
 
     private let router: JournalRoutingLogic
     private let interactor: JournalBusinessLogic
     private var presenter: JournalPresenter
 
-    private let events: [EventModel] = [EventModel](repeating: EventModel(title: "event", description: "description", petName: "pet", date: Date.now), count: 15)
+
 
     // MARK: - LifeCycle
     init(router: JournalRoutingLogic, interactor: JournalBusinessLogic, presenter: JournalPresenter) {
@@ -54,7 +58,7 @@ public final class JournalViewController: UIViewController,
     private func configureUI() {
         configureAddButton()
         configureLabel()
-       
+        configureCollection()
        
     }
 
@@ -83,6 +87,27 @@ public final class JournalViewController: UIViewController,
         label.pinCenterY(to: addButton.centerYAnchor)
         label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
     }
+    
+    private func configureCollection() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.alwaysBounceVertical = true
+        collectionView.showsVerticalScrollIndicator = false
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumInteritemSpacing = 0
+            layout.minimumLineSpacing = 2.5
+            layout.invalidateLayout()
+        }
+        
+        collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "event")
+        
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.pinHorizontal(to: view,5)
+        collectionView.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
+        collectionView.pinTop(to: label.bottomAnchor, 15)
+    }
 
     // MARK: - Actions
     @objc
@@ -110,6 +135,36 @@ public final class JournalViewController: UIViewController,
     func displayJournalAdd(_ viewModel: Model.JournalAdd.ViewModel) {
         router.routeToJournalAdd()
     }
+    
+    func displayJournalEdit(_ viewModel: Model.JournalEdit.ViewModel) {
+        router.routeToJournalEdit(event: viewModel.event)
+    }
 }
 
-
+extension JournalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return events.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionViewCell.reuseId, for: indexPath)
+        
+        guard let eventCell = cell as? EventCollectionViewCell else {
+            return cell
+        }
+        
+        let event = events[indexPath.row]
+        eventCell.configure(with: event)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: collectionView.bounds.width - 10, height: 57)
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            interactor.loadJournalEdit(JournalModel.JournalEdit.Request(event: events[indexPath.row]))
+            print("Cell tapped at index \(indexPath.item)")
+        }
+}

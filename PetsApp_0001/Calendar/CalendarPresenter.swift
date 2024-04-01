@@ -6,6 +6,8 @@
 //
 
 final class CalendarPresenter: CalendarPresentationLogic {
+    
+    
     // MARK: - Constants
     private enum Constants {
         
@@ -20,5 +22,9 @@ final class CalendarPresenter: CalendarPresentationLogic {
     
     func presentCalendarAdd(_ response: Model.CalendarAdd.Response) {
         view?.displayCalendarAdd(Model.CalendarAdd.ViewModel())
+    }
+    
+    func presentCalendarEdit(_ response: Model.CalendarEdit.Response) {
+        view?.displayCalendarEdit(Model.CalendarEdit.ViewModel(event: response.event))
     }
 }

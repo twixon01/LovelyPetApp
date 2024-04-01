@@ -18,4 +18,9 @@ final class CalendarRouter: CalendarRoutingLogic {
         let vc = CalendarAddAssembly.build()
         view?.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func routeToCalendarEdit(event: CalendarEventModel) {
+        let vc = CalendarEditAssembly.build(event: event)
+        view?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -9,14 +9,17 @@ import UIKit
 
 struct EventModel {
     var title: String
-    var description: String
-    var petName: String
+    var text: String?
     var date: Date
     
-    init(title: String, description: String, petName: String, date: Date) {
+    init(title: String, date: Date) {
         self.title = title
-        self.description = description
-        self.petName = petName
+        self.date = date
+    }
+    
+    init(title: String, text: String, date: Date) {
+        self.title = title
+        self.text = text
         self.date = date
     }
 }

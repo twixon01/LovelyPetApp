@@ -15,14 +15,18 @@ final class JournalEditViewController: UIViewController,
     }
     
     // MARK: - Fields
+    let event: EventModel
+    
     private let router: JournalEditRoutingLogic
     private let interactor: JournalEditBusinessLogic
     
     // MARK: - LifeCycle
     init(
+        event: EventModel,
         router: JournalEditRoutingLogic,
         interactor: JournalEditBusinessLogic
     ) {
+        self.event = event
         self.router = router
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -40,7 +44,8 @@ final class JournalEditViewController: UIViewController,
     
     // MARK: - Configuration
     private func configureUI() {
-        
+        view.backgroundColor = UIColor.systemBackground
+        print(event.title)
     }
     
     // MARK: - Actions
@@ -51,6 +56,6 @@ final class JournalEditViewController: UIViewController,
     
     // MARK: - DisplayLogic
     func displayStart(_ viewModel: Model.Start.ViewModel) {
-        
+        configureUI()
     }
 }

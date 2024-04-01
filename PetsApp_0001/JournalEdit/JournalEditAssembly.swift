@@ -8,11 +8,12 @@
 import UIKit
 
 enum JournalEditAssembly {
-    static func build() -> UIViewController {
+    static func build(event: EventModel) -> UIViewController {
         let router: JournalEditRouter = JournalEditRouter()
         let presenter: JournalEditPresenter = JournalEditPresenter()
         let interactor: JournalEditInteractor = JournalEditInteractor(presenter: presenter)
         let viewController: JournalEditViewController = JournalEditViewController(
+            event: event,
             router: router,
             interactor: interactor
         )

@@ -39,5 +39,8 @@ final class JournalInteractor: JournalBusinessLogic {
         presenter.presentJournalAdd(Model.JournalAdd.Response())
     }
     
+    func loadJournalEdit(_ request: Model.JournalEdit.Request) {
+        presenter.presentJournalEdit(Model.JournalEdit.Response(event: request.event))
+    }
 }
 

@@ -125,6 +125,12 @@ final class CalendarViewController: UIViewController,
         router.routeToCalendarAdd()
         
     }
+    
+    
+    func displayCalendarEdit(_ viewModel: Model.CalendarEdit.ViewModel) {
+        router.routeToCalendarEdit(event: viewModel.event)
+        
+    }
 }
 
 extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -150,6 +156,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            interactor.loadCalendarEdit(CalendarModel.CalendarEdit.Request(event: eventArray[indexPath.row]))
             print("Cell tapped at index \(indexPath.item)")
         }
 }

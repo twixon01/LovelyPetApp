@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor {
     static let systemBackground = UIColor { traitCollection -> UIColor in
-        return ((traitCollection.userInterfaceStyle == .dark ? UIColor(named: "tink") : .white) ?? .white)
+        return ((traitCollection.userInterfaceStyle == .dark ? UIColor(named: "tink") : UIColor(named: "whiteBack")) ?? .white)
     }
     
     static let label = UIColor { traitCollection -> UIColor in

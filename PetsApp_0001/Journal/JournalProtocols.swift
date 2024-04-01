@@ -12,6 +12,7 @@ protocol JournalBusinessLogic {
     func loadPets(_ request: Model.Pets.Request)
     func loadCalendar(_ request: Model.Calendar.Request)
     func loadJournalAdd(_ request: Model.JournalAdd.Request)
+    func loadJournalEdit(_ request: Model.JournalEdit.Request)
     // func load(_ request: Model..Request)
 }
 
@@ -22,6 +23,7 @@ protocol JournalPresentationLogic {
     func presentPets(_ response: Model.Pets.Response)
     func presentCalendar(_ response: Model.Calendar.Response)
     func presentJournalAdd(_ response: Model.JournalAdd.Response)
+    func presentJournalEdit(_ response: Model.JournalEdit.Response)
     // func present(_ response: Model..Response)
 }
 
@@ -32,6 +34,7 @@ protocol JournalDisplayLogic: AnyObject {
     func displayPets(_ viewModel: Model.Pets.ViewModel)
     func displayCalendar(_ viewModel: Model.Calendar.ViewModel)
     func displayJournalAdd(_ viewModel: Model.JournalAdd.ViewModel)
+    func displayJournalEdit(_ viewModel: Model.JournalEdit.ViewModel)
     // func display(_ viewModel: Model..ViewModel)
 }
 
@@ -46,5 +49,6 @@ protocol JournalRoutingLogic {
     func routeToPets()
     func routeToCalendar()
     func routeToJournalAdd()
+    func routeToJournalEdit(event: EventModel)
 }
 

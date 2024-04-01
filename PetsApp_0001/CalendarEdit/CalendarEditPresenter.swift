@@ -17,5 +17,9 @@ final class CalendarEditPresenter: CalendarEditPresentationLogic {
     func presentStart(_ response: Model.Start.Response) {
         view?.displayStart(Model.Start.ViewModel())
     }
+    
+    func presentCalendar(_ response: Model.Calendar.Response) {
+        view?.displayCalendar(Model.Calendar.ViewModel())
+    }
 }
 

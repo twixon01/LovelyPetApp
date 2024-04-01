@@ -40,7 +40,6 @@ final class CalendarEventCell: UICollectionViewCell {
         titleLabel.text = event.title
         dateLabel.text = "Дата: \(dateFormatter.string(from: event.date))"
         let differnce = differenceBetweenDates(date1: event.notification1, date2: event.date)
-        let differnce2 = differenceBetweenDates(date1: event.notification2, date2: event.date)
         let boldAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 15),
             .foregroundColor: UIColor.label
@@ -176,7 +175,7 @@ final class CalendarEventCell: UICollectionViewCell {
         wrapView.addSubview(titleLabel)
         titleLabel.textColor = .label
         titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        titleLabel.numberOfLines = 0
+        titleLabel.numberOfLines = 1
         titleLabel.pinTop(to: wrapView, 10)
         titleLabel.pinHorizontal(to: wrapView, 10)
     }

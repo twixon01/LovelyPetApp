@@ -47,8 +47,6 @@ final class PetCell: UICollectionViewCell {
         wrapView.layer.shadowColor = UIColor.shadowColor
         wrapView.layer.shadowOpacity = 25
         wrapView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
-        wrapView.setWidth(190)
-        wrapView.setHeight(190)
         wrapView.pinHorizontal(to: self, 5)
         wrapView.pinVertical(to: self, 6)
     }

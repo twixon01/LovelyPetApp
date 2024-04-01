@@ -11,6 +11,7 @@ import Firebase
 final class CalendarInteractor: CalendarBusinessLogic {
     
     
+    
     // MARK: - Fields
     private let presenter: CalendarPresentationLogic
     
@@ -27,6 +28,11 @@ final class CalendarInteractor: CalendarBusinessLogic {
     func loadCalendarAdd(_ request: Model.CalendarAdd.Request) {
         presenter.presentCalendarAdd(Model.CalendarAdd.Response())
     }
+    
+    func loadCalendarEdit(_ request: Model.CalendarEdit.Request) {
+        presenter.presentCalendarEdit(Model.CalendarEdit.Response(event: request.event))
+    }
+    
     
     func configureCollection(completion: @escaping ([CalendarEventModel]) -> Void) {
         var eventsArray: [CalendarEventModel] = []
@@ -50,14 +56,22 @@ final class CalendarInteractor: CalendarBusinessLogic {
                         let notify1 = data["Notify1"] as! Timestamp
                         let notify2 = data["Notify2"] as! Timestamp
                         let dateEdit = data["DateEdit"] as! Timestamp
-                        let eventModel = CalendarEventModel(title: title, date: date.dateValue(), notification1: notify1.dateValue(), notification2: notify2.dateValue(), dateEdit: dateEdit.dateValue())
-                        eventModels.append(eventModel)
+                        if date.dateValue() < Date() {
+                            document.reference.delete()
+                        } else {
+                            let eventModel = CalendarEventModel(title: title, date: date.dateValue(), notification1: notify1.dateValue(), notification2: notify2.dateValue(), dateEdit: dateEdit.dateValue())
+                            eventModels.append(eventModel)
+                        }
+                        
                     }
                 }
-                eventsArray = eventModels
-                completion(eventsArray)
+                eventsArray = eventModels.sorted { (eventModel1: CalendarEventModel, eventModel2: CalendarEventModel) -> Bool in
+                    return eventModel1.date > eventModel2.date
+                }
+                    completion(eventsArray)
+                }
             }
         }
+        
     }
-    
-}
+

@@ -26,5 +26,18 @@ enum CalendarModel {
         struct ViewModel { }
         struct Info { }
     }
+    
+    enum CalendarEdit {
+        struct Request { 
+            var event: CalendarEventModel
+        }
+        struct Response { 
+            var event: CalendarEventModel
+        }
+        struct ViewModel {
+            var event: CalendarEventModel
+        }
+        struct Info { }
+    }
 }
 

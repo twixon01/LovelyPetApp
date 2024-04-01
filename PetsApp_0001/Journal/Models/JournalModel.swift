@@ -49,5 +49,18 @@ enum JournalModel {
         struct ViewModel { }
         struct Info { }
     }
+    
+    enum JournalEdit {
+        struct Request { 
+            var event: EventModel
+        }
+        struct Response { 
+            var event: EventModel
+        }
+        struct ViewModel { 
+            var event: EventModel
+        }
+        struct Info { }
+    }
 }
 

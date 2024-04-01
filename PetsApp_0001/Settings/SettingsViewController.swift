@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 public final class SettingsViewController: UIViewController,
-                                    SettingsDisplayLogic {
+                                           SettingsDisplayLogic {
     // MARK: - Constants
     private enum Constants {
         static let fatalError: String = "init(coder:) has not been implemented"
@@ -19,6 +19,10 @@ public final class SettingsViewController: UIViewController,
     private let label: UILabel = UILabel()
     private let logOutButton: UIButton = UIButton()
     private let alert: UIAlertController = UIAlertController(title: "log_out_alert".localized, message: nil, preferredStyle: UIAlertController.Style.alert)
+    
+    private let tableView: UITableView = UITableView(frame: .zero)
+    let cellIdentifier = "SettingsCell"
+    
     private let router: SettingsRoutingLogic
     private let interactor: SettingsBusinessLogic
     
@@ -53,6 +57,7 @@ public final class SettingsViewController: UIViewController,
     private func configureUI() {
         configureLogOutButton()
         configureLabel()
+        configureTable()
     }
     
     private func configureLabel() {
@@ -61,8 +66,20 @@ public final class SettingsViewController: UIViewController,
         self.label.font = UIFont(name:"HelveticaNeue-Bold", size: 26.0)
         label.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
         label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
+    }
+    
+    private func configureTable() {
+        tableView.dataSource = self
+        tableView.delegate = self
         
+        view.addSubview(tableView)
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+
+        tableView.backgroundColor = UIColor.systemBackground
+        tableView.pinTop(to: label.bottomAnchor, 50)
+        tableView.pinHorizontal(to: view, 10)
+        tableView.pinBottom(to: logOutButton.topAnchor, 10)
     }
     
     private func configureLogOutButton() {
@@ -88,12 +105,12 @@ public final class SettingsViewController: UIViewController,
     
     @objc private func logOut() {
         UIView.animate(withDuration: 0.1, animations: {
-                self.logOutButton.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
-            }) { _ in
-                UIView.animate(withDuration: 0.1) {
-                    self.logOutButton.transform = .identity
-                }
+            self.logOutButton.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+        }) { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.logOutButton.transform = .identity
             }
+        }
         self.present(alert, animated: true)
     }
     
@@ -121,7 +138,29 @@ public final class SettingsViewController: UIViewController,
         router.routeToAuth()
     }
     
-    func displayJournal(_ viewModel: Model.Journal.ViewModel) {	
+    func displayJournal(_ viewModel: Model.Journal.ViewModel) {
         router.routeToJournal()
+    }
+}
+
+
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+        cell.backgroundColor = .white
+        cell.textLabel?.text = "Аккаунт"
+        cell.imageView?.image = UIImage(systemName: "person.fill")
+        cell.accessoryType = .disclosureIndicator
+        
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -89,7 +89,7 @@
 		4A8DA8602BB5DC82000DA908 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA85F2BB5DC82000DA908 /* CalendarPresenter.swift */; };
 		4A8DA8622BB5DC8B000DA908 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8612BB5DC8B000DA908 /* CalendarRouter.swift */; };
 		4A8DA8652BB5DC9C000DA908 /* CalendarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA8642BB5DC9C000DA908 /* CalendarAssembly.swift */; };
-		4A8DA86D2BB5FDF0000DA908 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA86C2BB5FDF0000DA908 /* EventCell.swift */; };
+		4A8DA86D2BB5FDF0000DA908 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA86C2BB5FDF0000DA908 /* EventCollectionViewCell.swift */; };
 		4A8DA8702BB6007C000DA908 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA86F2BB6007C000DA908 /* EventModel.swift */; };
 		4AD057D62BC0855F006E3275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DA8042BB59A23000DA908 /* LaunchScreen.storyboard */; };
 		4AD057D92BC08BC9006E3275 /* PetPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD057D82BC08BC9006E3275 /* PetPageModel.swift */; };
@@ -219,7 +219,7 @@
 		4A8DA85F2BB5DC82000DA908 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
 		4A8DA8612BB5DC8B000DA908 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
 		4A8DA8642BB5DC9C000DA908 /* CalendarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAssembly.swift; sourceTree = "<group>"; };
-		4A8DA86C2BB5FDF0000DA908 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		4A8DA86C2BB5FDF0000DA908 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A8DA86F2BB6007C000DA908 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		4AD057D82BC08BC9006E3275 /* PetPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageModel.swift; sourceTree = "<group>"; };
 		4AD057DA2BC08BD4006E3275 /* PetPageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPageProtocols.swift; sourceTree = "<group>"; };
@@ -448,6 +448,7 @@
 		4A8DA8452BB5DAB9000DA908 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				4AF4BDDB2BC6EB3400B8F3CE /* Views */,
 				4A8DA86E2BB5FFE4000DA908 /* Models */,
 				4A8DA8482BB5DAE3000DA908 /* JournalProtocols.swift */,
 				4A8DA84A2BB5DAF1000DA908 /* JournalViewController.swift */,
@@ -455,7 +456,6 @@
 				4A8DA84E2BB5DB0A000DA908 /* JournalPresenter.swift */,
 				4A8DA8502BB5DB15000DA908 /* JournalRouter.swift */,
 				4A8DA8522BB5DB2A000DA908 /* JournalAssembly.swift */,
-				4A8DA86C2BB5FDF0000DA908 /* EventCell.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -479,15 +479,14 @@
 		4A8DA8552BB5DC23000DA908 /* Pets */ = {
 			isa = PBXGroup;
 			children = (
-				4AEBA0A52BB736C600D17B79 /* PetsModel.swift */,
+				4AF4BDDD2BC6EFBC00B8F3CE /* Models */,
+				4AF4BDDC2BC6EFB200B8F3CE /* Views */,
 				4AEBA0A72BB736D600D17B79 /* PetsProtocols.swift */,
 				4AEBA0A92BB736E200D17B79 /* PetsViewController.swift */,
 				4AEBA0AB2BB736F400D17B79 /* PetsInteractor.swift */,
 				4AEBA0AD2BB7370000D17B79 /* PetsPresenter.swift */,
 				4AEBA0AF2BB7370700D17B79 /* PetsRouter.swift */,
 				4AEBA0B12BB7371100D17B79 /* PetsAssembly.swift */,
-				4A3F207B2BB85754005E4BC0 /* PetModel.swift */,
-				4A3F207D2BB85BA2005E4BC0 /* PetCell.swift */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -569,6 +568,31 @@
 				4AEBA0D02BB73B0900D17B79 /* JournalAddAssembly.swift */,
 			);
 			path = JournalAdd;
+			sourceTree = "<group>";
+		};
+		4AF4BDDB2BC6EB3400B8F3CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA86C2BB5FDF0000DA908 /* EventCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4AF4BDDC2BC6EFB200B8F3CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F207D2BB85BA2005E4BC0 /* PetCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4AF4BDDD2BC6EFBC00B8F3CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBA0A52BB736C600D17B79 /* PetsModel.swift */,
+				4A3F207B2BB85754005E4BC0 /* PetModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -688,7 +712,7 @@
 				4AEBA0982BB6F5A800D17B79 /* SettingsModel.swift in Sources */,
 				4AEBA0B72BB7382E00D17B79 /* PetAddModel.swift in Sources */,
 				4AEBA0D12BB73B0900D17B79 /* JournalAddAssembly.swift in Sources */,
-				4A8DA86D2BB5FDF0000DA908 /* EventCell.swift in Sources */,
+				4A8DA86D2BB5FDF0000DA908 /* EventCollectionViewCell.swift in Sources */,
 				4AD057E32BC08BFD006E3275 /* PetPageRouter.swift in Sources */,
 				4A8DA8622BB5DC8B000DA908 /* CalendarRouter.swift in Sources */,
 				4A32D9AF2BC599F2007B1279 /* CalendarEditViewController.swift in Sources */,

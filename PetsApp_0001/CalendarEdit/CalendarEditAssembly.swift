@@ -8,11 +8,12 @@
 import UIKit
 
 enum CalendarEditAssembly {
-    static func build() -> UIViewController {
+    static func build(event: CalendarEventModel) -> UIViewController {
         let router: CalendarEditRouter = CalendarEditRouter()
         let presenter: CalendarEditPresenter = CalendarEditPresenter()
         let interactor: CalendarEditInteractor = CalendarEditInteractor(presenter: presenter)
         let viewController: CalendarEditViewController = CalendarEditViewController(
+            event: event,
             router: router,
             interactor: interactor
         )

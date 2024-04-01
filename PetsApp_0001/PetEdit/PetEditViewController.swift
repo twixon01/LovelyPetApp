@@ -452,10 +452,6 @@ final class PetEditViewController: UIViewController,
         }
     }
     
-    func  saveChanges() {
-        
-    }
-    
     @objc func doneButtonTapped() {
         if nameField.text!.isEmpty {
             self.present(alert, animated: true)

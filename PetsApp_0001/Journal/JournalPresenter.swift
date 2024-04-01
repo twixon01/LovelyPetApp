@@ -42,6 +42,9 @@ final class JournalPresenter: JournalPresentationLogic {
         view?.displayJournalAdd(Model.JournalAdd.ViewModel())
     }
     
+    func presentJournalEdit(_ response: Model.JournalEdit.Response) {
+        view?.displayJournalEdit(Model.JournalEdit.ViewModel(event: response.event))
+    }
 }
 
 

@@ -148,9 +148,6 @@ final class CalendarAddViewController: UIViewController,
         
     }
     
-    private func configureDiscrView() {
-        
-    }
     // MARK: - Actions
     @objc
     private func wasTapped() {

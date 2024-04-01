@@ -30,4 +30,8 @@ final class JournalRouter: JournalRoutingLogic {
         view?.navigationController?.pushViewController(vc, animated: false)
     }
 
+    func routeToJournalEdit(event: EventModel) {
+        let vc = JournalEditAssembly.build(event: event)
+        view?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
