@@ -25,7 +25,7 @@ final class AccountSettingsViewController: UIViewController,
     private let passwordLabel2: UILabel = UILabel()
     private let passwordField2: UITextField = UITextField()
     private let changePasswordButton: UIButton = UIButton()
-    private let alert: UIAlertController = UIAlertController(title: "Ошибка смены пароля", message: "Пароль должен состоять минимум из 6 символов", preferredStyle: UIAlertController.Style.alert)
+    private let alert: UIAlertController = UIAlertController(title: "password_change_error".localized, message:  nil, preferredStyle: UIAlertController.Style.alert)
     
     private var user: UserModel = UserModel()
     
@@ -105,7 +105,7 @@ final class AccountSettingsViewController: UIViewController,
     
     private func configureChangePasswordLabel() {
         view.addSubview(changePasswordLabel)
-        self.changePasswordLabel.text = "Смена пароля"
+        self.changePasswordLabel.text = "change_password".localized
         
       
         changePasswordLabel.textColor = .label
@@ -116,7 +116,7 @@ final class AccountSettingsViewController: UIViewController,
     
     private func configurePasswordLabel() {
         view.addSubview(passwordLabel)
-        self.passwordLabel.text = "Текущий пароль: "
+        self.passwordLabel.text = "current_password".localized
         passwordLabel.textColor = .label
         self.passwordLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
         passwordLabel.pinTop(to: changePasswordLabel.bottomAnchor, 15)
@@ -139,7 +139,7 @@ final class AccountSettingsViewController: UIViewController,
     
     private func configurePasswordLabel2() {
         view.addSubview(passwordLabel2)
-        self.passwordLabel2.text = "Новый пароль: "
+        self.passwordLabel2.text = "new_password".localized
         passwordLabel2.textColor = .label
         self.passwordLabel2.font = UIFont.boldSystemFont(ofSize: 20.0)
         passwordLabel2.pinTop(to: passwordLabel.bottomAnchor, 13)
@@ -163,7 +163,7 @@ final class AccountSettingsViewController: UIViewController,
     private func configurechangePasswordButton() {
         view.addSubview(changePasswordButton)
         
-        changePasswordButton.setTitle("Сменить пароль", for: .normal)
+        changePasswordButton.setTitle("set_new_password".localized, for: .normal)
         changePasswordButton.setTitleColor(.white, for: .normal)
         changePasswordButton.backgroundColor = UIColor(named: "raspberryColor")
         changePasswordButton.layer.cornerRadius = 7
@@ -197,10 +197,10 @@ final class AccountSettingsViewController: UIViewController,
             }
         }
         if(passwordField.text!.isEmpty || passwordField2.text!.isEmpty){
-            alert.message = "Заполните оба поля с паролем"
+            alert.message = "fill_in_both_password_fields".localized
             self.present(alert, animated: true)
         } else if passwordField.text!.count < 6 || passwordField2.text!.count < 6 {
-            alert.message = "Длина пароля должна быть не меньше 6 символов"
+            alert.message = "password_6char_long".localized
             self.present(alert, animated: true)
         }else{
             
@@ -212,8 +212,8 @@ final class AccountSettingsViewController: UIViewController,
             print (user.email ?? "", passwordField.text!)
             
             user.reauthenticate(with: credential) { [self] result, error in
-                if let error = error {
-                    alert.message = "Текущий пароль недействителен"
+                if error != nil {
+                    alert.message = "current_password_isInvalid".localized
                     self.present(alert, animated: true)
                     return
                 }
@@ -221,7 +221,7 @@ final class AccountSettingsViewController: UIViewController,
                     if let error = error {
                         print("Ошибка смены пароля: \(error.localizedDescription)")
                     } else {
-                        self.alert.title = "Пароль успешно изменен"
+                        self.alert.title = "password_changed_successfully".localized
                         self.alert.message = nil
                         self.present(self.alert, animated: true)
                     }

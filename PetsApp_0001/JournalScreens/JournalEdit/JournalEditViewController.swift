@@ -1,15 +1,14 @@
 //
-//  JournalAddViewController.swift
+//  JournalEditViewController.swift
 //  PetsApp_0001
 //
-//  Created by Илья Нестрогаев on 11.03.2024.
+//  Created by Илья Нестрогаев on 29.03.2024.
 //
 
 import UIKit
 
-final class JournalAddViewController: UIViewController,
-                                      JournalAddDisplayLogic, UITextViewDelegate {
-    
+final class JournalEditViewController: UIViewController,
+                                       JournalEditDisplayLogic, UITextViewDelegate {
     
     // MARK: - Constants
     private enum Constants {
@@ -17,21 +16,24 @@ final class JournalAddViewController: UIViewController,
     }
     
     // MARK: - Fields
+    let event: EventModel
     
     private let textView: UITextView = UITextView()
     private let dateFormatter: DateFormatter = DateFormatter()
-    private let currentDate: Date = Date()
+    private let alertDelete = UIAlertController(title: "deleting_note".localized, message: "delete_note_confirm".localized, preferredStyle: .alert)
     
-    private let router: JournalAddRoutingLogic
-    private let interactor: JournalAddBusinessLogic
+    private let router: JournalEditRoutingLogic
+    private let interactor: JournalEditBusinessLogic
     
     private var bottomConstraint: NSLayoutConstraint!
     
     // MARK: - LifeCycle
     init(
-        router: JournalAddRoutingLogic,
-        interactor: JournalAddBusinessLogic
+        event: EventModel,
+        router: JournalEditRoutingLogic,
+        interactor: JournalEditBusinessLogic
     ) {
+        self.event = event
         self.router = router
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -49,12 +51,27 @@ final class JournalAddViewController: UIViewController,
         navigationController?.navigationBar.shadowImage = UIImage()
         view.backgroundColor = .systemBackground
         
+        let deleteAction = UIAlertAction(title: "delete".localized, style: .destructive) { _ in
+            self.agreeDeleteTapped()
+            
+        }
+        let cancelDeleteAction = UIAlertAction(title: "cancelB".localized, style: .default)
+        alertDelete.addAction(cancelDeleteAction)
+        alertDelete.addAction(deleteAction)
+        
         let tapKeyBoard = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tapKeyBoard)
         
         dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = "d MMMM HH:mm"
-        title = "\(dateFormatter.string(from: currentDate))"
+        let yearNote = Calendar.current.component(.year, from: event.dateEdit)
+        let yearCurrent = Calendar.current.component(.year, from: Date())
+        if yearNote < yearCurrent {
+            dateFormatter.dateFormat = "d MMMM yyyy"
+        } else {
+            dateFormatter.dateFormat = "d MMMM HH:mm"
+        }
+        
+        title = "\(dateFormatter.string(from: event.dateEdit))"
         
         if let navigationController = navigationController {
             let attributes: [NSAttributedString.Key: Any] = [
@@ -64,13 +81,17 @@ final class JournalAddViewController: UIViewController,
             navigationController.navigationBar.titleTextAttributes = attributes
         }
         
-        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonTapped))
+        let doneButton = UIBarButtonItem(title: "done".localized, style: .done, target: self, action: #selector(doneButtonTapped))
+        let deleteButton = UIBarButtonItem(title: "delete".localized, style: .plain, target: self, action: #selector(deleteButtonTapped))
+        deleteButton.tintColor = .red
         
         doneButton.isEnabled = true
-        navigationItem.rightBarButtonItem = doneButton
+        navigationItem.rightBarButtonItems = [doneButton, deleteButton]
         
-        textView.becomeFirstResponder()
+        deleteButton.isEnabled = true
+        
         interactor.loadStart(Model.Start.Request())
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -90,6 +111,30 @@ final class JournalAddViewController: UIViewController,
         textView.isEditable = true
         textView.delegate = self
         textView.contentInsetAdjustmentBehavior = .automatic
+        
+        let fullText = "\(event.title ?? "")\n\(event.text ?? "")"
+        
+        let attributedString = NSMutableAttributedString(string: fullText)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.headIndent = 0
+        paragraphStyle.paragraphSpacing = 6
+        let firstLineRange = (fullText as NSString).lineRange(for: NSRange(location: 0, length: 0))
+        attributedString.addAttributes([
+            .paragraphStyle: paragraphStyle,
+            .font: UIFont(name: "CenturyGothic-Bold", size: 24.0) ?? UIFont.boldSystemFont(ofSize: UIFont.labelFontSize + 6),
+            .foregroundColor: UIColor.label
+        ], range: firstLineRange)
+        
+        
+        let otherLinesRange = NSRange(location: firstLineRange.upperBound, length: attributedString.length - firstLineRange.upperBound)
+        attributedString.addAttributes([
+            .font:UIFont(name: "CenturyGothic", size: 14.5) ?? UIFont.boldSystemFont(ofSize: UIFont.labelFontSize - 1.3),
+            .foregroundColor: UIColor.label
+        ], range: otherLinesRange)
+        
+        textView.attributedText = attributedString
+        
         
         view.addSubview(textView)
         
@@ -131,7 +176,7 @@ final class JournalAddViewController: UIViewController,
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.headIndent = 0
-        paragraphStyle.paragraphSpacing = 7
+        paragraphStyle.paragraphSpacing = 6
         let attributesP: [NSAttributedString.Key: Any] = [
             .paragraphStyle: paragraphStyle,
             .font: UIFont(name: "CenturyGothic-Bold", size: 24.0) ?? UIFont.boldSystemFont(ofSize: UIFont.labelFontSize + 6),
@@ -159,7 +204,16 @@ final class JournalAddViewController: UIViewController,
         let firstLine = lines.first
         let note = lines.dropFirst().joined(separator: "\n")
         print(note)
-        interactor.addToDB(title: firstLine!, note: note, date: currentDate, dateEdit: currentDate)
+        interactor.addToDB(title: firstLine!, note: note, date: event.date, dateEdit: Date())
+        
+    }
+    
+    @objc private func deleteButtonTapped() {
+        self.present(alertDelete, animated: true)
+    }
+    
+    @objc func agreeDeleteTapped() {
+        interactor.removeForDB(date: event.date)
     }
     
     @objc
@@ -172,5 +226,7 @@ final class JournalAddViewController: UIViewController,
     }
     
     func displayJournal(_ viewModel: Model.Journal.ViewModel) {
+        router.routeToJournal()
     }
+    
 }

@@ -53,6 +53,7 @@
 		4A3F21472BBD3CDA005E4BC0 /* CalendarAddAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21462BBD3CDA005E4BC0 /* CalendarAddAssembly.swift */; };
 		4A3F214F2BBF2617005E4BC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F214D2BBF2616005E4BC0 /* Localizable.strings */; };
 		4A3F21522BBF2E80005E4BC0 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F21512BBF2E80005E4BC0 /* String+extension.swift */; };
+		4A51A3712BC9B37600CD0453 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A51A36F2BC9B37600CD0453 /* InfoPlist.strings */; };
 		4A8DA7FA2BB59A21000DA908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */; };
 		4A8DA7FC2BB59A21000DA908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */; };
 		4A8DA8032BB59A23000DA908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DA8022BB59A23000DA908 /* Assets.xcassets */; };
@@ -185,6 +186,8 @@
 		4A3F214E2BBF2616005E4BC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A3F21502BBF27FF005E4BC0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A3F21512BBF2E80005E4BC0 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		4A51A3702BC9B37600CD0453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A51A3722BC9B38C00CD0453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A8DA7F62BB59A21000DA908 /* PetsApp_0001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsApp_0001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -363,12 +366,59 @@
 			path = CalendarAdd;
 			sourceTree = "<group>";
 		};
+		4A51A36A2BC9B0E400CD0453 /* AuthScreens */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8192BB5B87F000DA908 /* AccessRecovery */,
+				4A8DA8362BB5C689000DA908 /* Registration */,
+				4A8DA80D2BB59B00000DA908 /* Auth */,
+			);
+			path = AuthScreens;
+			sourceTree = "<group>";
+		};
+		4A51A36B2BC9B12F00CD0453 /* SettingsScreens */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D9C62BC59C7C007B1279 /* AccountSettings */,
+				4A8DA8562BB5DC3E000DA908 /* Settings */,
+			);
+			path = SettingsScreens;
+			sourceTree = "<group>";
+		};
+		4A51A36C2BC9B15100CD0453 /* JournalScreens */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D9A92BC57E36007B1279 /* JournalEdit */,
+				4AEBA0B42BB737FA00D17B79 /* JournalAdd */,
+				4A8DA8452BB5DAB9000DA908 /* Journal */,
+			);
+			path = JournalScreens;
+			sourceTree = "<group>";
+		};
+		4A51A36D2BC9B16900CD0453 /* PetsScreens */ = {
+			isa = PBXGroup;
+			children = (
+				4AEBA0B32BB737F200D17B79 /* PetAdd */,
+				4AD057D72BC08BB2006E3275 /* PetPage */,
+				4AE7854D2BC3B22200D5182E /* PetEdit */,
+				4A8DA8552BB5DC23000DA908 /* Pets */,
+			);
+			path = PetsScreens;
+			sourceTree = "<group>";
+		};
+		4A51A36E2BC9B18600CD0453 /* CalendarScreens */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DA8542BB5DC17000DA908 /* Calendar */,
+				4A32D9A82BC57D49007B1279 /* CalendarEdit */,
+			);
+			path = CalendarScreens;
+			sourceTree = "<group>";
+		};
 		4A8DA7ED2BB59A21000DA908 = {
 			isa = PBXGroup;
 			children = (
 				4A03B80B2BC92717000E7DF7 /* Fonts */,
-				4A3F21342BB90E5F005E4BC0 /* UICustomColor.swift */,
-				4A8DA8142BB59DF6000DA908 /* UIViewPin.swift */,
 				4A3F21282BB89FE1005E4BC0 /* GoogleService-Info.plist */,
 				4A8DA7F82BB59A21000DA908 /* PetsApp_0001 */,
 				4A8DA7F72BB59A21000DA908 /* Products */,
@@ -387,35 +437,25 @@
 		4A8DA7F82BB59A21000DA908 /* PetsApp_0001 */ = {
 			isa = PBXGroup;
 			children = (
-				4A32D9C62BC59C7C007B1279 /* AccountSettings */,
-				4A32D9A92BC57E36007B1279 /* JournalEdit */,
-				4A32D9A82BC57D49007B1279 /* CalendarEdit */,
-				4AE7854D2BC3B22200D5182E /* PetEdit */,
-				4AD057D72BC08BB2006E3275 /* PetPage */,
-				4A8DA8552BB5DC23000DA908 /* Pets */,
+				4A51A36E2BC9B18600CD0453 /* CalendarScreens */,
+				4A51A36D2BC9B16900CD0453 /* PetsScreens */,
+				4A51A36C2BC9B15100CD0453 /* JournalScreens */,
+				4A51A36B2BC9B12F00CD0453 /* SettingsScreens */,
+				4A51A36A2BC9B0E400CD0453 /* AuthScreens */,
 				4A3F21392BBD3C5D005E4BC0 /* CalendarAdd */,
-				4AEBA0B42BB737FA00D17B79 /* JournalAdd */,
-				4AEBA0B32BB737F200D17B79 /* PetAdd */,
-				4A8DA8562BB5DC3E000DA908 /* Settings */,
-				4A8DA8542BB5DC17000DA908 /* Calendar */,
-				4A8DA8452BB5DAB9000DA908 /* Journal */,
 				4A8DA8162BB5A153000DA908 /* Views */,
-				4A8DA8362BB5C689000DA908 /* RegistrationScreen */,
-				4A8DA8192BB5B87F000DA908 /* AccessRecoveryScreen */,
-				4A8DA80D2BB59B00000DA908 /* Auth_Screen */,
 				4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */,
 				4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */,
 				4A8DA8022BB59A23000DA908 /* Assets.xcassets */,
 				4A8DA8042BB59A23000DA908 /* LaunchScreen.storyboard */,
 				4A8DA8072BB59A23000DA908 /* Info.plist */,
-				4A3F207F2BB8702C005E4BC0 /* TabBarController.swift */,
 				4A3F214D2BBF2616005E4BC0 /* Localizable.strings */,
-				4A3F21512BBF2E80005E4BC0 /* String+extension.swift */,
+				4A51A36F2BC9B37600CD0453 /* InfoPlist.strings */,
 			);
 			path = PetsApp_0001;
 			sourceTree = "<group>";
 		};
-		4A8DA80D2BB59B00000DA908 /* Auth_Screen */ = {
+		4A8DA80D2BB59B00000DA908 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				4A8DA8102BB59B46000DA908 /* AuthModel.swift */,
@@ -426,18 +466,22 @@
 				4A8DA8262BB5C19C000DA908 /* AuthAssembly.swift */,
 				4A8DA8282BB5C1A7000DA908 /* AuthRouter.swift */,
 			);
-			path = Auth_Screen;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		4A8DA8162BB5A153000DA908 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A3F21512BBF2E80005E4BC0 /* String+extension.swift */,
+				4A8DA8142BB59DF6000DA908 /* UIViewPin.swift */,
+				4A3F21342BB90E5F005E4BC0 /* UICustomColor.swift */,
 				4A8DA8172BB5A16C000DA908 /* CustomTextField.swift */,
+				4A3F207F2BB8702C005E4BC0 /* TabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4A8DA8192BB5B87F000DA908 /* AccessRecoveryScreen */ = {
+		4A8DA8192BB5B87F000DA908 /* AccessRecovery */ = {
 			isa = PBXGroup;
 			children = (
 				4A8DA82A2BB5C294000DA908 /* AccessRecoveryInteractor.swift */,
@@ -448,10 +492,10 @@
 				4A8DA8322BB5C32B000DA908 /* AccessRecoveryAssembly.swift */,
 				4A8DA8342BB5C370000DA908 /* AccessRecoveryRouter.swift */,
 			);
-			path = AccessRecoveryScreen;
+			path = AccessRecovery;
 			sourceTree = "<group>";
 		};
-		4A8DA8362BB5C689000DA908 /* RegistrationScreen */ = {
+		4A8DA8362BB5C689000DA908 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
 				4A8DA8372BB5CDCF000DA908 /* RegistrationModel.swift */,
@@ -462,7 +506,7 @@
 				4A8DA8412BB5CE24000DA908 /* RegistrationRouter.swift */,
 				4A8DA8432BB5CE2F000DA908 /* RegistrationAssembly.swift */,
 			);
-			path = RegistrationScreen;
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		4A8DA8452BB5DAB9000DA908 /* Journal */ = {
@@ -685,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8DA8032BB59A23000DA908 /* Assets.xcassets in Resources */,
+				4A51A3712BC9B37600CD0453 /* InfoPlist.strings in Resources */,
 				4AD057D62BC0855F006E3275 /* LaunchScreen.storyboard in Resources */,
 				4A3F214F2BBF2617005E4BC0 /* Localizable.strings in Resources */,
 				4A03B8132BC94402000E7DF7 /* SF-Pro-Rounded-Black.otf in Resources */,
@@ -835,6 +880,15 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		4A51A36F2BC9B37600CD0453 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A51A3702BC9B37600CD0453 /* en */,
+				4A51A3722BC9B38C00CD0453 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		4A8DA8042BB59A23000DA908 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -979,8 +1033,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetsApp_0001/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lovely Pet";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1012,8 +1064,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetsApp_0001/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lovely Pet";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

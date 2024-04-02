@@ -36,8 +36,9 @@ final class PetAddViewController: UIViewController,
     private let birthLabel: UILabel = UILabel()
     private let datePicker   = UIDatePicker()
     private let addButton: UIButton = UIButton()
-//    private let agreeAlert: UIAlertController = UIAlertController(title: "Подтвердите действие", message: "Добавьте питомца или заполните/отредактируйте поля", preferredStyle: UIAlertController.Style.alert)
-    private let alert: UIAlertController = UIAlertController(title: "Ошибка", message: "Заполните обязательное поле (Имя)", preferredStyle: UIAlertController.Style.alert)
+    private var fullScreenImageView: UIImageView?
+
+    private let alert: UIAlertController = UIAlertController(title: "error_alert".localized, message: "Fill_required_field_name".localized, preferredStyle: UIAlertController.Style.alert)
     private let router: PetAddRoutingLogic
     private let interactor: PetAddBusinessLogic
     
@@ -61,30 +62,27 @@ final class PetAddViewController: UIViewController,
         view.backgroundColor = .systemBackground
         let tapKeyBoard = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tapKeyBoard)
-        let cancelAction = UIAlertAction(title: "Отменить", style: .destructive)
-        let cameraAction = UIAlertAction(title: "Камера", style: .default){ _ in
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
+        let cancelAction = UIAlertAction(title: "cancelB".localized, style: .destructive)
+        let cameraAction = UIAlertAction(title: "camera".localized, style: .default){ _ in
             self.requestCameraAccess()
         }
-        let photoAction = UIAlertAction(title: "Фото", style: .default){ _ in
+        let photoAction = UIAlertAction(title: "photo_library".localized, style: .default){ _ in
             self.requestPhotoLibraryAccess()
         }
         alertController.addAction(photoAction)
         alertController.addAction(cameraAction)
         alertController.addAction(cancelAction)
 
-//        let agreeAddAction = UIAlertAction(title: "Добавить питомца", style: .default){ _ in
-//            self.agreeButtonTapped()
-//        }
-//        agreeAlert.addAction(agreeAddAction)
-//        agreeAlert.addAction(cancelAction)
-        
         interactor.loadStart(Model.Start.Request())
         
         nameField.delegate = self
         typeField.delegate = self
         breedField.delegate = self
         colorField.delegate = self
-        let doneButton = UIBarButtonItem(title: "Добавить питомца", style: .done, target: self, action: #selector(doneButtonTapped))
+        let doneButton = UIBarButtonItem(title: "pet_add".localized, style: .done, target: self, action: #selector(doneButtonTapped))
         doneButton.isEnabled = true
         navigationItem.rightBarButtonItem = doneButton
         let agreeAction = UIAlertAction(title: "ОК", style: .default)
@@ -155,7 +153,7 @@ final class PetAddViewController: UIViewController,
         
         nameField.setWidth(350)
         nameField.setHeight(35)
-        nameField.placeholder = "Буся (обязательное поле)"
+        nameField.placeholder = "Bysya_required_field".localized
         nameField.font = UIFont.boldSystemFont(ofSize: 20)
         nameField.pinLeft(to: nameLabel.trailingAnchor, 5)
         nameField.pinCenterY(to: nameLabel.centerYAnchor)
@@ -167,7 +165,7 @@ final class PetAddViewController: UIViewController,
     private func configureTypeLabel() {
         view.addSubview(typeLabel)
         
-        typeLabel.text = "\("Вид питомца"):"
+        typeLabel.text = "\("type_pet".localized):"
         typeLabel.font = UIFont.systemFont(ofSize: 20)
         typeLabel.pinTop(to: nameLabel.bottomAnchor, 10)
         typeLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -179,7 +177,7 @@ final class PetAddViewController: UIViewController,
         
         typeField.setWidth(350)
         typeField.setHeight(35)
-        typeField.placeholder = "Кошка"
+        typeField.placeholder = "cat".localized
         typeField.font = UIFont.boldSystemFont(ofSize: 20)
         typeField.pinLeft(to: typeLabel.trailingAnchor, 5)
         typeField.pinCenterY(to: typeLabel.centerYAnchor)
@@ -191,7 +189,7 @@ final class PetAddViewController: UIViewController,
     private func configureBreedLabel() {
         view.addSubview(breedLabel)
         
-        breedLabel.text = "\("Порода"):"
+        breedLabel.text = "\("breed".localized):"
         breedLabel.font = UIFont.systemFont(ofSize: 20)
         breedLabel.pinTop(to: typeLabel.bottomAnchor, 10)
         breedLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -203,7 +201,7 @@ final class PetAddViewController: UIViewController,
         
         breedField.setWidth(350)
         breedField.setHeight(35)
-        breedField.placeholder = "Британская"
+        breedField.placeholder = "british_shorthair".localized
         breedField.font = UIFont.boldSystemFont(ofSize: 20)
         breedField.pinLeft(to: breedLabel.trailingAnchor, 5)
         breedField.pinCenterY(to: breedLabel.centerYAnchor)
@@ -215,7 +213,7 @@ final class PetAddViewController: UIViewController,
     private func configureColorLabel() {
         view.addSubview(colorLabel)
         
-        colorLabel.text = "\("Окрас"):"
+        colorLabel.text = "\("colorPetB".localized):"
         colorLabel.font = UIFont.systemFont(ofSize: 20)
         colorLabel.pinTop(to: breedLabel.bottomAnchor, 10)
         colorLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -227,7 +225,7 @@ final class PetAddViewController: UIViewController,
         
         colorField.setWidth(350)
         colorField.setHeight(35)
-        colorField.placeholder = "белое золото"
+        colorField.placeholder = "white_gold".localized
         colorField.font = UIFont.boldSystemFont(ofSize: 20)
         colorField.pinLeft(to: colorLabel.trailingAnchor, 5)
         colorField.pinCenterY(to: colorLabel.centerYAnchor)
@@ -238,7 +236,7 @@ final class PetAddViewController: UIViewController,
     private func configureBirthLabel() {
         view.addSubview(birthLabel)
         
-        birthLabel.text = "\("Дата рождения"):"
+        birthLabel.text = "\("date_birth".localized):"
         birthLabel.font = UIFont.systemFont(ofSize: 20)
         birthLabel.pinTop(to: colorLabel.bottomAnchor, 10)
         birthLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -310,6 +308,8 @@ final class PetAddViewController: UIViewController,
                 print("Доступ к фотографиям запрещен или ограничен")
             case .notDetermined:
                 print("Пользователь еще не принял решение")
+            case .limited:
+                break
             @unknown default:
                 break
             }
@@ -354,6 +354,34 @@ final class PetAddViewController: UIViewController,
         
         interactor.loadPets(PetAddModel.Pets.Request(name: nameField.text!, type: typeField.text!, breed: breedField.text!, dateBirth: datePicker.date, date: Date(), photo: imageView.image, color: colorField.text!))
         
+    }
+    
+    @objc func imageTapped() {
+        if let image = imageView.image {
+            fullScreenImageView = UIImageView(image: image)
+            guard let fullScreenImageView = fullScreenImageView else { return }
+            fullScreenImageView.frame = UIScreen.main.bounds
+            fullScreenImageView.backgroundColor = .systemBackground
+            fullScreenImageView.contentMode = .scaleAspectFit
+            fullScreenImageView.isUserInteractionEnabled = true
+            
+            let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(dismissFullScreenImage))
+            swipeGesture.direction = .down
+            fullScreenImageView.addGestureRecognizer(swipeGesture)
+            
+            UIApplication.shared.keyWindow?.addSubview(fullScreenImageView)
+            
+            
+        }
+    }
+    
+    @objc func dismissFullScreenImage(sender: UISwipeGestureRecognizer) {
+        guard let fullScreenImageView = fullScreenImageView else { return }
+        UIView.animate(withDuration: 0.3, animations: {
+            fullScreenImageView.transform = CGAffineTransform(translationX: 0, y: fullScreenImageView.frame.height)
+        }) { _ in
+            fullScreenImageView.removeFromSuperview()
+        }
     }
     
     // MARK: - DisplayLogic

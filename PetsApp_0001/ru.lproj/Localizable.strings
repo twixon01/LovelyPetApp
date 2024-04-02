@@ -7,7 +7,6 @@
 */
 
 
-
 "name_field" = "Имя";
 "password_field" = "Пароль";
 "mail_field" = "Почта";
@@ -40,3 +39,82 @@
 "account" = "Аккаунт";
 "hello" = "Здравствуйте, ";
 "your_email" = "Ваш Email:  ";
+"change_password" = "Смена пароля";
+"current_password" = "Текущий пароль: ";
+"new_password" = "Новый пароль: ";
+"set_new_password" = "Сменить пароль";
+"fill_in_both_password_fields" = "Заполните оба поля с паролем";
+"password_6char_long" = "Длина пароля должна быть не менее 6 символов";
+"current_password_isInvalid" = "Текущий пароль недействителен";
+"password_changed_successfully" = "Пароль успешно изменен";
+"password_change_error" = "Ошибка смены пароля";
+"Fill_required_field_name" = "Заполните обязательное поле (Имя)";
+"edit" = "Редактировать";
+"age" = "Возраст: ";
+"less_than_month" = "меньше месяца";
+"monthA" = "месяца";
+"month_base" = "месяц";
+"monthsB" = "месяцев";
+"yearA" = "год";
+"yearsA" = "года";
+"yearsB" = "лет";
+"date_birth2" = "Дата рождения: ";
+"other_information" = "Остальная информация";
+"colorPet" = "Окрас: ";
+"date_annual_vaccinations" = "Дата ежегодных прививок: ";
+"date_last_vaccinations" = "Дата последних прививок: ";
+"date_last_bath" = "Дата последнего купания: ";
+"delete_pet_page" = "Удаление питомца";
+"delete_pet_confirm" = "Вы собираетесь удалить питомца, подтвердите свое действие";
+"changes_saved" = "Изменения сохранены";
+"to_pets_page" = "Вы будете перенаправлены на раздел с питомцами";
+"cancelB" = "Отменить";
+"delete_pet" = "Удалить питомца";
+"camera" = "Камера";
+"photo_library" = "Фото";
+"save_changes" = "Сохранить изменения";
+"Bysya" = "Буся";
+"cat" = "Кошка";
+"date_last_bathB" = "Дата последнего купания";
+"date_annualFirst_vaccinations" = "Дата первой/ежегодной прививки";
+"date_last_vaccinationsB" = "Дата последних прививок";
+"colorPetB" = "Окрас";
+"white_gold" = "белое золото";
+"british_shorthair" = "британская";
+"breed" = "Порода";
+"Bysya_required_field" = "Буся (обязательное поле)";
+"done" = "Готово";
+"new_note" = "Новая заметка";
+"delete" = "Удалить";
+"deleting_note" = "Удаление заметки";
+"delete_note_confirm" = "Вы собираетесь удалить заметку, подтвердите свое действие";
+"new_event" = "Новое событие";
+"event" = "Событие";
+"save_event" = "Сохранить событие";
+"date" = "Дата";
+"alert_not1" = "Напоминание";
+"alert_not2" = "Напоминание 2 (опц.)";
+"save" = "Сохранить";
+"delete_event" = "Удалить событие";
+"auth_error" = "Ошибка авторизации";
+"invalid_log_pass" = "Неверный логин или пароль";
+"forgot_password" = "Забыли пароль?";
+"no_account" = "Нет аккаунта?";
+"acess_rec" = "Восстановление доступа";
+"invalid_email" = "Недействительный адрес электронной почты";
+"passwords_match" = "Введенные пароли не совпадают";
+"email_already_taken" = "Данный электронный адрес уже занят";
+"fill_all_fields" = "Заполните все поля";
+"remind_for" = "Напомнить за: ";
+"minute1" = "минуту";
+"minute2" = "минуты";
+"minute3" = "минут";
+"hour1" = "час";
+"hour2" = "часа";
+"hour3" = "часов";
+"day1" = "день";
+"day2" = "дня";
+"day3" = "дней";
+
+
+

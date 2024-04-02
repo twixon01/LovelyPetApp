@@ -123,26 +123,26 @@ final class PetsViewController: UIViewController,
                         let lastVactination: String
                         let lastBath: String
                         if let yearVactinationF = data["YearVaccination"] as? Timestamp {
-                            yearVactination = dateFormatter.string(from: yearVactinationF.dateValue().addingTimeInterval(TimeInterval(3600*3)))
+                            yearVactination = dateFormatter.string(from: yearVactinationF.dateValue())
                         } else {
                             yearVactination = ""
                         }
                         
                         if let lastVactinationF = data["LastVaccination"] as? Timestamp {
-                            lastVactination = dateFormatter.string(from: lastVactinationF.dateValue().addingTimeInterval(TimeInterval(3600*3)))
+                            lastVactination = dateFormatter.string(from: lastVactinationF.dateValue())
                         } else {
                             lastVactination = ""
                         }
                         
                         if let lastBathF = data["LastBathing"] as? Timestamp {
-                            lastBath = dateFormatter.string(from: lastBathF.dateValue().addingTimeInterval(TimeInterval(3600*3)))
+                            lastBath = dateFormatter.string(from: lastBathF.dateValue())
                         } else {
                             lastBath = ""
                         }
                       
                        
                         let birthF: Timestamp = data["DateBirthday"] as! Timestamp
-                        let birth = birthF.dateValue().addingTimeInterval(TimeInterval(3600*3))
+                        let birth = birthF.dateValue()
                        
                         let storageRef = Storage.storage().reference().child("users/\(currId)/pets/\(data["Date"] as! String).jpg")
                         
@@ -244,6 +244,5 @@ extension PetsViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pet = petsArray[indexPath.item]
         interactor.loadPetPage(PetsModel.Pets.Request(pet: pet))
-        print("Cell tapped at index \(indexPath.item)")
     }
 }

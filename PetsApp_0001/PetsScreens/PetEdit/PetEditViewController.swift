@@ -20,7 +20,7 @@ final class PetEditViewController: UIViewController,
     private let imageView: UIImageView = UIImageView()
     private let selectImage: UIButton = UIButton()
     private let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    private let alertDelete = UIAlertController(title: "Удаление питомца", message: "Вы собираетесь удалить питомца, подтвердите свое действие", preferredStyle: .alert)
+    private let alertDelete = UIAlertController(title: "delete_pet_page".localized, message: "delete_pet_confirm".localized, preferredStyle: .alert)
     private let imagePicker = UIImagePickerController()
     private let cameraPicker = UIImagePickerController()
     private let nameLabel: UILabel = UILabel()
@@ -42,8 +42,8 @@ final class PetEditViewController: UIViewController,
     
     private let addButton: UIButton = UIButton()
     private var fullScreenImageView: UIImageView?
-    private let editAlert: UIAlertController = UIAlertController(title: "Изменения сохранены", message: "Вы будете перенаправлены на раздел с питомцами", preferredStyle: UIAlertController.Style.alert)
-    private let alert: UIAlertController = UIAlertController(title: "Ошибка", message: "Заполните обязательное поле (Имя)", preferredStyle: UIAlertController.Style.alert)
+    private let editAlert: UIAlertController = UIAlertController(title: "changes_saved".localized, message: "to_pets_page".localized, preferredStyle: UIAlertController.Style.alert)
+    private let alert: UIAlertController = UIAlertController(title: "error_alert".localized, message: "Fill_required_field_name".localized, preferredStyle: UIAlertController.Style.alert)
     private let router: PetEditRoutingLogic
     private let interactor: PetEditBusinessLogic
     
@@ -71,16 +71,16 @@ final class PetEditViewController: UIViewController,
         view.backgroundColor = .systemBackground
         let tapKeyBoard = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tapKeyBoard)
-        let cancelAction = UIAlertAction(title: "Отменить", style: .destructive)
-        let deleteAction = UIAlertAction(title: "Удалить питомца", style: .destructive) { _ in
+        let cancelAction = UIAlertAction(title: "cancelB".localized, style: .destructive)
+        let deleteAction = UIAlertAction(title: "delete_pet".localized, style: .destructive) { _ in
             self.agreeDeleteTapped()
             
         }
-        let cancelDeleteAction = UIAlertAction(title: "Отменить", style: .default)
-        let cameraAction = UIAlertAction(title: "Камера", style: .default){ _ in
+        let cancelDeleteAction = UIAlertAction(title: "cancelB".localized, style: .default)
+        let cameraAction = UIAlertAction(title: "camera".localized, style: .default){ _ in
             self.requestCameraAccess()
         }
-        let photoAction = UIAlertAction(title: "Фото", style: .default){ _ in
+        let photoAction = UIAlertAction(title: "photo_library".localized, style: .default){ _ in
             self.requestPhotoLibraryAccess()
         }
         alertController.addAction(photoAction)
@@ -90,8 +90,8 @@ final class PetEditViewController: UIViewController,
         alertDelete.addAction(deleteAction)
         alertDelete.addAction(cancelDeleteAction)
         
-        let doneButton = UIBarButtonItem(title: "Сохранить изменения", style: .done, target: self, action: #selector(doneButtonTapped))
-        let deleteButton = UIBarButtonItem(title: "Удалить питомца", style: .plain, target: self, action:
+        let doneButton = UIBarButtonItem(title: "save_changes".localized, style: .done, target: self, action: #selector(doneButtonTapped))
+        let deleteButton = UIBarButtonItem(title: "delete_pet".localized, style: .plain, target: self, action:
                                             #selector(deleteWasTapped))
         deleteButton.tintColor = .red
         doneButton.isEnabled = true
@@ -188,7 +188,7 @@ final class PetEditViewController: UIViewController,
         nameField.setWidth(350)
         nameField.setHeight(35)
         nameField.text = pet.name
-        nameField.placeholder = "Буся"
+        nameField.placeholder = "Bysya".localized
         nameField.font = UIFont.boldSystemFont(ofSize: 17)
         nameField.pinLeft(to: nameLabel.trailingAnchor, 5)
         nameField.pinCenterY(to: nameLabel.centerYAnchor)
@@ -200,7 +200,7 @@ final class PetEditViewController: UIViewController,
     private func configureTypeLabel() {
         view.addSubview(typeLabel)
         
-        typeLabel.text = "\("Вид питомца"):"
+        typeLabel.text = "\("type_pet".localized):"
         typeLabel.font = UIFont.systemFont(ofSize: 17)
         typeLabel.pinTop(to: nameLabel.bottomAnchor, 12)
         typeLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -213,7 +213,7 @@ final class PetEditViewController: UIViewController,
         typeField.setWidth(350)
         typeField.setHeight(35)
         typeField.text = pet.type
-        typeField.placeholder = "Кошка"
+        typeField.placeholder = "cat".localized
         typeField.font = UIFont.boldSystemFont(ofSize: 17)
         typeField.pinLeft(to: typeLabel.trailingAnchor, 5)
         typeField.pinCenterY(to: typeLabel.centerYAnchor)
@@ -225,7 +225,7 @@ final class PetEditViewController: UIViewController,
     private func configureBreedLabel() {
         view.addSubview(breedLabel)
         
-        breedLabel.text = "\("Порода"):"
+        breedLabel.text = "\("breed".localized):"
         breedLabel.font = UIFont.systemFont(ofSize: 17)
         breedLabel.pinTop(to: typeLabel.bottomAnchor, 12)
         breedLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -238,7 +238,7 @@ final class PetEditViewController: UIViewController,
         breedField.setWidth(350)
         breedField.setHeight(35)
         breedField.text = pet.breed
-        breedField.placeholder = "британская"
+        breedField.placeholder = "british_shorthair".localized
         breedField.font = UIFont.boldSystemFont(ofSize: 17)
         breedField.pinLeft(to: breedLabel.trailingAnchor, 5)
         breedField.pinCenterY(to: breedLabel.centerYAnchor)
@@ -250,7 +250,7 @@ final class PetEditViewController: UIViewController,
     private func configureColorLabel() {
         view.addSubview(colorLabel)
         
-        colorLabel.text = "\("Окрас"):"
+        colorLabel.text = "\("colorPetB".localized):"
         colorLabel.font = UIFont.systemFont(ofSize: 17)
         colorLabel.pinTop(to: breedLabel.bottomAnchor, 12)
         colorLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -263,7 +263,7 @@ final class PetEditViewController: UIViewController,
         colorField.setWidth(350)
         colorField.setHeight(35)
         colorField.text = pet.color
-        colorField.placeholder = "белое золото"
+        colorField.placeholder = "white_gold".localized
         colorField.font = UIFont.boldSystemFont(ofSize: 17)
         colorField.pinLeft(to: colorLabel.trailingAnchor, 5)
         colorField.pinCenterY(to: colorLabel.centerYAnchor)
@@ -274,7 +274,7 @@ final class PetEditViewController: UIViewController,
     private func configureBirthLabel() {
         view.addSubview(birthLabel)
         
-        birthLabel.text = "\("Дата рождения"):"
+        birthLabel.text = "\("date_birth".localized):"
         birthLabel.font = UIFont.systemFont(ofSize: 17)
         birthLabel.pinTop(to: colorLabel.bottomAnchor, 12)
         birthLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -296,7 +296,7 @@ final class PetEditViewController: UIViewController,
     private func configureLastVactLabel() {
         view.addSubview(lastVactLabel)
         
-        lastVactLabel.text = "\("Дата последних прививок"):"
+        lastVactLabel.text = "\("date_last_vaccinationsB".localized):"
         lastVactLabel.font = UIFont.systemFont(ofSize: 17)
         lastVactLabel.pinTop(to: birthLabel.bottomAnchor, 12)
         lastVactLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -320,7 +320,7 @@ final class PetEditViewController: UIViewController,
     private func configureYearVactLabel() {
         view.addSubview(yearVactLabel)
         
-        yearVactLabel.text = "\("Дата первой/ежегодной прививки"):"
+        yearVactLabel.text = "\("date_annualFirst_vaccinations".localized):"
         yearVactLabel.font = UIFont.systemFont(ofSize: 17)
         yearVactLabel.pinTop(to: lastVactLabel.bottomAnchor, 12)
         yearVactLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -345,7 +345,7 @@ final class PetEditViewController: UIViewController,
     private func configureLastBathLabel() {
         view.addSubview(lastBathLabel)
         
-        lastBathLabel.text = "\("Дата последнего купания"):"
+        lastBathLabel.text = "\("date_last_bathB".localized):"
         lastBathLabel.font = UIFont.systemFont(ofSize: 17)
         lastBathLabel.pinTop(to: yearVactLabel.bottomAnchor, 12)
         lastBathLabel.pinLeft(to: view.safeAreaLayoutGuide.leadingAnchor, 22)
@@ -421,6 +421,8 @@ final class PetEditViewController: UIViewController,
                 print("Доступ к фотографиям запрещен или ограничен")
             case .notDetermined:
                 print("Пользователь еще не принял решение")
+            case .limited:
+                break
             @unknown default:
                 break
             }
@@ -537,7 +539,6 @@ extension PetEditViewController : UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        print("1")
         if let selectedImage = info[.editedImage] as? UIImage {
             imageView.image = selectedImage
         } else if let selectedImage = info[.originalImage] as? UIImage {

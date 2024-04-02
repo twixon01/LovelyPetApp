@@ -40,12 +40,13 @@ final class CalendarEventCell: UICollectionViewCell {
         
         let titleSep = event.title!.trimmingCharacters(in: .whitespacesAndNewlines)
         if  titleSep == ""{
-            titleLabel.text = "Новое событие"
+            titleLabel.text = "new_event".localized
         } else {
             titleLabel.text = event.title
         }
       
-        dateLabel.text = "Дата: \(dateFormatter.string(from: event.date))"
+        dateLabel.text = "date".localized
+        dateLabel.text?.append(": \(dateFormatter.string(from: event.date))")
         let differnce = differenceBetweenDates(date1: event.notification1, date2: event.date)
         let boldAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 15),
@@ -56,44 +57,55 @@ final class CalendarEventCell: UICollectionViewCell {
         let minute1AttributedString: NSAttributedString
         
         
-        let attributedText = NSMutableAttributedString(string: "Напомнить за: ")
+        let attributedText = NSMutableAttributedString(string: "remind_for".localized)
+        
+        let minute1 = "minute1".localized
+        let minute2 = "minute2".localized
+        let minute3 = "minute3".localized
+        let hour1 = "hour1".localized
+        let hour2 = "hour2".localized
+        let hour3 = "hour3".localized
+        let day1 = "day1".localized
+        let day2 = "day2".localized
+        let day3 = "day3".localized
         
         if differnce!.days < 1 {
             if differnce!.hours < 1 {
                 if differnce!.minutes > 0 {
                     if differnce!.minutes % 10 == 1 {
-                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуту", attributes: boldAttributes)
+                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute1)", attributes: boldAttributes)
+                      
                         attributedText.append(minute1AttributedString)
                     } else if differnce!.minutes % 10 < 5 {
-                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуты", attributes: boldAttributes)
+                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute2)", attributes: boldAttributes)
                         attributedText.append(minute1AttributedString)
                     }
                     else {
-                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минут", attributes: boldAttributes)
+                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute3)", attributes: boldAttributes)
                         attributedText.append(minute1AttributedString)
                     }
                 }
             } else {
                 if differnce!.hours == 1  || differnce!.hours == 21 {
-                    hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) час ", attributes: boldAttributes)
+                    hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) \(hour1) ", attributes: boldAttributes)
                     attributedText.append(hours1AttributedString)
                 } else if differnce!.hours < 5 || (differnce!.hours < 24 && differnce!.hours > 20) {
-                    hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) часа ", attributes: boldAttributes)
+                    hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) \(hour2) ", attributes: boldAttributes)
                     attributedText.append(hours1AttributedString)
                 } else {
-                    hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) часов ", attributes: boldAttributes)
+                    hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) \(hour3) ", attributes: boldAttributes)
                     attributedText.append(hours1AttributedString)
                 }
                 if differnce!.minutes > 0 {
                     if differnce!.minutes % 10 == 1 {
-                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуту", attributes: boldAttributes)
+                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute1)", attributes: boldAttributes)
                         attributedText.append(minute1AttributedString)
                     } else if differnce!.minutes % 10 < 5 {
-                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуты", attributes: boldAttributes)
+                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute2)", attributes: boldAttributes)
                         attributedText.append(minute1AttributedString)
                     }
                     else {
-                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минут", attributes: boldAttributes)
+                        minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute3)", attributes: boldAttributes)
                         attributedText.append(minute1AttributedString)
                     }
                 }
@@ -101,60 +113,60 @@ final class CalendarEventCell: UICollectionViewCell {
             }
         } else if differnce!.hours < 1 {
             if differnce!.days % 10 == 1 && !(differnce!.days == 11) {
-                days1AttributedString = NSAttributedString(string: "\(differnce!.days) день ", attributes: boldAttributes)
+                days1AttributedString = NSAttributedString(string: "\(differnce!.days) \(day1) ", attributes: boldAttributes)
                 attributedText.append(days1AttributedString)
             } else if differnce!.days % 10 < 5 && !(differnce!.days > 10 && differnce!.days < 20) {
-                days1AttributedString = NSAttributedString(string: "\(differnce!.days) дня ", attributes: boldAttributes)
+                days1AttributedString = NSAttributedString(string: "\(differnce!.days) \(day2) ", attributes: boldAttributes)
                 attributedText.append(days1AttributedString)
             } else {
-                days1AttributedString = NSAttributedString(string: "\(differnce!.days) дней ", attributes: boldAttributes)
+                days1AttributedString = NSAttributedString(string: "\(differnce!.days) \(day3) ", attributes: boldAttributes)
                 attributedText.append(days1AttributedString)
             }
             if differnce!.minutes > 0 {
                 if differnce!.minutes % 10 == 1 {
-                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуту", attributes: boldAttributes)
+                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute1)", attributes: boldAttributes)
                     attributedText.append(minute1AttributedString)
                 } else if differnce!.minutes % 10 < 5 {
-                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуты", attributes: boldAttributes)
+                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute2)", attributes: boldAttributes)
                     attributedText.append(minute1AttributedString)
                 }
                 else {
-                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минут", attributes: boldAttributes)
+                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute3)", attributes: boldAttributes)
                     attributedText.append(minute1AttributedString)
                 }
             }
         } else {
             if differnce!.days % 10 == 1 && !(differnce!.days == 11) {
-                days1AttributedString = NSAttributedString(string: "\(differnce!.days) день ", attributes: boldAttributes)
+                days1AttributedString = NSAttributedString(string: "\(differnce!.days) \(day1) ", attributes: boldAttributes)
                 attributedText.append(days1AttributedString)
             } else if differnce!.days % 10 < 5 && !(differnce!.days > 10 && differnce!.days < 20) {
-                days1AttributedString = NSAttributedString(string: "\(differnce!.days) дня ", attributes: boldAttributes)
+                days1AttributedString = NSAttributedString(string: "\(differnce!.days) \(day2) ", attributes: boldAttributes)
                 attributedText.append(days1AttributedString)
             } else {
-                days1AttributedString = NSAttributedString(string: "\(differnce!.days) дней ", attributes: boldAttributes)
+                days1AttributedString = NSAttributedString(string: "\(differnce!.days) \(day3) ", attributes: boldAttributes)
                 attributedText.append(days1AttributedString)
             }
             if differnce!.hours == 1  || differnce!.hours == 21 {
-                hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) час ", attributes: boldAttributes)
+                hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) \(hour1) ", attributes: boldAttributes)
                 attributedText.append(hours1AttributedString)
             } else if differnce!.hours < 5 || (differnce!.hours < 24 && differnce!.hours > 20) {
-                hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) часа ", attributes: boldAttributes)
+                hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) \(hour2) ", attributes: boldAttributes)
                 attributedText.append(hours1AttributedString)
             } else {
-                hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) часов ", attributes: boldAttributes)
+                hours1AttributedString = NSAttributedString(string: "\(differnce!.hours) \(hour3) ", attributes: boldAttributes)
                 attributedText.append(hours1AttributedString)
             }
            
             if differnce!.minutes > 0 {
                 if differnce!.minutes % 10 == 1 {
-                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуту", attributes: boldAttributes)
+                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute1)", attributes: boldAttributes)
                     attributedText.append(minute1AttributedString)
                 } else if differnce!.minutes % 10 < 5 {
-                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минуты", attributes: boldAttributes)
+                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute2)", attributes: boldAttributes)
                     attributedText.append(minute1AttributedString)
                 }
                 else {
-                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) минут", attributes: boldAttributes)
+                    minute1AttributedString = NSAttributedString(string: "\(differnce!.minutes) \(minute3)", attributes: boldAttributes)
                     attributedText.append(minute1AttributedString)
                 }
             }

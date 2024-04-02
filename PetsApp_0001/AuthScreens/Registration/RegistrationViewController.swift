@@ -192,15 +192,15 @@ final class RegistrationViewController: UIViewController,
             if !success {
                 if (errorMessage == "The email address is badly formatted.")
                 {
-                    self.alert.message = "Недействительный адрес электронной почты"
+                    self.alert.message = "invalid_email".localized
                 }else if (errorMessage == "password"){
-                    self.alert.message = "Введенные пароли не совпадают"
+                    self.alert.message = "passwords_match".localized
                 }else if (errorMessage == "The password must be 6 characters long or more."){
-                    self.alert.message = "Пароль должен состоять из 6 и более символов"
+                    self.alert.message = "password_6char_long".localized
                 }else if (errorMessage == "The email address is already in use by another account."){
-                    self.alert.message = "Данный электронный адрес уже занят"
+                    self.alert.message = "email_already_taken".localized
                 }else if (errorMessage == ""){
-                    self.alert.message = "Заполните все поля"
+                    self.alert.message = "fill_all_fields".localized
                 }else{
                     self.alert.message = errorMessage
                 }

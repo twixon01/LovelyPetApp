@@ -45,7 +45,7 @@ final class CalendarAddViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        let doneButton = UIBarButtonItem(title: "Сохранить событие", style: .done, target: self, action: #selector(doneButtonTapped))
+        let doneButton = UIBarButtonItem(title: "save_event".localized, style: .done, target: self, action: #selector(doneButtonTapped))
         let tapKeyBoard = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tapKeyBoard)
         doneButton.isEnabled = true
@@ -68,7 +68,7 @@ final class CalendarAddViewController: UIViewController,
     private func configureTitle() {
         view.addSubview(titleField)
         
-        titleField.placeholder = "Событие"
+        titleField.placeholder = "event".localized
         titleField.font = UIFont(name:"HelveticaNeue-Bold", size: 26.0)
         titleField.textColor = UIColor.label
         NSLayoutConstraint.activate([
@@ -84,7 +84,7 @@ final class CalendarAddViewController: UIViewController,
     private func configureDateLabel() {
         view.addSubview(dateLabel)
         
-        dateLabel.text = "\("Дата"):"
+        dateLabel.text = "\("date".localized):"
         dateLabel.font = UIFont.systemFont(ofSize: 17)
         dateLabel.pinTop(to: titleField.bottomAnchor, 25)
         dateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21).isActive = true
@@ -105,7 +105,7 @@ final class CalendarAddViewController: UIViewController,
     private func configureNotifyLabel() {
         view.addSubview(notifyLabel)
         
-        notifyLabel.text = "\("Напоминание"):"
+        notifyLabel.text = "\("alert_not1".localized):"
         notifyLabel.font = UIFont.systemFont(ofSize: 17)
         notifyLabel.pinTop(to: dateLabel.bottomAnchor, 25)
         notifyLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21).isActive = true
@@ -126,7 +126,7 @@ final class CalendarAddViewController: UIViewController,
     private func configureNotifyLabel2() {
         view.addSubview(notifyLabel2)
         
-        notifyLabel2.text = "\("Напоминание 2 (опц.)"):"
+        notifyLabel2.text = "\("alert_not2".localized):"
         notifyLabel2.font = UIFont.systemFont(ofSize: 16)
         notifyLabel2.pinTop(to: notifyLabel.bottomAnchor, 25)
         notifyLabel2.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21).isActive = true

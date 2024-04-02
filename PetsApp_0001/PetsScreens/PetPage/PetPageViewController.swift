@@ -33,8 +33,7 @@ final class PetPageViewController: UIViewController,
     private let lastVact: UILabel = UILabel()
     private let lastBath: UILabel = UILabel()
     private var fullScreenImageView: UIImageView?
-    private let agreeAlert: UIAlertController = UIAlertController(title: "Подтвердите действие", message: "Добавьте питомца или заполните/отредактируйте поля", preferredStyle: UIAlertController.Style.alert)
-    private let alert: UIAlertController = UIAlertController(title: "Ошибка", message: "Заполните обязательное поле (Имя)", preferredStyle: UIAlertController.Style.alert)
+    private let alert: UIAlertController = UIAlertController(title: "error_alert".localized, message: "Fill_required_field_name".localized, preferredStyle: UIAlertController.Style.alert)
     
     private let pet: PetModel
     
@@ -67,7 +66,7 @@ final class PetPageViewController: UIViewController,
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         imageView.addGestureRecognizer(tapGesture)
         imageView.isUserInteractionEnabled = true
-        let doneButton = UIBarButtonItem(title: "Редактировать", style: .plain, target: self, action: #selector(editButtonTapped))
+        let doneButton = UIBarButtonItem(title: "edit".localized, style: .plain, target: self, action: #selector(editButtonTapped))
         doneButton.isEnabled = true
         navigationItem.rightBarButtonItem = doneButton
     }
@@ -112,12 +111,12 @@ final class PetPageViewController: UIViewController,
         nameLabel.pinTop(to: view.safeAreaLayoutGuide.topAnchor, 2)
         nameLabel.pinLeft(to: imageView.trailingAnchor, 10)
         nameLabel.textColor = .label
+        nameLabel.setWidth(255)
     }
     
     
     private func configureTypeBreedLabel() {
         view.addSubview(typeBreedLabel)
-        let typeBreed = pet.type!
         if !pet.type!.isEmpty && !pet.breed!.isEmpty {
             typeBreedLabel.text = "\(pet.type!.capitalized), \(pet.breed!)"
         }else if !pet.type!.isEmpty {
@@ -147,34 +146,42 @@ final class PetPageViewController: UIViewController,
             .foregroundColor: UIColor.label
         ]
         
-        let attributedText = NSMutableAttributedString(string: "Возраст: ", attributes: sizeAttributes)
+        let attributedText = NSMutableAttributedString(string: "age".localized, attributes: sizeAttributes)
         var ageString : String = String()
         if ageComponents.year! < 1 {
             let age = ageComponents.month
             if age! < 1 {
-                ageString = "меньше месяца"
+                ageString = "less_than_month".localized
             }else if age! % 10 == 1{
-                ageString = "\(age!) месяц"
+                ageString = "\(age!) "
+                ageString += "month_base".localized
             } else if age! % 10 < 5 {
-                ageString = "\(age!) месяца"
+                ageString = "\(age!) "
+                ageString += "monthA".localized
                 
             } else if age! % 10 > 5{
-                ageString = "\(age!) месяцев"
+                ageString = "\(age!) "
+                ageString += "monthsB".localized
             }
         }
         else {
             let age = ageComponents.year
             if age! == 11 {
-                ageString = "\(age!) лет"
+                ageString = "\(age!) "
+                ageString += "yearsB".localized
             } else if age! % 10 == 0 {
-                ageString = "\(age!) лет"
+                ageString = "\(age!) "
+                ageString += "yearsB".localized
             }
             else if age! % 10 == 1 {
-                ageString = "\(age!) год"
+                ageString = "\(age!) "
+                ageString += "yearA".localized
             } else if age! % 10 < 5 {
-                ageString = "\(age!) года"
+                ageString = "\(age!) "
+                ageString += "yearsA".localized
             } else {
-                ageString = "\(age!) лет"
+                ageString = "\(age!) "
+                ageString += "yearsB".localized
             }
         }
         
@@ -190,7 +197,7 @@ final class PetPageViewController: UIViewController,
         view.addSubview(birthLabel)
         
         
-        birthLabel.text = "Дата рождения: "
+        birthLabel.text = "date_birth2".localized
         birthLabel.font = UIFont.systemFont(ofSize: 16)
         
         birthLabel.pinBottom(to: imageView.bottomAnchor)
@@ -216,7 +223,7 @@ final class PetPageViewController: UIViewController,
     
     private func configureInfoLabel() {
         view.addSubview(infoLabel)
-        infoLabel.text = "Остальная информация"
+        infoLabel.text = "other_information".localized
         infoLabel.font = UIFont.boldSystemFont(ofSize: 20)
         infoLabel.pinTop(to: imageView.bottomAnchor, 30)
         infoLabel.pinLeft(to: imageView.leadingAnchor, 8)
@@ -237,7 +244,7 @@ final class PetPageViewController: UIViewController,
             .foregroundColor: UIColor.label
         ]
         
-        let attributedText = NSMutableAttributedString(string: "Окрас: ", attributes: sizeAttributes)
+        let attributedText = NSMutableAttributedString(string: "colorPet".localized, attributes: sizeAttributes)
         
         let ageAttributedString = NSAttributedString(string: pet.color!, attributes: boldAttributes)
         attributedText.append(ageAttributedString)
@@ -261,11 +268,10 @@ final class PetPageViewController: UIViewController,
             .foregroundColor: UIColor.label
         ]
         
-        let attributedText = NSMutableAttributedString(string: "Дата ежегодных прививок: ", attributes: sizeAttributes)
+        let attributedText = NSMutableAttributedString(string: "date_annual_vaccinations".localized, attributes: sizeAttributes)
         
         let ageAttributedString = NSAttributedString(string: pet.yearVactination!, attributes: boldAttributes)
         attributedText.append(ageAttributedString)
-        print(pet.yearVactination)
         
         yearVact.attributedText = attributedText
         yearVact.pinTop(to: colorLabel.bottomAnchor, 8)
@@ -286,7 +292,7 @@ final class PetPageViewController: UIViewController,
             .foregroundColor: UIColor.label
         ]
         
-        let attributedText = NSMutableAttributedString(string: "Дата последних прививок: ", attributes: sizeAttributes)
+        let attributedText = NSMutableAttributedString(string: "date_last_vaccinations".localized, attributes: sizeAttributes)
         
         let ageAttributedString = NSAttributedString(string: pet.lastVactination!, attributes: boldAttributes)
         attributedText.append(ageAttributedString)
@@ -310,7 +316,7 @@ final class PetPageViewController: UIViewController,
             .foregroundColor: UIColor.label
         ]
         
-        let attributedText = NSMutableAttributedString(string: "Дата последнего купания: ", attributes: sizeAttributes)
+        let attributedText = NSMutableAttributedString(string: "date_last_bath".localized, attributes: sizeAttributes)
         
         let ageAttributedString = NSAttributedString(string: pet.lastBath!, attributes: boldAttributes)
         attributedText.append(ageAttributedString)

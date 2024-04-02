@@ -27,7 +27,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     private let noAccountTextView: UILabel = UILabel()
     private let accessRecoveryButton: UIButton = UIButton()
     private let registrationButton: UIButton = UIButton()
-    private let alert: UIAlertController = UIAlertController(title: "Ошибка авторизации", message: "Неверный логин или пароль", preferredStyle: UIAlertController.Style.alert)
+    private let alert: UIAlertController = UIAlertController(title: "auth_error".localized, message: "invalid_log_pass".localized, preferredStyle: UIAlertController.Style.alert)
     
     private let router: AuthRoutingLogic
     private let interactor: AuthBusinessLogic
@@ -161,7 +161,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     private func configureForgotPasswordTextView() {
         view.addSubview(forgotPasswordTextView)
         
-        forgotPasswordTextView.text = "Забыли пароль?"
+        forgotPasswordTextView.text = "forgot_password".localized
         forgotPasswordTextView.pinTop(to: logInButton.bottomAnchor, 20)
         forgotPasswordTextView.pinLeft(to: logInButton.leadingAnchor)
         forgotPasswordTextView.textColor = .label
@@ -170,7 +170,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     private func configureNoAccountTextView() {
         view.addSubview(noAccountTextView)
         
-        noAccountTextView.text = "Нет аккаунта?"
+        noAccountTextView.text = "no_account".localized
         noAccountTextView.pinTop(to: forgotPasswordTextView.bottomAnchor, 10)
         noAccountTextView.pinLeft(to: logInButton.leadingAnchor)
         noAccountTextView.textColor = .label
@@ -179,7 +179,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     private func configureAccessRecoveryButton() {
         view.addSubview(accessRecoveryButton)
         
-        accessRecoveryButton.setTitle("Восстановление доступа", for: .normal)
+        accessRecoveryButton.setTitle("acess_rec".localized, for: .normal)
         accessRecoveryButton.backgroundColor = .clear
         accessRecoveryButton.setTitleColor(.systemBlue, for: .normal)
         accessRecoveryButton.pinLeft(to: forgotPasswordTextView.trailingAnchor, 5)

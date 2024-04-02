@@ -46,7 +46,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         
         let titleSep = event.title!.trimmingCharacters(in: .whitespacesAndNewlines)
         if titleSep == "" {
-            titleLabel.text = "Новая заметка"
+            titleLabel.text = "new_note".localized
         } else {
             titleLabel.text = event.title
         }
