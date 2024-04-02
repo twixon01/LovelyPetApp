@@ -126,11 +126,6 @@ public final class SettingsViewController: UIViewController,
         }
     }
     
-    @objc
-    func journalTapped() {
-        interactor.loadJournal(SettingsModel.Journal.Request())
-    }
-    
     // MARK: - DisplayLogic
     func displayStart(_ viewModel: Model.Start.ViewModel) {
         configureUI()
@@ -140,8 +135,8 @@ public final class SettingsViewController: UIViewController,
         router.routeToAuth()
     }
     
-    func displayJournal(_ viewModel: Model.Journal.ViewModel) {
-        router.routeToJournal()
+    func displayAccountSettings(_ viewModel: Model.AccountSettings.ViewModel) {
+        router.routeToAccountSettings()
     }
 }
 
@@ -156,7 +151,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.backgroundColor = .cellBackground
         cell.layer.cornerRadius = 12
-        cell.textLabel?.text = "Аккаунт"
+        cell.textLabel?.text = "account".localized
         cell.imageView?.image = UIImage(systemName: "person.fill")
         cell.accessoryType = .disclosureIndicator
         
@@ -167,6 +162,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        interactor.loadAccountSettings(Model.AccountSettings.Request())
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) { cell.layer.cornerRadius = 12

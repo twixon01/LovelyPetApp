@@ -52,12 +52,10 @@ final class RegistrationViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        self.navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         let goodAction = UIAlertAction(title: "ОК", style: .default){ _ in
-//            self.interactor.loadJournal(RegistrationModel.Journal.Request())
         }
         self.alert.addAction(goodAction)
         interactor.loadStart(Model.Start.Request())

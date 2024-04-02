@@ -17,13 +17,13 @@ final class TabBarController: UITabBarController {
         var title: String {
             switch self {
             case .calendar:
-                return "Календарь"
+                return "calendar".localized
             case .journal:
-                return "Журнал"
+                return "journal".localized
             case .pets:
-                return "Питомцы"
+                return "pets".localized
             case .settings:
-                return "Настройки"
+                return "settings".localized
             }
         }
         

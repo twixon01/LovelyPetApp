@@ -35,4 +35,8 @@
 "authorization" = "Auth";
 "log_in" = "Log In";
 "select_image" = "Select image";
+"pets" = "Pets";
+"account" = "Account";
+"hello" = "Hello, ";
+"your_email" = "Your Email:  ";
 

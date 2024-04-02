@@ -103,6 +103,8 @@ final class JournalAddViewController: UIViewController,
     // MARK: - Actions
     
     @objc func keyboardWillShow(_ notification: Notification) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationItem.hidesBackButton = true
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         let keyboardHeight = keyboardFrame.cgRectValue.height
         
@@ -115,6 +117,8 @@ final class JournalAddViewController: UIViewController,
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationItem.hidesBackButton = false
         bottomConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -130,12 +134,12 @@ final class JournalAddViewController: UIViewController,
         paragraphStyle.paragraphSpacing = 7
         let attributesP: [NSAttributedString.Key: Any] = [
             .paragraphStyle: paragraphStyle,
-            .font: UIFont.boldSystemFont (ofSize: UIFont.labelFontSize + 6),
+            .font: UIFont(name: "CenturyGothic-Bold", size: 24.0) ?? UIFont.boldSystemFont(ofSize: UIFont.labelFontSize + 6),
             .foregroundColor: UIColor.label
         ]
         
         let attributesB: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: UIFont.labelFontSize-1.3),
+            .font:UIFont(name: "CenturyGothic", size: 14.5) ?? UIFont.boldSystemFont(ofSize: UIFont.labelFontSize - 1.3),
             .foregroundColor: UIColor.label
         ]
         let attributedString = NSMutableAttributedString(string: text, attributes: attributesB)

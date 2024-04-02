@@ -23,8 +23,8 @@ final class SettingsInteractor: SettingsBusinessLogic {
         presenter.presentAuth(Model.AuthMy.Response())
     }
 
-    func loadJournal(_ request: Model.Journal.Request) {
-        presenter.presentJournal(Model.Journal.Response())
+    func loadAccountSettings(_ request: Model.AccountSettings.Request) {
+        presenter.presentAccountSettings(Model.AccountSettings.Response())
     }
 }
 

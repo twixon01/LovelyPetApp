@@ -8,6 +8,7 @@
 protocol AccountSettingsBusinessLogic {
     typealias Model = AccountSettingsModel
     func loadStart(_ request: Model.Start.Request)
+    func userInfo(completion: @escaping (UserModel) -> Void)
     // func load(_ request: Model..Request)
 }
 

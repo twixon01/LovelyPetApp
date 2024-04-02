@@ -13,7 +13,7 @@ final class JournalRouter: JournalRoutingLogic {
     
     func routeToJournalAdd() {
         let vc = JournalAddAssembly.build()
-        view?.navigationController?.pushViewController(vc, animated: false)
+        view?.navigationController?.pushViewController(vc, animated: true)
     }
 
     func routeToJournalEdit(event: EventModel) {

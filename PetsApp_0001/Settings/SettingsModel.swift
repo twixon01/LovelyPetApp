@@ -22,7 +22,7 @@ enum SettingsModel {
         struct Info { }
     }
     
-    enum Journal {
+    enum AccountSettings {
         struct Request { }
         struct Response { }
         struct ViewModel { }

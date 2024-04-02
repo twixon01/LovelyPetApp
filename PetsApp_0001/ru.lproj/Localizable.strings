@@ -36,3 +36,7 @@
 "authorization" = "Авторизация";
 "log_in" = "Войти";
 "select_image" = "Выберите изображение";
+"pets" = "Питомцы";
+"account" = "Аккаунт";
+"hello" = "Здравствуйте, ";
+"your_email" = "Ваш Email:  ";

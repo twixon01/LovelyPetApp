@@ -45,7 +45,6 @@ final class AccessRecoveryViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        self.navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.okWasTapped()
@@ -55,6 +54,9 @@ final class AccessRecoveryViewController: UIViewController,
         alertError.addAction(skipAction)
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        mailTextField.delegate = self
+        
         interactor.loadStart(Model.Start.Request())
     }
     
@@ -92,9 +94,11 @@ final class AccessRecoveryViewController: UIViewController,
         mailTextField.pinTop(to: textLabel.bottomAnchor, 20)
         mailTextField.pinCenterX(to: view)
         mailTextField.setWidth(350)
-        mailTextField.setHeight(35)
+        mailTextField.setHeight(40)
         
         mailTextField.textColor = .label
+        
+        mailTextField.returnKeyType = .done
     }
     
     private func configureResetPasswordButton() {
@@ -154,4 +158,15 @@ final class AccessRecoveryViewController: UIViewController,
     func displayResetPassword(_ viewModel: Model.ResetPassword.ViewModel) {
         router.routeToResetPassword()
     }
+}
+
+
+    // MARK: - Extensions
+extension AccessRecoveryViewController: UITextFieldDelegate {
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == mailTextField {
+        textField.resignFirstResponder()
+    }
+    return true
+}
 }

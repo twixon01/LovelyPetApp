@@ -15,8 +15,8 @@ final class SettingsRouter: SettingsRoutingLogic {
         view?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func routeToJournal() {
-        let vc = JournalAssembly.build()
+    func routeToAccountSettings() {
+        let vc = AccountSettingsAssembly.build()
         view?.navigationController?.pushViewController(vc, animated: true)
     }
 }

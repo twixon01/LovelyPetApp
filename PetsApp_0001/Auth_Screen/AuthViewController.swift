@@ -115,6 +115,12 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
 
         mailTextField.returnKeyType = .done
         mailTextField.textColor = .label
+        
+        mailTextField.textContentType = .emailAddress
+      
+
+
+        
     }
     
     private func configurePasswordTextField() {
@@ -131,6 +137,10 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
         passwordTextField.returnKeyType = .done
         
         passwordTextField.textColor = .label
+        
+        passwordTextField.textContentType = .password
+      
+        
     }
     
     private func configureLogInButton() {

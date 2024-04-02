@@ -9,7 +9,7 @@ protocol SettingsBusinessLogic {
     typealias Model = SettingsModel
     func loadStart(_ request: Model.Start.Request)
     func loadAuth(_ request: Model.AuthMy.Request)
-    func loadJournal(_ request: Model.Journal.Request)
+    func loadAccountSettings(_ request: Model.AccountSettings.Request)
     // func load(_ request: Model..Request)
 }
 
@@ -17,7 +17,7 @@ protocol SettingsPresentationLogic {
     typealias Model = SettingsModel
     func presentStart(_ response: Model.Start.Response)
     func presentAuth(_ response: Model.AuthMy.Response)
-    func presentJournal(_ response: Model.Journal.Response)
+    func presentAccountSettings(_ response: Model.AccountSettings.Response)
     // func present(_ response: Model..Response)
 }
 
@@ -25,7 +25,7 @@ protocol SettingsDisplayLogic: AnyObject {
     typealias Model = SettingsModel
     func displayStart(_ viewModel: Model.Start.ViewModel)
     func displayAuth(_ viewModel: Model.AuthMy.ViewModel)
-    func displayJournal(_ viewModel: Model.Journal.ViewModel)
+    func displayAccountSettings(_ viewModel: Model.AccountSettings.ViewModel)
     // func display(_ viewModel: Model..ViewModel)
 }
 
@@ -37,6 +37,6 @@ protocol SettingsAnalitics: AnyObject {
 
 protocol SettingsRoutingLogic {
     func routeToAuth()
-    func routeToJournal()
+    func routeToAccountSettings()
 }
 

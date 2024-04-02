@@ -28,8 +28,8 @@ final class SettingsPresenter: SettingsPresentationLogic {
         view?.displayStart(Model.Start.ViewModel())
     }
     
-    func presentJournal(_ response: Model.Journal.Response) {
-        view?.displayJournal(Model.Journal.ViewModel())
+    func presentAccountSettings(_ response: Model.AccountSettings.Response) {
+        view?.displayAccountSettings(Model.AccountSettings.ViewModel())
     }
 }
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A03B80C2BC92717000E7DF7 /* centurygothic_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A03B8082BC92717000E7DF7 /* centurygothic_bold.ttf */; };
+		4A03B80D2BC92717000E7DF7 /* centurygothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A03B8092BC92717000E7DF7 /* centurygothic.ttf */; };
+		4A03B8102BC93093000E7DF7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A03B80F2BC93093000E7DF7 /* UserModel.swift */; };
+		4A03B8132BC94402000E7DF7 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A03B8122BC94401000E7DF7 /* SF-Pro-Rounded-Black.otf */; };
 		4A32D9AB2BC599CC007B1279 /* CalendarEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9AA2BC599CC007B1279 /* CalendarEditModel.swift */; };
 		4A32D9AD2BC599E8007B1279 /* CalendarEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9AC2BC599E8007B1279 /* CalendarEditProtocols.swift */; };
 		4A32D9AF2BC599F2007B1279 /* CalendarEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D9AE2BC599F2007B1279 /* CalendarEditViewController.swift */; };
@@ -137,6 +141,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A03B8082BC92717000E7DF7 /* centurygothic_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = centurygothic_bold.ttf; sourceTree = "<group>"; };
+		4A03B8092BC92717000E7DF7 /* centurygothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = centurygothic.ttf; sourceTree = "<group>"; };
+		4A03B80F2BC93093000E7DF7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4A03B8122BC94401000E7DF7 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
 		4A32D9AA2BC599CC007B1279 /* CalendarEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditModel.swift; sourceTree = "<group>"; };
 		4A32D9AC2BC599E8007B1279 /* CalendarEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditProtocols.swift; sourceTree = "<group>"; };
 		4A32D9AE2BC599F2007B1279 /* CalendarEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEditViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +289,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A03B80B2BC92717000E7DF7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A03B8122BC94401000E7DF7 /* SF-Pro-Rounded-Black.otf */,
+				4A03B8082BC92717000E7DF7 /* centurygothic_bold.ttf */,
+				4A03B8092BC92717000E7DF7 /* centurygothic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4A32D9A82BC57D49007B1279 /* CalendarEdit */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +337,7 @@
 				4A32D9CF2BC59CD0007B1279 /* AccountSettingsPresenter.swift */,
 				4A32D9D12BC59CD8007B1279 /* AccountSettingsRouter.swift */,
 				4A32D9D32BC59CE1007B1279 /* AccountSettingsAssembly.swift */,
+				4A03B80F2BC93093000E7DF7 /* UserModel.swift */,
 			);
 			path = AccountSettings;
 			sourceTree = "<group>";
@@ -347,6 +366,7 @@
 		4A8DA7ED2BB59A21000DA908 = {
 			isa = PBXGroup;
 			children = (
+				4A03B80B2BC92717000E7DF7 /* Fonts */,
 				4A3F21342BB90E5F005E4BC0 /* UICustomColor.swift */,
 				4A8DA8142BB59DF6000DA908 /* UIViewPin.swift */,
 				4A3F21282BB89FE1005E4BC0 /* GoogleService-Info.plist */,
@@ -667,7 +687,10 @@
 				4A8DA8032BB59A23000DA908 /* Assets.xcassets in Resources */,
 				4AD057D62BC0855F006E3275 /* LaunchScreen.storyboard in Resources */,
 				4A3F214F2BBF2617005E4BC0 /* Localizable.strings in Resources */,
+				4A03B8132BC94402000E7DF7 /* SF-Pro-Rounded-Black.otf in Resources */,
 				4A3F21292BB89FE1005E4BC0 /* GoogleService-Info.plist in Resources */,
+				4A03B80C2BC92717000E7DF7 /* centurygothic_bold.ttf in Resources */,
+				4A03B80D2BC92717000E7DF7 /* centurygothic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +709,7 @@
 				4A8DA7FA2BB59A21000DA908 /* AppDelegate.swift in Sources */,
 				4A3F21522BBF2E80005E4BC0 /* String+extension.swift in Sources */,
 				4A3F21472BBD3CDA005E4BC0 /* CalendarAddAssembly.swift in Sources */,
+				4A03B8102BC93093000E7DF7 /* UserModel.swift in Sources */,
 				4A32D9BB2BC59B47007B1279 /* JournalEditProtocols.swift in Sources */,
 				4A8DA8402BB5CE1B000DA908 /* RegistrationPresenter.swift in Sources */,
 				4AD057E52BC08C0B006E3275 /* PetPageAssembly.swift in Sources */,
