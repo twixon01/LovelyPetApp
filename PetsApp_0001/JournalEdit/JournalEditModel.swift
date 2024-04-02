@@ -13,6 +13,13 @@ enum JournalEditModel {
         struct Info { }
     }
     
+    enum Journal {
+        struct Request { }
+        struct Response { }
+        struct ViewModel { }
+        struct Info { }
+    }
+    
     //    enum Other {
     //        struct Request { }
     //        struct Response { }

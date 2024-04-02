@@ -7,30 +7,25 @@
 
 import UIKit
 
-final class JournalAddViewController: UIViewController, JournalAddDisplayLogic, UITextViewDelegate {
+final class JournalAddViewController: UIViewController,
+                                      JournalAddDisplayLogic, UITextViewDelegate {
+    
+    
     // MARK: - Constants
     private enum Constants {
         static let fatalError: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
+    
+    private let textView: UITextView = UITextView()
+    private let dateFormatter: DateFormatter = DateFormatter()
+    private let currentDate: Date = Date()
+    
     private let router: JournalAddRoutingLogic
     private let interactor: JournalAddBusinessLogic
     
-    
-//    private let doneButton = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(doneButtonTapped))
-////    
-//    private let backImage = UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-//    
-//    private let dateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
-//        return formatter
-//    }()
-//    
-//    private var formattedDate: String = ""
-  
-    
+    private var bottomConstraint: NSLayoutConstraint!
     
     // MARK: - LifeCycle
     init(
@@ -49,97 +44,129 @@ final class JournalAddViewController: UIViewController, JournalAddDisplayLogic, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        formattedDate = dateFormatter.string(from: Date())
-//        let formattedDate = dateFormatter.string(from: Date())
-//        interactor.addToDB(title: "fist", note: "first", date: formattedDate)
-//        textView.delegate = self
-//       
-//        self.navigationController?.navigationBar.backIndicatorImage = backImage
-//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
-//        self.navigationController?.navigationBar.backItem?.title = "Назад"
-//        self.navigationController?.navigationBar.backItem?.leftBarButtonItem?.isEnabled = true
-//        let edgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleEdgePanGesture(_:)))
-//                edgePanGesture.edges = .left
-//                view.addGestureRecognizer(edgePanGesture)
-//        
+        navigationController?.navigationBar.barTintColor = UIColor.systemBackground
+        navigationController?.navigationBar.backgroundColor = .systemBackground
+        navigationController?.navigationBar.shadowImage = UIImage()
+        view.backgroundColor = .systemBackground
+        
+        let tapKeyBoard = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tapKeyBoard)
+        
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "d MMMM HH:mm"
+        title = "\(dateFormatter.string(from: currentDate))"
+        
+        if let navigationController = navigationController {
+            let attributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.gray,
+                .font: UIFont.systemFont(ofSize: 12)
+            ]
+            navigationController.navigationBar.titleTextAttributes = attributes
+        }
+        
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonTapped))
+        
+        doneButton.isEnabled = true
+        navigationItem.rightBarButtonItem = doneButton
+        
+        textView.becomeFirstResponder()
         interactor.loadStart(Model.Start.Request())
         
-        
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: - Configuration
     private func configureUI() {
-//        configureTextViews()
+        configureTextView()
     }
     
-//    private func configureTextViews() {
-//        
-//    
-//
-//
-//
-//
-//       
-//
-//
-//        view.addSubview(textView)
-//
-//        NSLayoutConstraint.activate([
-//            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-//            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
-//            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//            textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-//            
-//    
-//        ])
-//        view.clipsToBounds = true
-//      
-//        
-//        navigationItem.rightBarButtonItem = doneButton
-//    }
-
+    private func configureTextView() {
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .systemBackground
+        textView.font = UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .regular)
+        textView.textColor = .label
+        textView.isScrollEnabled = true
+        textView.isEditable = true
+        textView.delegate = self
+        textView.contentInsetAdjustmentBehavior = .automatic
+        
+        view.addSubview(textView)
+        
+        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        bottomConstraint = textView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        bottomConstraint.isActive = true
+        textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    }
+    
     // MARK: - Actions
-    @objc
-    private func wasTapped() {
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let keyboardHeight = keyboardFrame.cgRectValue.height
+        
+        if view.frame.height - textView.frame.maxY < (keyboardHeight + 34.58) {
+            bottomConstraint.constant = -keyboardHeight-34.58
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        bottomConstraint.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let selectedRange = textView.selectedRange
+        guard let text = textView.text else { return }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.headIndent = 0
+        paragraphStyle.paragraphSpacing = 7
+        let attributesP: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle,
+            .font: UIFont.boldSystemFont (ofSize: UIFont.labelFontSize + 6),
+            .foregroundColor: UIColor.label
+        ]
+        
+        let attributesB: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: UIFont.labelFontSize-1.3),
+            .foregroundColor: UIColor.label
+        ]
+        let attributedString = NSMutableAttributedString(string: text, attributes: attributesB)
+        
+        let firstLineRange = (text as NSString).lineRange(for: NSRange(location: 0, length: 0))
+        attributedString.addAttributes(attributesP, range: firstLineRange)
+        
+        textView.attributedText = attributedString
+        textView.selectedRange = selectedRange
         
     }
     
-//    @objc func doneButtonTapped() {
-//        interactor.addToDB(title: textView.text!, note: noteTextView.text!, date: formattedDate)
-//        noteTextView.resignFirstResponder()
-//    }
     
+    @objc private func doneButtonTapped() {
+        dismissKeyboard()
+        let lines = textView.text.components(separatedBy: "\n")
+        let firstLine = lines.first
+        let note = lines.dropFirst().joined(separator: "\n")
+        print(note)
+        interactor.addToDB(title: firstLine!, note: note, date: currentDate, dateEdit: currentDate)
+    }
+    
+    @objc
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     // MARK: - DisplayLogic
     func displayStart(_ viewModel: Model.Start.ViewModel) {
         configureUI()
     }
-//    func textViewDidChange(_ textView: UITextView) {
-//
-//            guard let text = textView.text else {
-//                return
-//            }
-//
-//            
-//            let lines = text.components(separatedBy: "\n")
-//     
-//        let attributedString = NSMutableAttributedString(string: text)
-//        let range = NSRange(location: 0, length: text.count)
-//        attributedString.addAttribute(.foregroundColor, value: UIColor.label, range: range)
-//        let firstLine = lines.first ?? ""
-//        let currentLine = lines.last
-//            print("here")
-//        attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: NSRange(location: 0, length: firstLine.count))
-//            print(firstLine.count)
-//       
-//            
-//        textView.attributedText = attributedString
-//        
-//
-//           
-//        }
+    
     func displayJournal(_ viewModel: Model.Journal.ViewModel) {
-        router.routeToJournal()
     }
 }
-    

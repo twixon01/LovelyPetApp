@@ -8,7 +8,7 @@
 import UIKit
 
 struct CalendarEventModel {
-    var title: String
+    var title: String?
     var date: Date
     var notification1: Date
     var notification2: Date

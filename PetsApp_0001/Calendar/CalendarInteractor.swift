@@ -66,7 +66,7 @@ final class CalendarInteractor: CalendarBusinessLogic {
                     }
                 }
                 eventsArray = eventModels.sorted { (eventModel1: CalendarEventModel, eventModel2: CalendarEventModel) -> Bool in
-                    return eventModel1.date > eventModel2.date
+                    return eventModel1.date < eventModel2.date
                 }
                     completion(eventsArray)
                 }

@@ -24,7 +24,7 @@ final class JournalViewController: UIViewController,
     
     private let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
-    private let events: [EventModel] = [EventModel](repeating: EventModel(title: "Буся погуляла", date: Date.now), count: 15)
+    private var events: [EventModel] = []
 
     private let router: JournalRoutingLogic
     private let interactor: JournalBusinessLogic
@@ -50,9 +50,31 @@ final class JournalViewController: UIViewController,
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         view.backgroundColor = .systemBackground
+        interactor.configureCollection { [weak self] events in
+            guard let self = self else { return }
+            self.events = events
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.configureCollection()
+            }
+            self.interactor.loadStart(Model.Start.Request())
+        }
 
-        interactor.loadStart(Model.Start.Request())
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.configureCollection { [weak self] events in
+            guard let self = self else { return }
+            self.events = events
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.configureCollection()
+            }
+            self.interactor.loadStart(Model.Start.Request())
+        }
+    }
+
 
     // MARK: - Configuration
     private func configureUI() {
@@ -120,17 +142,6 @@ final class JournalViewController: UIViewController,
        configureUI()
     }
 
-    func displaySettings(_ viewModel: Model.Settings.ViewModel) {
-        router.routeToSettings()
-    }
-
-    func displayPets(_ viewModel: Model.Pets.ViewModel) {
-        router.routeToPets()
-    }
-
-    func displayCalendar(_ viewModel: Model.Calendar.ViewModel) {
-        router.routeToCalendar()
-    }
 
     func displayJournalAdd(_ viewModel: Model.JournalAdd.ViewModel) {
         router.routeToJournalAdd()

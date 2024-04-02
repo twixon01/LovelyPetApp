@@ -36,7 +36,7 @@ final class PetAddViewController: UIViewController,
     private let birthLabel: UILabel = UILabel()
     private let datePicker   = UIDatePicker()
     private let addButton: UIButton = UIButton()
-    private let agreeAlert: UIAlertController = UIAlertController(title: "Подтвердите действие", message: "Добавьте питомца или заполните/отредактируйте поля", preferredStyle: UIAlertController.Style.alert)
+//    private let agreeAlert: UIAlertController = UIAlertController(title: "Подтвердите действие", message: "Добавьте питомца или заполните/отредактируйте поля", preferredStyle: UIAlertController.Style.alert)
     private let alert: UIAlertController = UIAlertController(title: "Ошибка", message: "Заполните обязательное поле (Имя)", preferredStyle: UIAlertController.Style.alert)
     private let router: PetAddRoutingLogic
     private let interactor: PetAddBusinessLogic
@@ -72,11 +72,11 @@ final class PetAddViewController: UIViewController,
         alertController.addAction(cameraAction)
         alertController.addAction(cancelAction)
 
-        let agreeAddAction = UIAlertAction(title: "Добавить питомца", style: .default){ _ in
-            self.agreeButtonTapped()
-        }
-        agreeAlert.addAction(agreeAddAction)
-        agreeAlert.addAction(cancelAction)
+//        let agreeAddAction = UIAlertAction(title: "Добавить питомца", style: .default){ _ in
+//            self.agreeButtonTapped()
+//        }
+//        agreeAlert.addAction(agreeAddAction)
+//        agreeAlert.addAction(cancelAction)
         
         interactor.loadStart(Model.Start.Request())
         
@@ -345,7 +345,7 @@ final class PetAddViewController: UIViewController,
         if (nameField.text!.isEmpty) {
             self.present(self.alert, animated: true)
         }else{
-            self.present(agreeAlert, animated: true)
+            agreeButtonTapped()
         }
         
     }
@@ -386,7 +386,6 @@ extension PetAddViewController : UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        print("1")
         if let selectedImage = info[.editedImage] as? UIImage {
             imageView.image = selectedImage
         } else if let selectedImage = info[.originalImage] as? UIImage {

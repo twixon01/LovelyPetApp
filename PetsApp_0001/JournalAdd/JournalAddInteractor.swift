@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import UIKit
 
 final class JournalAddInteractor: JournalAddBusinessLogic {
     // MARK: - Fields
@@ -21,10 +22,14 @@ final class JournalAddInteractor: JournalAddBusinessLogic {
         presenter.presentStart(Model.Start.Response())
     }
     
-    func addToDB (title: String, note : String, date : String) {
+    func addToDB (title: String, note : String, date : Date, dateEdit : Date) {
         let uid = Auth.auth().currentUser?.uid ?? ""
-
-        Firestore.firestore().collection("users_new").document(uid).collection("journal").document(date).setData(["Title": title, "Note": note]){ error in
+        func stringFromDate(_ date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+            return dateFormatter.string(from: date)
+        }
+        Firestore.firestore().collection("users_new").document(uid).collection("journal").document(stringFromDate(date)).setData(["Title": title, "Note": note, "Date": date, "DateEdit" : date]){ error in
             if let error = error {
                 print("Ошибка при обновлении данных: \(error.localizedDescription)")
             } else {

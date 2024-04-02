@@ -5,6 +5,8 @@
 //  Created by Илья Нестрогаев on 11.03.2024.
 //
 
+import UIKit
+
 enum JournalAddModel {
     enum Start {
         struct Request { }
@@ -21,7 +23,12 @@ enum JournalAddModel {
     //    }
     
     enum Journal {
-        struct Request { }
+        struct Request {
+            var title: String?
+            var text: String?
+            var date: Date
+            var dateEdit: Date
+        }
         struct Response { }
         struct ViewModel { }
         struct Info { }

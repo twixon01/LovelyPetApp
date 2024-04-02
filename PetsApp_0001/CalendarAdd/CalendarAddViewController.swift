@@ -23,7 +23,6 @@ final class CalendarAddViewController: UIViewController,
     private let notifyDatePicker = UIDatePicker()
     private let notifyLabel2: UILabel = UILabel()
     private let notifyDatePicker2 = UIDatePicker()
-    private let alertError: UIAlertController = UIAlertController(title: "Введите название события", message: nil, preferredStyle: .alert)
     
     private let router: CalendarAddRoutingLogic
     private let interactor: CalendarAddBusinessLogic
@@ -47,14 +46,11 @@ final class CalendarAddViewController: UIViewController,
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(title: "Сохранить событие", style: .done, target: self, action: #selector(doneButtonTapped))
-       
+        let tapKeyBoard = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tapKeyBoard)
         doneButton.isEnabled = true
         navigationItem.rightBarButtonItem = doneButton
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alertError.addAction(okAction)
-        
-        
-        
+    
         interactor.loadStart(Model.Start.Request())
     }
     
@@ -155,12 +151,12 @@ final class CalendarAddViewController: UIViewController,
     }
     
     @objc private func doneButtonTapped() {
-        if titleField.text!.isEmpty {
-            present(alertError, animated: true)
-        }else {
-            interactor.addToDB(title: titleField.text!, date: datePicker.date, notify1: notifyDatePicker.date, notify2: notifyDatePicker2.date, currentDate: Date())
-        }
-        
+        interactor.addToDB(title: titleField.text!, date: datePicker.date, notify1: notifyDatePicker.date, notify2: notifyDatePicker2.date, currentDate: Date())
+    }
+    
+    @objc
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     // MARK: - DisplayLogic

@@ -26,8 +26,6 @@ final class CalendarEditViewController: UIViewController,
     private let notifyLabel2: UILabel = UILabel()
     private let notifyDatePicker2 = UIDatePicker()
     private let alertDelete = UIAlertController(title: "Удаление события", message: "Вы собираетесь удалить событие, подтвердите свое действие", preferredStyle: .alert)
-    private let alertError: UIAlertController = UIAlertController(title: "Введите название события", message: nil, preferredStyle: .alert)
-    private let alert: UIAlertController = UIAlertController(title: "Ошибка", message: "Заполните обязательное поле (Название события)", preferredStyle: UIAlertController.Style.alert)
     
     private let router: CalendarEditRoutingLogic
     private let interactor: CalendarEditBusinessLogic
@@ -59,8 +57,9 @@ final class CalendarEditViewController: UIViewController,
             
         }
         let cancelDeleteAction = UIAlertAction(title: "Отменить", style: .default)
-        alertDelete.addAction(deleteAction)
         alertDelete.addAction(cancelDeleteAction)
+        alertDelete.addAction(deleteAction)
+       
         let doneButton = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(doneButtonTapped))
         let deleteButton = UIBarButtonItem(title: "Удалить событие", style: .plain, target: self, action:
                                             #selector(deleteWasTapped))
@@ -69,8 +68,6 @@ final class CalendarEditViewController: UIViewController,
         navigationItem.rightBarButtonItems = [doneButton, deleteButton]
         
         deleteButton.isEnabled = true
-        let okAction = UIAlertAction(title: "ОК", style: .default)
-        alert.addAction(okAction)
         interactor.loadStart(Model.Start.Request())
     }
     
@@ -177,11 +174,7 @@ final class CalendarEditViewController: UIViewController,
     }
     
     @objc func doneButtonTapped() {
-        if titleField.text!.isEmpty {
-            self.present(alert, animated: true)
-        } else {
-            interactor.addToDB(title: titleField.text!, date : datePicker.date, notify1: notifyDatePicker.date, notify2: notifyDatePicker2.date, currentDate: event.dateEdit)
-        }
+        interactor.addToDB(title: titleField.text!, date : datePicker.date, notify1: notifyDatePicker.date, notify2: notifyDatePicker2.date, currentDate: event.dateEdit)
     }
     
     @objc func deleteWasTapped() {

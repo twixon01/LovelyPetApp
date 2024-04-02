@@ -33,8 +33,8 @@ final class CalendarEditInteractor: CalendarEditBusinessLogic {
             dateFormatter.dateFormat = "d MMMM HH:mm"
             return dateFormatter.string(from: date)
         }
-        self.scheduleNotification(date: notify1, body: "\(title) состоится \(stringFromDateNot(date))", identifier: "\(title)\(date)\(notify1)_1")
-        self.scheduleNotification(date: notify2, body: "\(title) состоится \(stringFromDateNot(date))", identifier: "\(title)\(date)\(notify1)_2")
+        self.scheduleNotification(date: notify1, body: "\(title) состоится \(stringFromDateNot(date))", identifier: "\(currentDate)_1")
+        self.scheduleNotification(date: notify2, body: "\(title) состоится \(stringFromDateNot(date))", identifier: "\(currentDate)_2")
         func stringFromDate(_ date: Date) -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
@@ -83,6 +83,7 @@ final class CalendarEditInteractor: CalendarEditBusinessLogic {
         }
         let uid = Auth.auth().currentUser?.uid ?? ""
         Firestore.firestore().collection("users_new").document(uid).collection("calendar").document(stringFromDate(dateEdit)).delete()
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(dateEdit)_1", "\(dateEdit)_2"])
         self.loadCalendar(Model.Calendar.Request())
         
     }

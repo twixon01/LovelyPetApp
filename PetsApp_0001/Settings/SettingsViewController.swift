@@ -77,13 +77,15 @@ public final class SettingsViewController: UIViewController,
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
 
         tableView.backgroundColor = UIColor.systemBackground
-        tableView.pinTop(to: label.bottomAnchor, 50)
-        tableView.pinHorizontal(to: view, 10)
+        tableView.separatorStyle = .none
+        tableView.pinTop(to: label.bottomAnchor, 20)
+        tableView.pinHorizontal(to: view, 15)
         tableView.pinBottom(to: logOutButton.topAnchor, 10)
     }
     
     private func configureLogOutButton() {
         view.addSubview(logOutButton)
+        
         
         logOutButton.setTitle("log_out".localized, for: .normal)
         logOutButton.setTitleColor(.white, for: .normal)
@@ -152,15 +154,22 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        cell.backgroundColor = .white
+        cell.backgroundColor = .cellBackground
+        cell.layer.cornerRadius = 12
         cell.textLabel?.text = "Аккаунт"
         cell.imageView?.image = UIImage(systemName: "person.fill")
         cell.accessoryType = .disclosureIndicator
+        
+        
         
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) { cell.layer.cornerRadius = 12
+        cell.layer.masksToBounds = true
     }
 }

@@ -10,7 +10,12 @@ import UIKit
 final class JournalEditRouter: JournalEditRoutingLogic {
     weak var view: UIViewController?
     
-    func routeTo() {
-        
+    func routeToJournal() {
+        guard let journalViewController = view?.navigationController?.viewControllers
+                    .compactMap({ $0 as? JournalViewController })
+                    .first else {
+                return
+            }
+        self.view?.navigationController?.popToViewController(journalViewController, animated: true)
     }
 }

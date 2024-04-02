@@ -72,6 +72,7 @@ final class TabBarController: UITabBarController {
         
         tabBar.tintColor = .systemPink
         tabBar.unselectedItemTintColor = .gray
+        tabBar.barTintColor = .systemBackground
     }
     
     private func wrappedInNavigationController(with: UIViewController, title: Any?) -> UINavigationController {

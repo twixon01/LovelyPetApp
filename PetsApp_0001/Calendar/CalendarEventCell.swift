@@ -37,7 +37,14 @@ final class CalendarEventCell: UICollectionViewCell {
     func configure(with event: CalendarEventModel) {
         dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "EEEE, d MMMM, yyyy' 'HH:mm"
-        titleLabel.text = event.title
+        
+        let titleSep = event.title!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if  titleSep == ""{
+            titleLabel.text = "Новое событие"
+        } else {
+            titleLabel.text = event.title
+        }
+      
         dateLabel.text = "Дата: \(dateFormatter.string(from: event.date))"
         let differnce = differenceBetweenDates(date1: event.notification1, date2: event.date)
         let boldAttributes: [NSAttributedString.Key: Any] = [

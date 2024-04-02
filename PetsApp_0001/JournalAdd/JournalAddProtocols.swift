@@ -5,10 +5,12 @@
 //  Created by Илья Нестрогаев on 11.03.2024.
 //
 
+import UIKit
+
 protocol JournalAddBusinessLogic {
     typealias Model = JournalAddModel
     func loadStart(_ request: Model.Start.Request)
-    func addToDB (title: String, note : String, date : String)
+    func addToDB (title: String, note : String, date : Date, dateEdit : Date)
     func loadJournal(_ request: Model.Journal.Request)
     // func load(_ request: Model..Request)
 }

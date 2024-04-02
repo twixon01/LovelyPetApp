@@ -6,6 +6,7 @@
 //
 
 final class JournalEditPresenter: JournalEditPresentationLogic {
+    
     // MARK: - Constants
     private enum Constants {
         
@@ -16,6 +17,10 @@ final class JournalEditPresenter: JournalEditPresentationLogic {
     // MARK: - PresentationLogic
     func presentStart(_ response: Model.Start.Response) {
         view?.displayStart(Model.Start.ViewModel())
+    }
+    
+    func presentJournal(_ response: Model.Journal.Response) {
+        view?.displayJournal(Model.Journal.ViewModel())
     }
 }
 
