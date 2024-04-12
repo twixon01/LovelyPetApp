@@ -69,8 +69,9 @@ final class PetCell: UICollectionViewCell {
         nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         nameLabel.numberOfLines = 0
         nameLabel.pinBottom(to: wrapView.bottomAnchor, 9)
-        nameLabel.pinCenterX(to: wrapView.centerXAnchor)
         nameLabel.numberOfLines = 1
         nameLabel.setWidth(175)
+        nameLabel.textAlignment = .center
+        nameLabel.pinCenterX(to: wrapView.centerXAnchor)
     }
 }
