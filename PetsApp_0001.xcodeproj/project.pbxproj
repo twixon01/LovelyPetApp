@@ -409,6 +409,7 @@
 		4A51A36E2BC9B18600CD0453 /* CalendarScreens */ = {
 			isa = PBXGroup;
 			children = (
+				4A3F21392BBD3C5D005E4BC0 /* CalendarAdd */,
 				4A8DA8542BB5DC17000DA908 /* Calendar */,
 				4A32D9A82BC57D49007B1279 /* CalendarEdit */,
 			);
@@ -442,7 +443,6 @@
 				4A51A36C2BC9B15100CD0453 /* JournalScreens */,
 				4A51A36B2BC9B12F00CD0453 /* SettingsScreens */,
 				4A51A36A2BC9B0E400CD0453 /* AuthScreens */,
-				4A3F21392BBD3C5D005E4BC0 /* CalendarAdd */,
 				4A8DA8162BB5A153000DA908 /* Views */,
 				4A8DA7F92BB59A21000DA908 /* AppDelegate.swift */,
 				4A8DA7FB2BB59A21000DA908 /* SceneDelegate.swift */,
