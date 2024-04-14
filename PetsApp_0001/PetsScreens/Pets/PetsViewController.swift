@@ -169,7 +169,10 @@ final class PetsViewController: UIViewController,
                 dispatchGroup.notify(queue: .main) {
                     print("Все фотографии успешно загружены")
                     self.petsArray = petModels.sorted { (petModel1: PetModel, petModel2: PetModel) -> Bool in
-                        return petModel1.date! > petModel2.date!
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+                        return dateFormatter.date(from: petModel1.date!)! > dateFormatter.date(from: petModel2.date!)!
+                       
                     }
                     
                     completion(true)
