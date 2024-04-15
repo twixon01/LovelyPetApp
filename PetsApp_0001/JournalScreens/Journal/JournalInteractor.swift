@@ -61,7 +61,7 @@ final class JournalInteractor: JournalBusinessLogic {
                     }
                 }
                 eventsArray = eventModels.sorted { (eventModel1: EventModel, eventModel2: EventModel) -> Bool in
-                    return eventModel1.date > eventModel2.date
+                    return eventModel1.dateEdit > eventModel2.dateEdit
                 }
                     completion(eventsArray)
                 }
