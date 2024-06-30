@@ -12,13 +12,22 @@ IOS App with UIKit&Firebase.
   + Дата последнего купания
 + Смена пароля
 ## Иллюстрация работы приложения:
-<img src="screenshots/logo, background, language.PNG" alt="logo" width="750"/>
+<img src="screenshots/logo, background, language.PNG" alt="logo" width="500"/>
+
 _Авторизация, темный и светлый фоны, поддержка английского языка_
-<img src="screenshots/calendar.PNG" alt="calendar" width="750"/>
+
+<img src="screenshots/calendar.PNG" alt="calendar" width="500"/>
+
 _Календарь для добавления событий_
-<img src="screenshots/journal.PNG" alt="journal" width="750"/>
+
+<img src="screenshots/journal.PNG" alt="journal" width="500"/>
+
 _Журнал для заметок_
-<img src="screenshots/pets.PNG" alt="pets" width="1250"/>
+
+<img src="screenshots/pets.PNG" alt="pets" width="1000"/>
+
 _Разделы с питомцами_
-<img src="screenshots/settings.PNG" alt="settings" width="350"/>
+
+<img src="screenshots/settings.PNG" alt="settings" width="250"/>
+
 _Настройки, смена пароля_
